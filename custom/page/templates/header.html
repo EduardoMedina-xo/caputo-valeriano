@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		{% if hub_id == 123 %}
+			<title>DEV -- {{ projectDir }}</title>
+		{% else %}
+			<title>{{ page_meta.html_title }}</title>
+	    <meta name="description" content="{{ content.meta_description }}">
+		{% endif %}
+
+		<!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<!-- Include google fonts stylesheet -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+		<!-- Include the Font Awesome stylesheet -->
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+
+		<!-- Include animation stylesheet -->
+		<link href="{{ var.assetDir }}/css/animate.css" rel="stylesheet" media="all">
+
+		{{ standard_header_includes }}
+
+		<!-- Include base stylesheet -->
+		<link href="{{ var.assetDir }}/css/base.css" rel="stylesheet" media="all">
+
+		<!-- jQuery  -->
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="{{ var.assetDir }}/js/respond.min.js"></script>
+		<![endif]-->
+	</head>

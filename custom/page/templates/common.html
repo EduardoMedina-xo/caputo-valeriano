@@ -1,0 +1,94 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/templates/variables.html" %}
+  {% import variables as var %}
+{% else %}
+  {% import "custom/page/templates/variables.html" as var %}
+{% endif %}
+
+{{ var.template('header.html') }}
+
+<body style="background:#fff;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>I'm a h1 heading.</h1>
+        <h2>I'm a h2 heading.</h2>
+        <h3>I'm a h3 heading — styles conflict, needs updating.</h3>
+        <h4>I'm a h4 heading.</h4>
+        <h5>I'm a h5 heading.</h5>
+        <h1 class="light">I'm a light h1 heading.</h1>
+        <h2 class="light">I'm a light h1 heading.</h2>
+        <h3 class="light">I'm a light h1 heading.</h3>
+        <h4 class="light">I'm a light h1 heading.</h4>
+        <h5 class="light">I'm a light h1 heading.</h5>
+        <hr />
+        <p class="lead">
+          I'm a lead paragraph, slightly larger than a normal paragraph and I work well in combination with headings.
+        </p>
+        <p>
+          <strong>I'm a normal paragraph.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula tristique ipsum ac placerat. Aenean sapien diam, gravida non porttitor lacinia, luctus eget libero. Fusce eleifend semper felis, ut suscipit dolor porttitor eget. Vivamus vulputate, est vel feugiat rhoncus, ligula ligula ullamcorper ligula, a posuere ex magna ac nisl. Pellentesque vestibulum urna nec lorem congue, at interdum leo aliquam. Pellentesque vulputate metus in ultricies malesuada. Nunc aliquet turpis viverra nisl mattis, id tempor tortor sodales. Quisque eu efficitur risus, <a href="#">eu elementum mauris.</a>
+        </p>
+        <blockquote>
+          Blockquote - Curabitur blandit tempus porttitor.
+        </blockquote>
+
+        <hr />
+      </div>
+      <div class="col-sm-6">
+        <ul>
+          <li>I'm an unordered list element.</li>
+          <li>I'm another unordered list element.</li>
+          <li>I'm the last unordered list element.</li>
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ol>
+          <li>I'm an ordered list element.</li>
+          <li>I'm another ordered list element.</li>
+          <li>I'm the last ordered list element.</li>
+        </ol>
+      </div>
+      <div class="col-xs-12">
+        <hr />
+        <a href="#">I'm a regular link.</a><br />
+        <a class="no-decoration" href="#">I'm a link using .no-decoration (no hover underline).</a>
+      </div>
+      <div class="col-xs-12">
+        <hr />
+        <a class="btn btn-lg btn-primary" href="#">Large Primary Button</a>
+        <a class="btn btn-md btn-primary" href="#">Medium Primary Button</a>
+        <a class="btn btn-sm btn-primary" href="#">Small Primary Button</a>
+        <br /><br /><br />
+        <a class="btn btn-lg btn-default" href="#">Large Default Button</a>
+        <a class="btn btn-md btn-default" href="#">Medium Default Button</a>
+        <a class="btn btn-sm btn-default" href="#">Small Default Button</a>
+
+      <hr />
+      <div class="form-wrap col-sm-6">
+        <h3>Form Header</h3>
+        <!--[if lte IE 8]>
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+        <![endif]-->
+        <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+        <script>
+        hbspt.forms.create({
+          portalId: '275827',
+          formId: '1ba92a94-3927-4d7f-bb4f-51040b16be0b',
+          css: ''
+        });
+        </script>
+      </div>
+
+      <!--div class="section section-dark bg-dark" style="padding: 30px;">
+        <p class="lead">I'm a div using .section-dark, where the contrast is automatically fixed when using .bg-dark</p>
+        <a class="btn btn-md btn-primary" href="#">Medium Primary Button</a> &nbsp;<a class="btn btn-md btn-default" href="#">This applies to me too</a>
+      </div-->
+		</div>
+  </div>
+
+	{{ var.template('footer-includes.html') }}
+
+</body>
+</html>

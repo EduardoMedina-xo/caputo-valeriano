@@ -1,0 +1,52 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Tabbed Content <small>01</small></h2>
+          <!-- <p>
+            The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+          </p> -->
+        </div>
+        <div class="pl-panel-body">
+          {{ sprocket.template('sr-tabbed-content-01-extend.html') }}
+        </div>
+
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Build SR Tabbed Content</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

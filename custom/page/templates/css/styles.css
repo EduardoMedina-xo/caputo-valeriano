@@ -1,0 +1,31 @@
+/*-----------------------------------------------------------------------------------*/
+/*
+/*  Lean Labs LaunchPad Stylesheet
+/*
+/*  Author: @helloteichner
+/*  Version: 1.0.1
+/*
+/*-----------------------------------------------------------------------------------*/
+.services01 {
+  padding: 100px 0;
+}
+.services01 ul li {
+  border-bottom: 1px solid #f3f3f3;
+  padding: 15px 0;
+}
+.services01 ul li:before {
+  font-family: 'FontAwesome';
+  margin-right: 10px;
+  content: "\f00c";
+  color: lightgrey;
+}
+.owl-carousel {
+  padding: 50px 0;
+}
+.equal-height-cols {
+  padding: 50px 0;
+}
+.equal-height-cols .inside {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

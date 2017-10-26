@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='masthead' label='Masthead' image_src='http://placehold.it/1200x800' heading='LaunchPad Masthead' lead='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat dolor nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

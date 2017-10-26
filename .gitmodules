@@ -1,0 +1,3 @@
+[submodule "custom/page/sr-templates"]
+	path = custom/page/sr-templates
+	url = git@gitlab.com:lean-labs/launchpad-hubl.git

@@ -1,0 +1,229 @@
+{
+  "custom_module": {
+    "name": "SR Slider",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enable?",
+        "name": "enable",
+        "type": "boolean"
+      },
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "default": "1",
+        "help_text": "Default: 1",
+        "label": "Number of Rows",
+        "name": "number_of_rows",
+        "type": "text"
+      },
+      {
+        "default": "1",
+        "help_text": "Default: 1",
+        "label": "Number of Slides",
+        "name": "number_of_slides",
+        "type": "text"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Show Dot Navigation?",
+        "name": "dot_navigation",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Autoplay",
+        "name": "autoplay",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Infinite",
+        "name": "infinite",
+        "type": "boolean"
+      },
+      {
+        "default": "500",
+        "help_text": "millisecond (default: 500)",
+        "label": "Transition Speed",
+        "name": "transition_speed",
+        "type": "text"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 1 Image",
+        "name": "slide_1_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 2 Image",
+        "name": "slide_2_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 3 Image",
+        "name": "slide_3_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 4 Image",
+        "name": "slide_4_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 5 Image",
+        "name": "slide_5_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 6 Image",
+        "name": "slide_6_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 7 Image",
+        "name": "slide_7_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 8 Image",
+        "name": "slide_8_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 9 Image",
+        "name": "slide_9_image",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1920x768.jpg",
+          "alt": "",
+          "width": "1920",
+          "height": "768"
+        },
+        "label": "Slide 10 Image",
+        "name": "slide_10_image",
+        "type": "image"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-slider-01-extend.html",
+  "custom_module_template": "sr-slider-01.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-slider-01.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-slider/vendor/slick.min.js",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/vendor"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/vendor/slick.css",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/vendor"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/vendor/slick-theme.css",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/vendor"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/fonts/slick.eot",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/fonts"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/fonts/slick.svg",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/fonts"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/fonts/slick.ttf",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/fonts"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/fonts/slick.woff",
+      "folder_paths": "sr-assets/pattern-library/sr-slider/fonts"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-slider/sr-slider-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-slider"
+    }
+  ]
+}

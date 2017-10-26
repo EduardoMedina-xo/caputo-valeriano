@@ -1,0 +1,50 @@
+{## sr-flex-column v.0.1 ##}
+
+<style>
+    .sr-flex-wrapper {
+        {% if widget.border_top %}
+            border-top: 2px solid black;
+        {% endif %}
+        {% if widget.border_bottom %}
+            border-bottom: 2px solid black;
+        {% endif %}
+    }
+    .sr-flex > span {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .sr-flex div.hs_cos_wrapper {
+        width: {{ widget.mobile_columns }};
+        {% if widget.top_bottom_padding != "no-padding" %}
+            padding: {{ widget.top_bottom_padding }} 0;
+        {% endif %}
+        text-align: {{ widget.mobile_text_alignment }};
+    }
+
+    @media only screen and (min-width: 768px) {
+        .sr-flex div.hs_cos_wrapper {
+            width: inherit;
+            text-align: inherit;
+            flex: 1;
+        }
+    }
+}
+</style>
+
+<div class="sr-flex-wrapper">
+    <div class="{% if widget.layout != "no-wrapper "%}{{ widget.layout }}{% endif %}">
+        <div class="sr-flex {{ widget.flex_name }}">
+            {% if hub_id == 123 %}
+              <span>
+                {{ var.template('custom-modules/sr-rich-text-item-01-extend.html') }}
+                {{ var.template('custom-modules/sr-rich-text-item-01-extend.html') }}
+                {{ var.template('custom-modules/sr-rich-text-item-01-extend.html') }}
+              </span>
+            {% else %}
+                {{ var.flex(widget.flex_name) }}
+            {% endif %}
+        </div>
+    </div>
+</div>

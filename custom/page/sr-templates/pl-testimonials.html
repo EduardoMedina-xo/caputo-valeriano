@@ -1,0 +1,166 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Testimonials <small>01</small></h2>
+		<!-- <p>
+			The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+		</p> -->
+		</div>
+		<div class="pl-panel-body">
+		{{ sprocket.template('sr-testimonials-01-extend.html') }}
+		</div>
+		<div class="pl-panel-footer">
+		<h2>Extendable Blocks</h2>
+		<p>
+			Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+		</p>
+		<pre class="language-markup"><code>
+			&#123;&#37; block content &#37;&#125;
+
+				&lt;!-- Tab panes --&gt;
+				&lt;div class=&quot;tab-content sr-testimonials-panes&quot;&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade in active&quot; id=&quot;tab-1&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_1_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_1_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_1_name &#125;&#125;&lt;/h6&gt;
+									&lt;h4 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_1_company &#125;&#125;&lt;/h4&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade&quot; id=&quot;tab-2&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_2_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_2_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_2_name &#125;&#125;&lt;/h6&gt;
+									&lt;h4 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_2_company &#125;&#125;&lt;/h4&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade&quot; id=&quot;tab-3&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_3_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_3_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_3_name &#125;&#125;&lt;/h6&gt;
+									&lt;h4 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_3_company &#125;&#125;&lt;/h4&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade&quot; id=&quot;tab-4&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_4_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_4_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_4_name &#125;&#125;&lt;/h6&gt;
+									&lt;h4 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_4_company &#125;&#125;&lt;/h4&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade&quot; id=&quot;tab-5&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_5_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_5_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_5_name &#125;&#125;&lt;/h6&gt;
+									&lt;h5 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_5_company &#125;&#125;&lt;/h5&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+					&lt;div role=&quot;tabpanel&quot; class=&quot;tab-pane fade&quot; id=&quot;tab-6&quot;&gt;
+						&lt;div class=&quot;sr-testimonials-pane&quot;&gt;
+							&lt;div class=&quot;sr-testimonials-content&quot;&gt;&#123;&#123; widget.testimonial_6_content &#125;&#125;&lt;/div&gt;
+							&lt;div class=&quot;sr-testimonials-info&quot;&gt;
+								&lt;div class=&quot;sr-testimonials-photo&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_6_photo.src &#125;&#125;&quot;&gt;&lt;/div&gt;
+								&lt;div class=&quot;sr-testimonials-author&quot;&gt;
+									&lt;h6 class=&quot;sr-testimonials-name&quot;&gt;&#123;&#123; widget.testimonial_6_name &#125;&#125;&lt;/h6&gt;
+									&lt;h6 class=&quot;sr-testimonials-company&quot;&gt;&#123;&#123; widget.testimonial_6_company &#125;&#125;&lt;/h6&gt;
+								&lt;/div&gt;
+							&lt;/div&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+
+				&lt;/div&gt;
+
+				&lt;!-- Nav tabs --&gt;
+				&lt;ul class=&quot;sr-testimonials-tabs&quot; role=&quot;tablist&quot;&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;active&quot;&gt;
+						&lt;a href=&quot;#tab-1&quot; aria-controls=&quot;tab-1&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_1_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;#tab-2&quot; aria-controls=&quot;tab-2&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_2_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;#tab-3&quot; aria-controls=&quot;tab-3&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_3_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;#tab-4&quot; aria-controls=&quot;tab-4&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_4_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;#tab-5&quot; aria-controls=&quot;tab-5&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_5_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+					&lt;li role=&quot;presentation&quot; class=&quot;&quot;&gt;
+						&lt;a href=&quot;#tab-6&quot; aria-controls=&quot;tab-6&quot; role=&quot;tab&quot; data-toggle=&quot;tab&quot;&gt;&lt;img src=&quot;&#123;&#123; widget.testimonial_6_tab.src &#125;&#125;&quot;&gt;&lt;/a&gt;
+					&lt;/li&gt;
+				&lt;/ul&gt;
+			&#123;&#37; endblock content &#37;&#125;
+		</code> </pre>
+		</div>
+		<div class="pl-panel-footer clearfix">
+			<h2>Versions</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Version 01</th>
+					</tr>
+				</thead>
+					<tbody>
+					<tr>
+						<td>Build SR Testimonials</td>
+					</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

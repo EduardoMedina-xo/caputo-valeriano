@@ -1,0 +1,105 @@
+{% if hub_id == 123 %}
+    <!--
+        enabled: boolean
+        content options: rich text
+        class: text
+        image.src options: url
+        height options: 'small', 'medium', 'large'
+        overlay options: 'light', 'medium', 'dark'
+        parallax options: boolean
+    -->
+    {% if module.enabled or module.enabled == 0 %}
+      {% set enabled = module.enabled %}
+    {% else %}
+      {% set enabled = 1 %}
+    {% endif %}
+    {% if module.parallax or module.parallax == 0 %}
+      {% set parallax = module.parallax %}
+    {% else %}
+      {% set parallax = 1 %}
+    {% endif %}
+    {% if module.class %}
+      {% set class = module.class %}
+    {% else %}
+      {% set class = '' %}
+    {% endif %}
+    {% if module.height %}
+      {% set height = module.height %}
+    {% else %}
+      {% set height = 'medium' %}
+    {% endif %}
+    {% if module.overlay %}
+      {% set overlay = module.overlay %}
+    {% else %}
+      {% set overlay = 'light' %}
+    {% endif %}
+    {% if module.image %}
+      {% set image = {'src': module.image } %}
+    {% else %}
+      {% set image = {'src': 'http://placehold.it/1200x800.jpg'} %}
+    {% endif %}
+    {% if caller()|length > 3 %}
+      {% set caller = caller() %}
+    {% else %}
+      {% set caller = '<h1>Dolor Quam Tellus Lorem</h1><p class="lead">Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p><a href="#" class="btn btn-primary">Click here</a>' %}
+    {% endif %}
+
+    {% set widget = {
+        'enabled': enabled,
+        'image': image,
+        'height': height,
+        'overlay': overlay,
+        'parallax': parallax,
+        'class': class,
+        'content': caller
+    }%}
+
+    {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+    {% import sr-variables as sprocket %}
+{% else %}
+    {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+{% endif %}
+
+{## sr-parallax-masthead v.0.3 ##}
+
+{% if widget.enabled %}
+	{{ require_css(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/sr-masthead-01.css') }}
+
+	{% if widget.parallax %}
+		{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/TweenMax.min.js') }}
+		{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/ScrollMagic.min.js') }}
+		{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/animation.gsap.min.js') }}
+
+		<!-- parallax masthead 01 start -->
+		<script type="text/javascript">
+				$(function() {
+						var controller = new ScrollMagic.Controller();
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: '.sr-masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+								.setTween(".sr-masthead-inner", {y: 90})
+								// .addIndicators() // add indicators (requires plugin)
+								.addTo(controller);
+
+						var scene1 = new ScrollMagic.Scene({triggerElement: '.sr-masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+								.setTween(".sr-masthead-image", {opacity: .0})
+								// .addIndicators() // add indicators (requires plugin)
+								.addTo(controller);
+						});
+		</script>
+	{% endif %}
+
+	<header class="sr-masthead-wrapper  {{ widget.class }}" style="background: #000">
+			<div class="sr-masthead-image" style="background: url('{{ widget.image.src }}') 50% 50% / cover; {% if widget.overlay == 'light' %}opacity: .75;{% elif widget.overlay == 'medium' %}opacity: .5;{% elif widget.overlay == 'dark' %}opacity: .25;{% endif %}"></div>
+			<div class="container">
+					<div class="col-xs-12 col-sm-10 col-sm-offset-1">
+								<div class="sr-masthead text-center" style="{% if widget.height == 'small' %}min-height: 500px;{% elif widget.height == 'medium' %}min-height: 600px;{% elif widget.height == 'large' %}min-height: 700px;{% endif %}">
+										<div class="sr-masthead-inner">
+											{{ widget.content }}
+										</div>
+								</div>
+					</div>
+			</div>
+	</header>
+	<!-- parallax masthead 01 end -->
+{% endif %}

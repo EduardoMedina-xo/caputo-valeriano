@@ -1,0 +1,41 @@
+{## sr-parallax-masthead v.0.1 ##}
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/sr-masthead-01.css') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/TweenMax.min.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/ScrollMagic.min.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-parallax-masthead/animation.gsap.min.js') }}
+
+<!-- parallax masthead 01 start -->
+<script type="text/javascript">
+	$(function() {
+		var controller = new ScrollMagic.Controller();
+
+		// build scene
+		var scene = new ScrollMagic.Scene({triggerElement: '.sr-masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+				.setTween(".sr-masthead-inner", {y: 90})
+				// .addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+
+		var scene1 = new ScrollMagic.Scene({triggerElement: '.sr-masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+				.setTween(".sr-masthead-image", {opacity: .0})
+				// .addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+	});
+</script>
+
+<header class="sr-masthead-wrapper" style="background: #000">
+	<div class="sr-masthead-image" style="background: url('{{ widget.image.src }}') 50% 50% / cover; {% if widget.overlay == 'light' %}opacity: .75;{% elif widget.overlay == 'medium' %}opacity: .5;{% elif widget.overlay == 'dark' %}opacity: .25;{% endif %}"></div>
+	<div class="container">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			{% block sr-parallax-masthead-content %}
+			<div class="sr-masthead text-center" style="{% if widget.height == 'small' %}min-height: 500px;{% elif widget.height == 'medium' %}min-height: 600px;{% elif widget.height == 'large' %}min-height: 700px;{% endif %}">
+				<div class="sr-masthead-inner">
+					<h1>{{ widget.heading }}</h1>
+					<p>{{ widget.lead }}</p>
+				</div>
+			</div>
+			{% endblock %}
+		</div>
+	</div>
+</header>
+<!-- parallax masthead 01 end -->

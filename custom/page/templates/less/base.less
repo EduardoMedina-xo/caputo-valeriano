@@ -1,0 +1,533 @@
+/*-----------------------------------------------------------------------------------*/
+/*
+/*  Lean Labs LaunchPad Base Theme
+/*
+/*  Author: @helloteichner
+/*  Version: 1.0.1
+/*
+/*-----------------------------------------------------------------------------------*/
+
+// Main Bootstrap less
+@import "bootstrap/bootstrap.less";
+
+// Variables less
+@import "variables.less";
+
+/*-----------------------------------------------------------------------------------*/
+/*  Typography
+/*-----------------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Shared
+/*-----------------------------------------------------------------------------------*/
+
+.block { display: table; }
+.circle { border-radius: 100%; }
+.divider {
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 0 0 13px 0;
+	margin: 0 0 40px;
+}
+
+.line-top { border-top: 1px solid #DADADA; }
+.line-bottom { border-bottom: 1px solid #DADADA; }
+
+.text-center-mobile { text-align: center; }
+.max-responsive { max-width: 100%; height: auto !important; }
+.antialiased { -webkit-font-smoothing: antialiased; }
+
+.animated {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+.animated-fast {
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	-o-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Buttons
+/*-----------------------------------------------------------------------------------*/
+
+
+
+/* All HubSpot Forms
+   ========================================================================== */
+
+/* Form Field (selector for form field wrapper) */
+.hs-form .hs-form-field {
+	margin: 3px 0;
+}
+.hs-form fieldset.form-columns-1 input.hs-input,
+.hs-form fieldset.form-columns-1 select.hs-input,
+.hs-form fieldset.form-columns-1 textarea.hs-input {
+	width: 100%;
+}
+.hs-form fieldset.form-columns-1 .input {
+	margin-right: 0;
+}
+/* Descriptions (targets class applied to Help Text divs) */
+.hs-form .hs-field-desc {}
+
+/* Labels (selects field labels and error messages) */
+.hs-form label {
+  font-weight: normal;
+  font-size: 1.2em;
+	font-weight: normal;
+}
+.section-light .hs-form label {
+	color: #555555;
+}
+.hs-form .hs-form-field > label {}
+
+/* Inputs (selectors for all inputs)  */
+.hs-form input[type="text"],
+.hs-form input[type="password"],
+.hs-form input[type="datetime"],
+.hs-form input[type="datetime-local"],
+.hs-form input[type="date"],
+.hs-form input[type="month"],
+.hs-form input[type="time"],
+.hs-form input[type="week"],
+.hs-form input[type="number"],
+.hs-form input[type="email"],
+.hs-form input[type="url"],
+.hs-form input[type="search"],
+.hs-form input[type="tel"],
+.hs-form input[type="color"],
+.hs-form input[type="file"],
+.hs-form textarea,
+.hs-form select {
+	.form-control;
+  box-shadow: 0 2px 0 0 #D1D1D1;
+  border: 1px solid #E5E6E7;
+	border-radius: 2px;
+	background: #fff;
+	padding: 1.5em 0.75em;
+  width: 100%;
+  font-size: 1.2em;
+  font-weight: bold;
+	margin: 4px 0 12px 0;
+}
+/* Inputs in focus (selectors for all inputs when clicked)  */
+.hs-form input[type="text"]:focus,
+.hs-form input[type="password"]:focus,
+.hs-form input[type="datetime"]:focus,
+.hs-form input[type="datetime-local"]:focus,
+.hs-form input[type="date"]:focus,
+.hs-form input[type="month"]:focus,
+.hs-form input[type="time"]:focus,
+.hs-form input[type="week"]:focus,
+.hs-form input[type="number"]:focus,
+.hs-form input[type="email"]:focus,
+.hs-form input[type="url"]:focus,
+.hs-form input[type="search"]:focus,
+.hs-form input[type="tel"]:focus,
+.hs-form input[type="color"]:focus,
+.hs-form input[type="file"]:focus,
+.hs-form textarea:focus,
+.hs-form select:focus {
+	background: #fff;
+	color: #555555;
+	outline:none;
+	box-shadow: 0 2px 0 0 #FDB927;
+}
+
+/* Multi-line inputs (selectors to target multi-line fields */
+.hs-form textarea {}
+.hs-form textarea:focus {}
+
+/* Dropdowns (selectors for dropdowns) */
+.hs-form select { height: 50px; }
+.hs-form select:focus {}
+
+/* Multi-select (selectors for multi-select fields) */
+.hs-form .hs-form-field ul.inputs-list {
+  list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.hs-form .hs-form-field ul.inputs-list li input {
+	margin-right: 10px;
+	height: auto;
+  margin-top: 6px;
+}
+.hs-form input[type="radio"] {}
+.hs-form input[type="checkbox"] {}
+
+/* Required (selectors for fields, when they do not pass validation) */
+.hs-form input:focus:required:invalid,
+.hs-form textarea:focus:required:invalid,
+.hs-form select:focus:required:invalid {
+	border-color: #D0011B;
+}
+
+.hs-form input:focus:required:invalid:focus,
+.hs-form textarea:focus:required:invalid:focus,
+.hs-form select:focus:required:invalid:focus {
+	border-color: #D0011B;
+}
+
+/* Error message (selector for validation messages) */
+.hs-form .hs-error-msgs label{
+	color: #D0011B;
+}
+
+/* Placeholder Text (styles the placeholder attribute text) */
+::-webkit-input-placeholder { /* Webkit Browsers */}
+:-moz-placeholder { /* Firefox 18- */}
+::-moz-placeholder { /* Firefox 19+ */}
+:-ms-input-placeholder { /* IE10 */}
+
+/* Multi Column Form (selectors for fieldsets and field wrappers)
+   ========================================================================== */
+
+.hs-form fieldset { max-width: inherit !important; }
+.hs-form fieldset.form-columns-1 .hs-form-field {}
+
+.hs-form fieldset.form-columns-2 {}
+.hs-form fieldset.form-columns-2 .hs-form-field {}
+
+.hs-form fieldset.form-columns-3 {}
+.hs-form fieldset.form-columns-3 .hs-form-field {}
+
+.hs-form li.hs-form-checkbox,
+.hs-form li.hs-form-radio {
+	padding: 0.5em;
+	margin-bottom: 0;
+	span {
+		font-size: 1em;
+	  font-weight: normal;
+		margin-top: 4px;
+		display: block;
+	}
+	input {
+		float: left;
+	}
+
+	label {
+		width: 100%;
+	}
+}
+
+
+/* Submit buttons (selectors for all non-CTA buttons)
+   ========================================================================== */
+
+body .hs-button.primary,
+body input[type="submit"],
+body input[type="button"] {
+  .btn;
+	.btn-primary;
+	.btn-lg;
+	margin: 0 auto;
+	display: block;
+}
+
+body .hs-button.primary:hover,
+body input[type="submit"]:hover,
+body input[type="button"]:hover {}
+
+body .hs-button.primary:focus,
+body input[type="submit"]:focus,
+body input[type="button"]:focus {}
+
+// Select box styling
+
+@select-color: #313543;
+@select-background: #fff;
+@select-width: 100%;
+@select-height: 40px;
+
+
+.select-hidden {
+  display: none;
+  visibility: hidden;
+  padding-right: 10px;
+}
+.select {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  color: @select-color;
+  width: @select-width;
+  height: @select-height;
+}
+.select-styled {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: @select-background;
+  padding: 8px 15px;
+	border: 1px solid rgba(0,0,0,0.3);
+  &:after {
+    content:"";
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-color: #D13B4C transparent transparent transparent;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+  }
+  &:hover {
+    background-color: @select-background;
+  }
+  &:active, &.active {
+    background-color: @select-background;
+    &:after {
+      top: 9px;
+      border-color: transparent transparent @select-color transparent;
+    }
+  }
+}
+
+.select-options {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  z-index: 999;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: @select-background;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-top: none;
+  li {
+    margin: 0;
+    padding: 12px 0;
+    text-indent: 15px;
+    border-top: 1px solid @select-background;
+    &:hover {
+      color: @select-background;
+      background: @select-color;
+    }
+    &[rel="hide"] {
+      display: none;
+    }
+  }
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Page Specific Styles — Blog
+/*-----------------------------------------------------------------------------------*/
+
+.blog {
+	nav {
+		width:100%;
+		position: absolute;
+		border-bottom: 1px solid rgba(255, 255, 255, .2);
+		z-index: 999;
+	}
+	.brand {
+		padding: 15px 0;
+	}
+	.blog-main {
+		margin-top: 50px;
+	}
+	.entry-meta {
+		border-bottom: 1px solid #f3f3f3;
+		margin-bottom: 20px;
+		ul {
+			padding: 0;
+		}
+	}
+	article {
+		padding-bottom: 80px;
+		.pull-left {
+			margin-right: 20px;
+			margin-bottom: 20px;
+		}
+		.pull-right {
+			margin-left: 20px;
+			margin-bottom: 20px;
+		}
+	}
+	.entry-date, .entry-comments {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	.entry-author {
+		background: #f3f3f3;
+		padding: 30px;
+		margin-top: 30px;
+	}
+	.entry-author-image {
+		float: left;
+		margin: 0 20px 20px 0;
+	}
+	.widget {
+		margin-bottom: 40px;
+	}
+	.widget-category {
+		ul {
+			padding: 0;
+			list-style: none;
+			li {
+				border-bottom: 1px solid #f3f3f3;
+				padding: 10px 0;
+			}
+		}
+	}
+	.author-bio {
+		text-align: center;
+		margin: 40px 0;
+	}
+	.avatar {
+		// width: 100%;
+		// text-align: center;
+	}
+	.masthead-meta {
+		// z-index: 99;
+		// top: 50 !important;
+		// display: block;
+		width: 100%;
+		text-align: center;
+		position: absolute;
+		height: 100px;
+		bottom: 10px;
+		span.posted,
+		span.author,
+		span.date {
+			text-transform: uppercase;
+			display: block;
+			padding-bottom: 5px;
+		}
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Page: HubSpot Comments
+/*-----------------------------------------------------------------------------------*/
+
+#comments {
+	margin-bottom: 50px;
+	.comment-from {
+		margin-top: 30px;
+	}
+	p, .comment-date {
+		line-height: 24px !important;
+		font-size: 14px;
+	}
+	.comment {
+		border-top: 1px solid #e2e2e2 !important;
+		padding-bottom: 50px !important;
+	}
+	input[type="submit"], button.comment-reply-to.hs-button.secondary {
+		.btn;
+		.btn-primary;
+		display: inline-block;
+	}
+}
+
+#comment-form {
+	input, textarea {
+		border: 1px solid #d0d6d9;
+		padding: 15px;
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	input[type="radio"], input[type="checkbox"] {
+		width: inherit;
+		margin-right: 15px;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+	}
+	label {
+		font-weight: 400;
+	}
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Page Specific Styles — Ebook
+/*-----------------------------------------------------------------------------------*/
+
+.ebook {
+
+	.ebook-body {
+		padding: 70px 0;
+	}
+
+	// Sidebar
+	.ebook-sidebar-nav {
+		padding-top: 10px;
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				list-style: none;
+				&:nth-child(n+2) {
+					margin-top: 1em;
+				}
+				a {
+					display: block;
+					padding: 20px;
+					background: #f9f9f9;
+					color: @text-color;
+					text-decoration: none;
+					&:hover,
+					&.active {
+						background: @brand-primary;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}
+
+	// Content
+	.ebook-content {
+		padding-top: 10px;
+		> span > div {
+			&:nth-child(n+2) {
+				margin-top: 50px;
+			}
+		}
+	}
+
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Media Queries
+/*-----------------------------------------------------------------------------------*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+}

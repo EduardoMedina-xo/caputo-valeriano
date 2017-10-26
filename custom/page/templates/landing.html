@@ -1,0 +1,43 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/templates/variables.html" %}
+  {% import variables as var %}
+{% else %}
+  {% import "custom/page/templates/variables.html" as var %}
+{% endif %}
+
+{{ var.template('header.html') }}
+
+<body class="">
+  {% if hub_id == 123 %}
+    {{ var.custom_module('custom-modules/sr-parallax-masthead-02-extend.html') }}
+
+    {% call var.custom_module('custom-modules/sr-landing-01-extend.html', { 'form_position': 'Bottom', 'copyright': 'Copyright text Your Company'}) %}
+    <h3>Every Great Growth-Driven Design Project Starts With Strategy</h3>
+    <p>Base your website's strategy on your target audience's needs, problems, questions, and desires, and you will have solid foundation for success.</p>
+    <p>How do you ensure you've effectively addressed your target audience's key issues, and successfully provided the answers they seek, at each stage of their journey?</p>
+    <p>In it find:</p>
+    <ul>
+    <li><strong>How to Complete Each Step of the Buyer Journey and Align Messaging&nbsp;</strong></li>
+    <li><strong>Actionable Examples&nbsp;</strong></li>
+    <li><strong>How to Use The Templates + Strategy to Enhance Your Website and Buyer Journey&nbsp;</strong></li>
+    <li><strong>Our Client Onboarding Checklist&nbsp;</strong></li>
+    </ul>
+    <p>Get your free Growth-Drive Design Strategy Kit and learn how to set your brand up for success with the foundational&nbsp;elements you need for an effective website.&nbsp;</p>
+    <p><em>The Growth-Driven Design Strategy Kit will be available on August 30th. Sign up now to receive&nbsp;your copy as soon as it is released.</em></p>
+    {% endcall %}
+
+  {% else %}
+
+
+
+  {% endif %}
+
+
+
+	{{ var.template('footer.html') }}
+	{{ var.template('footer-includes.html') }}
+
+</body>
+</html>

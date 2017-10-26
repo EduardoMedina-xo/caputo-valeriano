@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ page_meta.html_title }}</title>
+
+		<!-- Define a viewport to mobile devices to use - telling the browser to assume that the page is as wide as the device (width=device-width) and setting the initial page zoom level to be 1 (initial-scale=1.0) -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Typekit fonts -->
+		<script src="https://use.typekit.net/fpb3hnd.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+
+    <!-- Include google fonts stylesheet -->
+		<link href="https://fonts.googleapis.com/css?family=Work+Sans:500,700|Lato:400|Open+Sans:300,400,700|Raleway:200i|Source+Serif+Pro:400,700" rel="stylesheet">
+
+    <!-- Include the Font Awesome stylesheet -->
+		<link href="{{ var.assetDir }}/css/font-awesome.css" rel="stylesheet" media="all">
+
+    <!-- Include animation stylesheet -->
+		<link href="{{ var.assetDir }}/css/animate.css" rel="stylesheet" media="all">
+
+    <!-- Include base stylesheet -->
+		<link href="{{ var.assetDir }}/css/blog.css" rel="stylesheet" media="all">
+
+    {{ standard_header_includes }}
+
+    <!-- jQuery  -->
+		<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<script src="js/respond.min.js"></script>
+		<![endif]-->
+	</head>

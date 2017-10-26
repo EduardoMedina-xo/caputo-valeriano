@@ -1,0 +1,7 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='media_block' image_src='http://placehold.it/570x407' heading='Media Block' body='Etiam pretium quam sed lectus mollis, sed elementum velit cursus. Phasellus
+    vitae mollis sem. Mauris vestibulum urna ac placerat.' cta='Explore More' cta_url='#' list="<ul class='services'><li>One page Responsive Design</li><li>Great Features and Easy to Use</li><li>Easy Customization</li></ul></div><div class='col-sm-6'><ul><li>Responsive with Twitter Bootstrap</li><li>Retina Ready Design</li><li>Parallax Scrolling</li></ul>" %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

@@ -1,0 +1,42 @@
+@import "../../less/variables.less";
+
+// Imports vendor
+@import (less) "vendor/slick.css";
+@import (less) "vendor/slick-theme.css";
+
+
+.sr-slider-slide img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.slick-prev:before, .slick-next:before {
+    color: @text-color;
+}
+
+.slick-dots li button:before {
+    font-size: 40px;
+}
+
+
+/*-----------------------------------------------------------------------------------*/
+/*  Layouts
+/*-----------------------------------------------------------------------------------*/
+
+.slick-list {
+    margin: -10px -10px;
+}
+.slick-slide {
+    margin: 10px;
+}
+
+// Single row
+
+
+// Multi rows
+.sr-slider.multi-rows .slick-slide {
+    margin: 0;
+}
+.sr-slider.multi-rows .slick-slide > div {
+    margin: 10px;
+}

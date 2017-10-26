@@ -1,0 +1,32 @@
+{% if hub_id == 123 %}
+
+	{% if module.parent_custom_widget_name %}
+    	{% set parent_custom_widget_name = module.parent_custom_widget_name %}
+	{% else %}
+		{% set parent_custom_widget_name = 'accordionsingle01' %}
+	{% endif %}
+
+
+	{% if module.title %}
+    	{% set title = module.title %}
+	{% else %}
+		{% set title = 'Title' %}
+	{% endif %}
+	{% if module.content %}
+    	{% set content = module.content %}
+	{% else %}
+		{% set content = 'Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.' %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set parent_custom_widget_name = parent_custom_widget_name %}
+	{% set widget = {'title': title, 'content': content} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-accordion-item-01.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-accordion-item-01.html' %}
+{% endif %}

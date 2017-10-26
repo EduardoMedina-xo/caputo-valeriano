@@ -1,0 +1,38 @@
+@import "../../less/variables.less";
+
+/*-----------------------------------------------------------------------------------*/
+/*  SR Footer
+/*-----------------------------------------------------------------------------------*/
+
+.sr-footer-nav {
+  li a {
+    line-height: 2em;
+    color: @text-color !important;
+    &:hover {
+      color: @brand-primary !important;
+      text-decoration: none;
+    }
+  }
+  .hs-menu-wrapper > ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .hs-menu-depth-1 {
+    width: 50%;
+  }
+}
+
+.footer-copyright {
+  padding-top: 2em;
+}
+
+@media only screen and (min-width: 768px) {
+  .sr-footer-nav .hs-menu-depth-1 {
+    width: inherit;
+    flex-grow: 1;
+  }
+}

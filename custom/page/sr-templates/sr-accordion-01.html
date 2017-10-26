@@ -1,0 +1,45 @@
+{% block sr-accordion-content %}
+    {% if widget.enabled == 'true' %}
+        <div class="flex-accordion {{ parent_custom_widget_name }}">
+            <div class="{% if widget.layout != 'no-wrapper' %}{{ widget.layout }}{% endif %}">
+                <div class="panel-group accordion" id="accordion-{{ parent_custom_widget_name }}" role="tablist" aria-multiselectable="true">
+                    {% if hub_id == 123 %}
+                        {% if widget.caller != '' %}
+                            <span>{{ widget.caller }}</span>
+                        {% else %}
+                            {{ sprocket.template('sr-accordion-item-01-extend.html') }}
+                            {{ sprocket.template('sr-accordion-item-01-extend.html') }}
+                            {{ sprocket.template('sr-accordion-item-01-extend.html') }}
+                        {% endif %}
+                    {% else %}
+                        {{ var.flex(widget.flex_name) }}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        {% require_js %}
+        <script>
+
+            // Unwrap each FAQ item
+            $('.flex-accordion .panel').unwrap();
+
+            // Assign parent's ID to each FAQ item
+            $('.accordion').each(function(){
+                var accordionID = $(this).attr('id');
+                // console.log(accordionID);
+                $(this).find('.panel-title a').each(function(){
+                    $(this).attr('data-parent', '#'+accordionID);
+                });
+            });
+
+            // Add active state to the first's FAQ item
+            $('.flex-accordion .panel').first().each(function(){
+                $(this).find('.panel-title a').removeClass('collapsed').attr('aria-expanded', 'true');
+                $(this).find('.panel-collapse').addClass('in');
+            });
+            
+        </script>
+        {% end_require_js %}
+    {% endif %}
+{% endblock %}

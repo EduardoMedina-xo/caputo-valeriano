@@ -1,0 +1,15 @@
+{## lp-sharebox v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-share-box/share-box.css') }}
+
+<!-- sharebox start -->
+<div class="share-box">
+  <p>{{ widget.sub_header }}</p>
+	<h3><a href="https://twitter.com/intent/tweet?text={{ widget.encoded_title }}" target="_blank">{{ widget.title }}</a></h3>
+	<div class="share-box-links">
+		<a href="https://twitter.com/intent/tweet?text={{ widget.encoded_title }}" class="share-tweet" target="_blank">Click to tweet</a>
+		<a href="https://www.facebook.com/dialog/feed?app_id={{ widget.fb_app_id }}&amp;display=popup&amp;description={{ widget.encoded_title }}&amp;picture={{ widget.share_url }}&amp;link={{ widget.share_url }}&amp;redirect_uri={{ widget.share_url }}" class="share-facebook" target="_blank">Click to share</a>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url={{ widget.share_url }}&title={{ widget.encoded_title }}&summary={{ widget.linkedin_summary }}&source=" class="share-linkedin" target="_blank">Click to share</a>
+  </div>
+</div>
+<!-- sharebox end -->

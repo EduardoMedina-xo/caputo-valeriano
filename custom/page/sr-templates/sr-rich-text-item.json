@@ -1,0 +1,115 @@
+{
+  "custom_module": {
+    "name": "SR Rich Text Item",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "default": "rich-text",
+        "help_text": "",
+        "label": "Class",
+        "name": "class",
+        "type": "text"
+      },
+      {
+        "choices": [
+          [
+            "0", "No Padding"
+          ],
+          [
+            "full section", "Full Section"
+          ],
+          [
+            "half section", "Half Section"
+          ]
+        ],
+        "default": "0",
+        "display": "select",
+        "label": "Top / Bottom Padding",
+        "name": "top_bottom_padding",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "0", "No Padding"
+          ],
+          [
+            "15px", "15px"
+          ],
+          [
+            "container", "Page"
+          ]
+        ],
+        "default": "0",
+        "display": "select",
+        "label": "Left / Right Padding",
+        "name": "left_right_padding",
+        "type": "choice"
+      },
+      {
+        "default": "<h2>Hello World</h2><p>This is dummy content and will change once the website goes live</p>",
+        "help_text": "",
+        "label": "Rich Text",
+        "name": "rich_text",
+        "type": "richtext"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Text Center",
+        "name": "text_center",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Background Enabled",
+        "name": "background_enabled",
+        "type": "boolean"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1200x800.jpg",
+          "alt": "",
+          "width": "1200",
+          "height": "800"
+        },
+        "label": "Background Image",
+        "name": "background_image",
+        "type": "image"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Top",
+        "name": "border_top",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Bottom",
+        "name": "border_bottom",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "03"
+  },
+  "custom_module_extend": "sr-rich-text-item-03-extend.html",
+  "custom_module_template": "sr-rich-text-item-03.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-rich-text-item-03.html",
+		"source": ""
+  },
+  "files": []
+}

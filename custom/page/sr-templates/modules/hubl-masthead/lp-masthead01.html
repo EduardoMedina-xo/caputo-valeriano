@@ -1,0 +1,40 @@
+{## lp-masthead01 v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-masthead/masthead01.css') }}
+{{ require_js('launchpad-hubl/modules/hubl-masthead/TweenMax.min.js') }}
+{{ require_js('launchpad-hubl/modules/hubl-masthead/ScrollMagic.min.js') }}
+{{ require_js('launchpad-hubl/modules/hubl-masthead/animation.gsap.min.js') }}
+
+<!-- parallax masthead 01 start -->
+<script type="text/javascript">
+	$(function() {
+		var controller = new ScrollMagic.Controller();
+
+		// build scene
+		var scene = new ScrollMagic.Scene({triggerElement: '.masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+				.setTween(".masthead-inner", {y: 90})
+				// .addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+
+		var scene1 = new ScrollMagic.Scene({triggerElement: '.masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+				.setTween(".masthead-image", {opacity: .0})
+				// .addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+	});
+</script>
+
+<header class="masthead-wrapper" style="background: #006ECC">
+	<div class="masthead-image" style="background: url('{{ widget.image.src }}') 50% 50% / cover; opacity: .4;">
+	</div>
+	<div class="container">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+			<div class="masthead text-center" style="min-height: 700px;">
+				<div class="masthead-inner">
+					<h1>{{ widget.heading }}</h1>
+					<p>{{ widget.lead }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+<!-- parallax masthead 01 end -->

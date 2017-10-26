@@ -1,0 +1,21 @@
+{
+  "name": "sticky_offer",
+  "widget_label": "Sticky Offer",
+  "fields": [
+    {
+      "default": "<!--HubSpot Call-to-Action Code --><span class='hs-cta-wrapper' id='hs-cta-wrapper-4760fce1-6a21-4f72-9549-d361f770f512'> <span class='hs-cta-node hs-cta-4760fce1-6a21-4f72-9549-d361f770f512' id='hs-cta-4760fce1-6a21-4f72-9549-d361f770f512'> <!--[if lte IE 8]><div id='hs-cta-ie-element'></div><![endif]--> <a href='http://cta-redirect.hubspot.com/cta/redirect/275827/4760fce1-6a21-4f72-9549-d361f770f512' ><img class='hs-cta-img' id='hs-cta-img-4760fce1-6a21-4f72-9549-d361f770f512' style='border-width:0px;' src='https://no-cache.hubspot.com/cta/default/275827/4760fce1-6a21-4f72-9549-d361f770f512.png' alt='New Call-to-action'/></a> </span> <script charset='utf-8' src='https://js.hscta.net/cta/current.js'></script> <script type='text/javascript'> hbspt.cta.load(275827, '4760fce1-6a21-4f72-9549-d361f770f512', {}); </script></span><!-- end HubSpot Call-to-Action Code -->",
+      "help_text": "",
+      "type": "text",
+      "name": "encoded_cta",
+      "label": "HubSpot CTA Embed"
+    },
+    {
+      "default": "70",
+      "help_text": "",
+      "type": "text",
+      "name": "scroll_trigger",
+      "label": "Scroll Trigger"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-sticky-offer01.html' %}"
+}

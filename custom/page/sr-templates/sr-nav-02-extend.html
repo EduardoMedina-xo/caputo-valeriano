@@ -1,0 +1,85 @@
+{% if hub_id == 123 %}
+  <!--
+    layout options: 'container', 'container-fluid'
+    dropdown_position options: 'nav-left', 'nav-right'
+    style options: '', 'nav-light', 'nav-dark'
+  -->
+  {% if module.brand %}
+    {% set brand = module.brand %}
+  {% else %}
+    {% set brand = 'LaunchPad' %}
+  {% endif %}
+
+  {% if module.sitemap_name %}
+    {% set sitemap_name = module.sitemap_name %}
+  {% else %}
+    {% set sitemap_name = 'sprocket-rocket' %}
+  {% endif %}
+
+  {% if module.layout %}
+    {% set layout = module.layout %}
+  {% else %}
+    {% set layout = 'container-fluid' %}
+  {% endif %}
+
+  {% if module.dropdown_position %}
+    {% set dropdown_position = module.dropdown_position %}
+  {% else %}
+    {% set dropdown_position = 'nav-right' %}
+  {% endif %}
+
+  {% if module.style %}
+    {% set style = module.style %}
+  {% else %}
+    {% set style = 'nav-dark' %}
+  {% endif %}
+
+  {% if module.transparent_background %}
+    {% set transparent_background = module.transparent_background %}
+  {% else %}
+    {% set transparent_background = 0 %}
+  {% endif %}
+
+  {% if module.sticky_nav %}
+    {% set sticky_nav = module.sticky_nav %}
+  {% else %}
+    {% set sticky_nav = 0 %}
+  {% endif %}
+
+  {% if module.cta or module.cta == 0%}
+    {% set cta = module.cta %}
+  {% else %}
+    {% set cta = 1 %}
+  {% endif %}
+
+  {% if module.cta_class %}
+    {% set cta_class = module.cta_class %}
+  {% else %}
+    {% set cta_class = 'btn-nav' %}
+  {% endif %}
+
+  {% set widget = {
+    'brand': brand,
+    'brand_img': {
+      'src': ''
+    },
+    'brand_url': '/',
+    'sitemap_name': 'sprocket-rocket',
+    'layout': layout,
+    'dropdown_position': dropdown_position,
+    'style': style,
+    'transparent_background': transparent_background,
+    'sticky_nav': sticky_nav,
+    'cta': cta,
+    'cta_class': cta_class
+    }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-nav-02.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-nav-02.html' %}
+{% endif %}

@@ -1,0 +1,7 @@
+{## sr-rich-text-item v.0.1 ##}
+
+{% if hub_id == 123 %}<div class="hs_cos_wrapper">{% endif %}
+    <div class="sr-rich-text-inner" style="overflow: auto; height: 100%; padding: {{ widget.top_bottom_padding }} {{ widget.left_right_padding }}; {% if widget.background_image.src %}background: url('{{ widget.background_image.src }}') 50% 50% / cover;{% endif %}">
+        {{ widget.rich_text }}
+    </div>
+{% if hub_id == 123 %}</div>{% endif %}

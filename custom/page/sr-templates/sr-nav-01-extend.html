@@ -1,0 +1,31 @@
+{% if hub_id == 123 %}
+  <!--
+    layout options: 'container', 'container-fluid'
+    dropdown_position options: 'nav-left', 'nav-right'
+    style options: '', 'nav-light', 'nav-dark'
+  -->
+  {% set widget = {
+    'brand': 'LaunchPad',
+    'brand_img': {
+      'src': ''
+    },
+    'brand_url': '/',
+    'sitemap_name': 'sprocket-rocket',
+    'layout': 'container-fluid',
+    'dropdown_position': 'nav-right',
+    'style': 'nav-dark',
+    'transparent_background': 0,
+    'sticky_nav': 0,
+    'cta': 1,
+    'cta_class': 'btn-nav'
+    }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-nav-01.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-nav-01.html' %}
+{% endif %}

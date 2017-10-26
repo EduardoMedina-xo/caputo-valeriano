@@ -1,0 +1,32 @@
+{## sr-rich-text-item v.0.2 ##}
+
+{% if widget.enabled %}
+    {% if hub_id == 123 %}
+        <div class="hs_cos_wrapper">
+    {% endif %}
+
+    <div class="{% if widget.border_top %}line-top{% endif %} {% if widget.border_bottom %}line-bottom{% endif %}" style="{% if widget.background_enabled %}background: url('{{ widget.background_image.src }}') 50% 50% / cover;{% endif %} height: 100%;">
+        <div class="{{ widget.class }} {% if widget.left_right_padding == 'container' %}container{% endif %} {% if widget.text_center %}text-center{% endif %} sr-rich-text-inner"
+            style="
+                overflow: auto; height: 100%;
+                {% if widget.top_bottom_padding == "full section" %}
+                    padding-top: 5em;
+                    padding-bottom: 5em;
+                {% elif widget.top_bottom_padding == "half section" %}
+                    padding-top: 2.5em;
+                    padding-bottom: 2.5em;
+                {% endif %}
+                {% if widget.left_right_padding == "15px" %}
+                    padding-left: 15px;
+                    padding-right: 15px;
+                {% endif %}
+            ">
+            {% if hub_id == 123 %}
+                {{ caller }}
+            {% else %}
+                {{ widget.rich_text }}
+            {% endif%}
+        </div>
+    </div>
+    {% if hub_id == 123 %}</div>{% endif %}
+{% endif %}

@@ -1,0 +1,49 @@
+{
+  "custom_module": {
+    "name": "SR Footer",
+    "fields": [
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "no-wrapper",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "default": "sprocket-rocket footer",
+        "help_text": "",
+        "label": "Sitemap Name",
+        "name": "sitemap_name",
+        "type": "text"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-footer-01-extend.html",
+  "custom_module_template": "sr-footer-01.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-footer-01.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-footer/sr-footer-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-footer"
+    }
+  ]
+}

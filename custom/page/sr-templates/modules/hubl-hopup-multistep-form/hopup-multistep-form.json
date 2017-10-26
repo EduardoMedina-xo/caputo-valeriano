@@ -1,0 +1,28 @@
+{
+  "name": "multistep_form",
+  "widget_label": "Multistep Form",
+  "fields": [
+    {
+      "default": "true",
+      "help_text": "",
+      "type": "boolean",
+      "name": "enabled",
+      "label": "Enable Multistep Form?"
+    },
+    {
+      "default": "275827",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_portal_id",
+      "label": "Portal ID"
+    },
+    {
+      "default": "4ee18fe6-38d8-4031-853f-d3c1d317c832",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_form_id",
+      "label": "Form ID"
+    }
+  ],
+  "source": "{% include 'custom-modules/hopup-multistep-form.html' %}"
+}

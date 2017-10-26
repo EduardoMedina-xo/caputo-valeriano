@@ -1,0 +1,53 @@
+{## sr-nav v.0.2 ##}
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-nav/sr-nav-02.css') }}
+<nav class="sr-nav {{ widget.dropdown_position }} {{ widget.style }} {% if widget.transparent_background %}nav-transparent{% endif %} {% if widget.sticky_nav %}nav-fixed{% endif %}">
+  <div class="{% if widget.layout != "no-wrapper "%}{{ widget.layout }}{% endif %} sr-nav-inner">
+    <div class="sr-brand">
+      <a href="{{ widget.brand_url }}">{% if widget.brand_img.src %}<img src='{{ widget.brand_img.src}}' data-at2x='{{ widget.brand_img.src}}' width='200' />{% else %}{{ widget.brand }}{% endif %}</a>
+    </div>
+    <div class="sr-nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    {% block sr-nav-content %}
+      {% if hub_id == 123 %}
+        <span id="hs_cos_wrapper_my_menu" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu">
+          <div id="hs_menu_wrapper_my_menu" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="sprocket-rocket">
+            <ul>
+              <li class="hs-menu-item hs-menu-depth-1"><a href="#">Home</a></li>
+              <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">About</a>
+                <ul class="hs-menu-children-wrapper">
+                  <li class="hs-menu-item hs-menu-depth-2"><a href="#">First Menu Item</a></li>
+                  <li class="hs-menu-item hs-menu-depth-2"><a href="#">Second Menu Item</a></li>
+                  <li class="hs-menu-item hs-menu-depth-2"><a href="#">Third Menu Item</a></li>
+                </ul>
+              </li>
+              <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="#">Services</a>
+                <ul class="hs-menu-children-wrapper">
+                  <li class="hs-menu-item hs-menu-depth-2"><a href="#">First Menu Item</a></li>
+                </ul>
+              </li>
+              <li class="hs-menu-item hs-menu-depth-1"><a href="#">Sign Up</a></li>
+            </ul>
+          </div>
+        </span>
+      {% else %}
+        {% menu "main_nav" site_map_name='{{ widget.sitemap_name }}', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+      {% endif %}
+    {% endblock %}
+  </div>
+</nav>
+
+<script>
+  $(function(){
+    $('.sr-nav-toggle').click(function(){
+      $('.sr-nav').toggleClass('menu-open');
+    })
+    {% if widget.cta %}
+      $('.sr-nav').find('.hs-menu-item:last').addClass('{{ widget.cta_class }}');
+      $('.sr-nav').find('.hs-menu-item:last a:last-of-type').addClass('{{ widget.cta_class }}');
+    {% endif %}
+  })
+</script>

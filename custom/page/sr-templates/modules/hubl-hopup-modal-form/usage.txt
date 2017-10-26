@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='hopup_modal_form' enabled='true' hopup_header='LaunchPad Hop-up' hopup_content='Content goes here' hopup_portal_id='275827' hopup_form_id='4ee18fe6-38d8-4031-853f-d3c1d317c832' hopup_modal_type='slide' show_once='true' slide_percentage='70' hopup_identifier='local01' light_or_dark_version='light' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

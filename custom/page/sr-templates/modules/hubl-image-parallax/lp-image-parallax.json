@@ -1,0 +1,19 @@
+{
+  "name": "image_parallax",
+  "widget_label": "Image Parallax",
+  "fields": [
+    {
+      "default": {
+        "src": "http://placehold.it/570x407",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image",
+      "label": "Parallax Image"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-image-parallax.html' %}"
+}

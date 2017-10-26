@@ -1,0 +1,249 @@
+{## sr-filter-panels v.0.1 ##}
+{% if hub_id == 123 %}
+  <!--
+    enabled options: boolean
+    class options: string
+    top_bottom_padding options: 'full section', 'half section', '0'
+    left_right_padding options: 'container', '15px', 'no padding'
+	-->
+	{% if module.enabled or module.enabled == 0 %}
+		{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 1 %}
+	{% endif %}
+
+	{% if module.class %}
+		{% set class = module.class %}
+	{% else %}
+		{% set class = '' %}
+	{% endif %}
+	{% if module.panel_height is string %}
+		{% set panel_height = module.panel_height %}
+	{% else %}
+		{% set panel_height = '300px' %}
+	{% endif %}
+	{% if module.filter_name is string %}
+		{% set class = module.filter_name %}
+	{% else %}
+		{% set filter_name = 'filter-panels' %}
+	{% endif %}
+	{% if module.filter1_name is string %}
+		{% set filter1_name = module.filter1_name %}
+	{% else %}
+		{% set filter1_name = 'Topics' %}
+	{% endif %}
+	{% if module.filter1_values is string %}
+		{% set filter1_values = module.filter1_values %}
+	{% else %}
+		{% set filter1_values = 'Inbound Marketing:inbound-marketing|Growth Driven Design:gdd|SEO:seo' %}
+	{% endif %}
+	{% if module.filter2_name is string %}
+		{% set filter2_name = module.filter2_name %}
+	{% else %}
+		{% set filter2_name = 'Content type' %}
+	{% endif %}
+	{% if module.filter2_values is string %}
+		{% set filter2_values = module.filter2_values %}
+	{% else %}
+		{% set filter2_values = 'eBooks:ebooks|Articles:articles' %}
+	{% endif %}
+	{% if module.filter3_name is string %}
+		{% set filter3_name = module.filter3_name %}
+	{% else %}
+		{% set filter3_name = 'Year' %}
+	{% endif %}
+	{% if module.filter3_values is string %}
+		{% set filter3_values = module.filter3_values %}
+	{% else %}
+		{% set filter3_values = '2016:2016|2017:2017' %}
+	{% endif %}
+	{% if caller()|length > 3 %}
+    {% set caller = caller() %}
+  {% else %}
+    {% set caller = '' %}
+  {% endif %}
+	{% if module.top_bottom_padding %}
+    {% set top_bottom_padding = module.top_bottom_padding %}
+  {% else %}
+    {% set top_bottom_padding = 'full section' %}
+  {% endif %}
+  {% if module.left_right_padding %}
+    {% set left_right_padding = module.left_right_padding %}
+  {% else %}
+    {% set left_right_padding = 'container' %}
+  {% endif %}
+
+	{% set widget = {'enabled': enabled, 'class': class, 'top_bottom_padding': top_bottom_padding, 'left_right_padding': left_right_padding, 'panel_height': panel_height, 'filter_name': filter_name, 'filter1_name': filter1_name, 'filter1_values': filter1_values, 'filter2_name': filter2_name, 'filter2_values': filter2_values, 'filter3_name': filter3_name, 'filter3_values': filter3_values, 'caller': caller } %}
+{% else %}
+	  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+{% endif %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+
+
+{% if widget.enabled %}
+
+	{{ require_css(sprocket.assetDir + '/pattern-library/sr-filter-panels/sr-filter-panels-01.css') }}
+	{{ require_js(sprocket.assetDir + '/pattern-library/sr-filter-panels/isotope.pkgd.min.js') }}
+
+	<style>
+	.sr-filter-panels.{{ widget.filter_name }} .sr-rich-text {
+		height: {{ widget.panel_height }} !important;
+	}
+	</style>
+	<div class="sr-filter-panels {{ widget.class }} {{ widget.filter_name }}">
+		<div class="{% if widget.left_right_padding == 'container' %}container{% endif %} {% if widget.text_center %}text-center{% endif %}"
+				style="
+						overflow: auto; height: 100%;
+						{% if widget.top_bottom_padding == "full section" %}
+								padding-top: 5em;
+								padding-bottom: 5em;
+						{% elif widget.top_bottom_padding == "half section" %}
+								padding-top: 2.5em;
+								padding-bottom: 2.5em;
+						{% endif %}
+						{% if widget.left_right_padding == "15px" %}
+								padding-left: 15px;
+								padding-right: 15px;
+						{% endif %}
+				">
+
+				<div class="filter-option-wrap hs-form">
+					{% if widget.filter1_name %}
+					<div class="filter-option">
+						<label>{{ widget.filter1_name }}</label>
+						{% set filter_value_array = widget.filter1_values|split('|') %}
+						<select name="filter1" class="filter1">
+							<option value="">Please Select</option>
+							{% for filter_value in filter_value_array %}
+								<option value="{{ filter_value|split(':')|last }}">{{ filter_value|split(':')|first }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					{% endif %}
+					{% if widget.filter2_name %}
+					<div class="filter-option">
+						<label>{{ widget.filter2_name }}</label>
+						{% set filter_value_array = widget.filter2_values|split('|') %}
+						<select name="filter2" class="filter2">
+							<option value="">Please Select</option>
+							{% for filter_value in filter_value_array %}
+								<option value="{{ filter_value|split(':')|last }}">{{ filter_value|split(':')|first }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					{% endif %}
+					{% if widget.filter3_name != '' %}
+					<div class="filter-option">
+						<label>{{ widget.filter3_name }}</label>
+						{% set filter_value_array = widget.filter3_values|split('|') %}
+						<select name="filter3" class="filter3">
+							<option value="">Please Select</option>
+							{% for filter_value in filter_value_array %}
+								<option value="{{ filter_value|split(':')|last }}">{{ filter_value|split(':')|first }}</option>
+							{% endfor %}
+						</select>
+					</div>
+					{% endif %}
+
+				</div>
+
+
+				<div class="filter-panels-inner"></div>
+				<div class="filter-flex-wrap" style="">
+
+					<span class="hs_cos_wrapper_type_widget_container">
+						<div class="hs_cos_wrapper_type_custom_widget">
+
+							{% if hub_id == 123 %}
+									<span class="hs_cos_wrapper">
+											{{ widget.caller }}
+									</span>
+							{% else %}
+									{{ var.flex(widget.filter_name) }}
+							{% endif %}
+
+
+						</div>
+					</span>
+				</div>
+
+
+		</div>
+	</div>
+
+<script>
+	$(document).ready(function() {
+
+	/*-----------------------------------------------------------------------------------*/
+	  /*  Isotope
+	/*-----------------------------------------------------------------------------------*/
+	$(".{{ widget.filter_name }}.sr-filter-panels .filter-panels-inner").append( $(".{{ widget.filter_name }}.sr-filter-panels .filter-flex-wrap .sr-rich-text"));
+	  var isotopeContainer = $('.{{ widget.filter_name }} .filter-panels-inner');
+
+	  function getHashFilter() {
+	    var hash = location.hash;
+	    // get filter=filterName
+	    var matches = location.hash.match( /filter=([^&]+)/i );
+	    var hashFilter = matches && matches[1];
+	    return hashFilter && decodeURIComponent( hashFilter );
+	  }
+	  var isIsotopeInit = false;
+	  function isotope() {
+	      var hashFilter = getHashFilter();
+	     /* if ( !hashFilter && isIsotopeInit ) {
+	        return;
+	      }*/
+	      isIsotopeInit = true;
+
+	    console.log('isotope');
+	    console.log('filter:' + hashFilter);
+	      isotopeContainer.isotope({
+	          animationEngine: 'best-available',
+	          layoutMode: 'fitRows',
+	          itemSelector: '.sr-rich-text',
+	          filter:  hashFilter
+	      });
+
+	      if ( hashFilter ) {
+	        var tags = hashFilter.split('.');
+	        $.each(tags, function(index, value){
+	          if (value != ""){
+	            $(".{{ widget.filter_name }}.sr-filter-panels .filter-option-wrap option[value='" + value + "']").attr('selected', 'selected');
+	          }
+	        });
+	      }
+
+	      $('.{{ widget.filter_name }}.sr-filter-panels .filter-option select').change(function() {
+	        var selector = "";
+					$('.{{ widget.filter_name }}.sr-filter-panels .filter-option select').each(function() {
+						if ($(this).val() != ""){
+							selector = selector + "." + $(this).val();
+						}
+					});
+
+	        console.log("isotope selector: " + selector);
+	        // set filter in hash
+	        location.hash = 'filter=' + encodeURIComponent( selector );
+
+	        isotope();
+
+	      });
+
+	  }
+
+	  if (jQuery().isotope) {
+	      $(window).on('load', function () {
+	          isotope();
+	      });
+	      $(window).on('resize', function () {
+	          isotope();
+	      });
+	      $(window).on( 'hashchange', isotope );
+	  }
+
+	});
+
+</script>
+{# end widget enabled #}
+{% endif %}

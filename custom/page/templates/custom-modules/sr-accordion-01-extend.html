@@ -1,0 +1,40 @@
+{% if hub_id == 123 %}
+<!--
+	layout options: 'no-wrapper', 'container', 'container-fluid'
+-->
+
+	{% set parent_custom_widget_name = 'accordion01' %}
+
+	{% if module.enabled %}
+    	{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 'true' %}
+	{% endif %}
+	{% if module.layout %}
+    	{% set layout = module.layout %}
+	{% else %}
+    	{% set layout = 'container' %}
+	{% endif %}
+	{% if module.flex_name %}
+    	{% set flex_name = module.flex_name %}
+	{% else %}
+		{% set flex_name = 'accordion-flex' %}
+	{% endif %}
+
+	{% if caller()|length > 3 %}
+    	{% set caller = caller() %}
+	{% else %}
+    	{% set caller = '' %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set widget = {'enabled': enabled, 'layout': layout, 'flex_name': flex_name, 'caller': caller} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-accordion-01.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-accordion-01.html' %}
+{% endif %}

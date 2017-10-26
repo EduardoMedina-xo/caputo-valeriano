@@ -1,0 +1,74 @@
+{
+  "custom_module": {
+    "name": "SR Landing Page",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Show Offer",
+        "name": "show_offer",
+        "type": "boolean"
+      },
+      {
+        "default": "<h2>Get your free ebook!</h2><img src='http://placehold.it/300x450.jpg'><a href='#landing-form' class='btn btn-default scroll'>Get the Strategy Kit</a>",
+        "help_text": "",
+        "label": "Offer",
+        "name": "offer",
+        "type": "richtext"
+      },
+      {
+        "default": "<h1>Hello World</h1><p>This text will change once the website goes live.</p>",
+        "help_text": "",
+        "label": "Content",
+        "name": "content",
+        "type": "richtext"
+      },
+      {
+        "choices": [
+          [
+            "Bottom", "Bottom"
+          ],
+          [
+            "Right", "Right"
+          ]
+        ],
+        "default": "Bottom",
+        "display": "select",
+        "label": "Form Position",
+        "name": "form_position",
+        "type": "choice"
+      },
+      {
+        "default": "Your Company &copy; 2017 All rights reserved. Privacy Policy.",
+        "help_text": "",
+        "label": "Copyright",
+        "name": "copyright",
+        "type": "text"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-landing-01-extend.html",
+  "custom_module_template": "sr-landing-01.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-landing-01.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-landing/sr-landing-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-landing"
+    }
+  ]
+}

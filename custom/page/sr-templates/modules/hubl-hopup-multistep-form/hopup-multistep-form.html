@@ -1,0 +1,74 @@
+{## hopup-modal v.0.1 ##}
+
+<!-- hopup-multistep start -->
+{% if widget.enabled %}
+
+<h4 class="form-title">Form step:</h4>
+
+<!--[if lte IE 8]>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+<![endif]-->
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+<script>
+  hbspt.forms.create({
+    portalId: '{{ widget.hopup_portal_id }}',
+    formId: '{{ widget.hopup_form_id }}',
+    onFormReady: function($form) {
+
+      var steps;
+      var currentStep = 1;
+
+      // Get steps and wrap them in divs
+      for(var index = 0; index < $('legend').length + 50; index++){
+
+        var currentLegend = $('legend').eq(index);
+
+        $('legend:contains(' + index + ')').parent('div').wrapAll( "<div class='steps step" + index + "' />");
+        $(currentLegend).hide(); // Hide legends
+
+      }
+
+      steps = $('[class*="step"]').length;
+      var curHtml = $('.form-title').html();
+      $('.form-title').html(curHtml + " " + currentStep + " of " + steps);
+
+      // Add next buttons
+      $('.steps').each(function (index) {
+        $('[class*="step"]:eq('+ index +')').append("<a class='hs-button nextbtn primary large' data-step='" + index + "';>Next</a>");
+      })
+
+      $(".steps:not(:first)").hide();
+      $('input[type=submit]').hide();
+
+      $(".nextbtn").click(function(){
+        var stepTarget = $(this).data("step");
+        var nextStepTarget = stepTarget + 1;
+
+        $('[class*="step"]:eq('+ stepTarget +')').each(function (index) {
+
+          // Trigger form validation
+          $(this).find("input").change();
+
+          function checkError(){
+            if ($(".hs-error-msgs").length == 0) {
+              $('[class*="step"]:eq('+ stepTarget +')').fadeOut(function(){
+                $('[class*="step"]:eq('+ nextStepTarget +')').fadeIn();
+                currentStep++;
+                $('.form-title').html(curHtml + " " + currentStep + " of " + steps);
+
+                if (steps == currentStep) {
+                  $('.nextbtn').hide(); // Hide the last next button
+                  $('input[type=submit]').fadeIn();
+                }
+              });
+            }
+          }
+          setTimeout(checkError, 100); // Add timeout because .hs-error-msgs don't appear instantly
+        });
+      });
+    }
+  });
+</script>
+
+{% endif %}
+<!-- hopup-multistep end -->

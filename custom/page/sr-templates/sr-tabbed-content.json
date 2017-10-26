@@ -1,0 +1,187 @@
+{
+  "custom_module": {
+    "name": "SR Tabbed Content",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Tab 01 Enabled",
+        "name": "tab01_enabled",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Tab 02 Enabled",
+        "name": "tab02_enabled",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Tab 03 Enabled",
+        "name": "tab03_enabled",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Tab 04 Enabled",
+        "name": "tab04_enabled",
+        "type": "boolean"
+      },
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "full section", "Full Section"
+          ],
+          [
+            "half section", "Half Section"
+          ]
+        ],
+        "default": "full section",
+        "display": "select",
+        "label": "Top / Bottom Padding",
+        "name": "top_bottom_padding",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "top", "Top"
+          ],
+          [
+            "bottom", "Bottom"
+          ]
+        ],
+        "default": "top",
+        "display": "select",
+        "label": "Tabs Position",
+        "name": "tabs_position",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "half section", "Half Section"
+          ],
+          [
+            "full section", "Full Section"
+          ]
+        ],
+        "default": "half section",
+        "display": "select",
+        "label": "Tab Content Layout",
+        "name": "tab_content_layout",
+        "type": "choice"
+      },
+      {
+        "default": "First Tab",
+        "help_text": "",
+        "label": "Tab 01 Heading",
+        "name": "tab_01_heading",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "help_text": "",
+        "label": "Tab 01 Body",
+        "name": "tab_01_body",
+        "type": "richtext"
+      },
+      {
+        "default": "First Tab",
+        "help_text": "",
+        "label": "Tab 02 Heading",
+        "name": "tab_02_heading",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "help_text": "",
+        "label": "Tab 02 Body",
+        "name": "tab_02_body",
+        "type": "richtext"
+      },
+      {
+        "default": "First Tab",
+        "help_text": "",
+        "label": "Tab 03 Heading",
+        "name": "tab_03_heading",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "help_text": "",
+        "label": "Tab 03 Body",
+        "name": "tab_03_body",
+        "type": "richtext"
+      },
+      {
+        "default": "First Tab",
+        "help_text": "",
+        "label": "Tab 04 Heading",
+        "name": "tab_04_heading",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "help_text": "",
+        "label": "Tab 04 Body",
+        "name": "tab_04_body",
+        "type": "richtext"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Top",
+        "name": "border_top",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Bottom",
+        "name": "border_bottom",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-tabbed-content-01-extend.html",
+  "custom_module_template": "sr-tabbed-content-01.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-tabbed-content-01.html",
+		"source": ""
+  },
+  "files": []
+}

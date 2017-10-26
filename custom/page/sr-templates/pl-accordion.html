@@ -1,0 +1,131 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Accordion <small>01</small></h2>
+		<!-- <p>
+			The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+		</p> -->
+		</div>
+		<div class="pl-panel-body">
+		{{ sprocket.template('sr-accordion-01-extend.html') }}
+		</div>
+        <div class="pl-panel-footer">
+		<h2>Extendable Blocks</h2>
+		<p>
+			Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+		</p>
+		<pre class="language-markup"><code>
+    &#123;&#37; block accordioncontent &#37;&#125;
+        &lt;div class&#x3D;&quot;flex-accordion &#123;&#123; parent_custom_widget_name &#125;&#125;&quot;&gt;
+            &lt;div class&#x3D;&quot;&#123;&#37; if widget.layout !&#x3D; &#39;no-wrapper&#39; &#37;&#125;&#123;&#123; widget.layout &#125;&#125;&#123;&#37; endif &#37;&#125;&quot;&gt;
+                &lt;div class&#x3D;&quot;panel-group accordion&quot; id&#x3D;&quot;accordion-&#123;&#123; parent_custom_widget_name &#125;&#125;&quot; role&#x3D;&quot;tablist&quot; aria-multiselectable&#x3D;&quot;true&quot;&gt;
+                    &#123;&#37; if hub_id &#x3D;&#x3D; 123 &#37;&#125;
+                        &#123;&#37; if widget.caller !&#x3D; &#39;&#39; &#37;&#125;
+                            &lt;span&gt;&#123;&#123; widget.caller &#125;&#125;&lt;&#x2F;span&gt;
+                        &#123;&#37; else &#37;&#125;
+                            &#123;&#123; sprocket.template(&#39;sr-accordion-item-01-extend.html&#39;) &#125;&#125;
+                            &#123;&#123; sprocket.template(&#39;sr-accordion-item-01-extend.html&#39;) &#125;&#125;
+                            &#123;&#123; sprocket.template(&#39;sr-accordion-item-01-extend.html&#39;) &#125;&#125;
+                        &#123;&#37; endif &#37;&#125;
+                    &#123;&#37; else &#37;&#125;
+                        &#123;&#123; var.flex(widget.flex_name) &#125;&#125;
+                    &#123;&#37; endif &#37;&#125;
+                &lt;&#x2F;div&gt;
+            &lt;&#x2F;div&gt;
+        &lt;&#x2F;div&gt;
+
+        &#123;&#37; require_js &#37;&#125;
+        &lt;script&gt;
+
+            &#x2F;&#x2F; Unwrap each FAQ item
+            $(&#39;.&#123;&#123; parent_custom_widget_name &#125;&#125; .panel&#39;).unwrap();
+            &#x2F;&#x2F; $(&#39;.&#123;&#123; parent_custom_widget_name &#125;&#125; .panel&#39;).first().unwrap();
+
+            &#x2F;&#x2F; Assign parent&#39;s ID to each FAQ item
+            $(&#39;.accordion&#39;).each(function()&#123;
+                var accordionID &#x3D; $(this).attr(&#39;id&#39;);
+                &#x2F;&#x2F; console.log(accordionID);
+                $(this).find(&#39;.panel-title a&#39;).each(function()&#123;
+                    $(this).attr(&#39;data-parent&#39;, &#39;#&#39;+accordionID);
+                &#125;);
+            &#125;);
+
+            &#x2F;&#x2F; Add active state to the first&#39;s FAQ item
+            $(&#39;.&#123;&#123; parent_custom_widget_name &#125;&#125; .panel&#39;).first().each(function()&#123;
+                $(this).find(&#39;.panel-title a&#39;).removeClass(&#39;collapsed&#39;).attr(&#39;aria-expanded&#39;, &#39;true&#39;);
+                $(this).find(&#39;.panel-collapse&#39;).addClass(&#39;in&#39;);
+            &#125;);
+            
+        &lt;&#x2F;script&gt;
+        &#123;&#37; end_require_js &#37;&#125;
+    &#123;&#37; endblock &#37;&#125;
+		</code> </pre>
+		</div>
+		<div class="pl-panel-footer">
+		<h2>Caller</h2>
+		<p>
+			
+		</p>
+		<pre class="language-markup"><code>
+&#123;&#37; call var.custom_module(&#39;custom-modules&#x2F;sr-accordion-01-extend.html&#39;, &#123;&#39;enabled&#39;: &#39;true&#39;, &#39;flex_name&#39;: &#39;Accordion&#39;, &#39;layout&#39;: &#39;container&#39;&#125;) &#37;&#125;
+    &#123;&#37; call var.custom_module(&#39;custom-modules&#x2F;sr-accordion-item-01-extend.html&#39;, &#123;
+        &#39;parent_custom_widget_name&#39;: &#39;accordion01&#39;,
+        &#39;title&#39;: &#39;Title 01&#39;, 
+        &#39;content&#39;: &#39;Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.&#39;
+    &#125;) &#37;&#125;
+    &#123;&#37; endcall &#37;&#125;
+    &#123;&#37; call var.custom_module(&#39;custom-modules&#x2F;sr-accordion-item-01-extend.html&#39;, &#123;
+        &#39;parent_custom_widget_name&#39;: &#39;accordion02&#39;,
+        &#39;title&#39;: &#39;Title 02&#39;, 
+        &#39;content&#39;: &#39;Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.&#39;
+    &#125;) &#37;&#125;
+    &#123;&#37; endcall &#37;&#125;
+    &#123;&#37; call var.custom_module(&#39;custom-modules&#x2F;sr-accordion-item-01-extend.html&#39;, &#123;
+        &#39;parent_custom_widget_name&#39;: &#39;accordion03&#39;,
+        &#39;title&#39;: &#39;Title 03&#39;, 
+        &#39;content&#39;: &#39;Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.&#39;
+    &#125;) &#37;&#125;
+    &#123;&#37; endcall &#37;&#125;
+&#123;&#37; endcall &#37;&#125;
+		</code> </pre>
+		</div>
+		<div class="pl-panel-footer clearfix">
+            <h2>Versions</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Version 01</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>Build SR Accordion</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

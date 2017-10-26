@@ -1,0 +1,54 @@
+{% if hub_id == 123 %}
+    <!--
+      'enabled': boolean,
+      'offer': rich text
+      'content': rich text
+      'form_header':  rich text,
+      'form_position': 'Bottom', 'Right',
+      'copyright': text
+    -->
+    {% if caller()|length > 3 %}
+      {% set caller = caller() %}
+    {% else %}
+      {% set caller = '<h1>Hello World</h1><p>This text will change once the website goes live.</p>' %}
+    {% endif %}
+    {% if module.form_header  %}
+      {% set form_header = module.form_header %}
+    {% else %}
+      {% set form_header = '<h3>Enquire Here:</h3>' %}
+    {% endif %}
+    {% if module.form_position %}
+      {% set form_position = module.form_position %}
+    {% else %}
+      {% set form_position = 'Bottom' %}
+    {% endif %}
+    {% if module.offer %}
+      {% set offer = module.offer  %}
+    {% else %}
+    {% if module.copyright %}
+      {% set copyright = module.copyright %}
+    {% else %}
+      {% set copyright = 'Your Company &copy; 2017 All rights reserved. Privacy Policy.' %}
+    {% endif %}
+      {% set offer = '<h2>Get your free ebook!</h2><img src="http://placehold.it/300x450.jpg"><br><a href="#landing-form" class="btn btn-default scroll">Get the Strategy Kit</a>' %}
+    {% endif %}
+
+    <!-- do not change -->
+    {% set widget = {
+      'enabled': 'True',
+      'show_offer': 'True',
+      'offer': offer,
+      'content': caller,
+      'form_header': form_header,
+      'form_position': form_position,
+      'copyright': copyright
+    } %}
+
+    {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+    {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-landing-01.html" %}
+    {% import sr-variables as sprocket %}
+    {% extends sr-extends %}
+{% else %}
+    {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+    {% extends 'custom/page/sr-templates/sr-landing-01.html' %}
+{% endif %}

@@ -1,0 +1,135 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Parallax Masthead <small>03</small></h2>
+        </div>
+        <div class="pl-panel-body">
+          {% call sprocket.custom_module('sr-parallax-masthead-03.html',
+          {'enabled': 1, 'parallax': 1, 'class': 'my-class', 'height': 'medium', 'image': 'http://placehold.it/1200x800.jpg', 'overlay': 'light' }) %}{% endcall %}
+        </div>
+        <div class="pl-panel-footer">
+          <h2>Usage</h2>
+          <pre class="language-markup"><code>
+            &#123;&#37; call sprocket.custom_module(&#39;sr-parallax-masthead-03.html&#39;,
+          &#123;&#39;enabled&#39;: 1, &#39;parallax&#39;: 1, &#39;class&#39;: &#39;my-class&#39;, &#39;height&#39;: &#39;medium&#39;, &#39;image&#39;: &#39;http:&#x2F;&#x2F;placehold.it&#x2F;1200x800.jpg&#39;, &#39;overlay&#39;: &#39;light&#39; &#125;) &#37;&#125;
+&#123;&#37; endcall &#37;&#125;
+          </code></pre>
+
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Attributes</h2>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="200"><code>enabled</code></td>
+                <td>boolean</td>
+              </tr>
+              <tr>
+                <td width="200"><code>content</code></td>
+                <td>richtext</td>
+              </tr>
+              <tr>
+                <td width="200"><code>image</code></td>
+                <td>image</td>
+              </tr>
+              <tr>
+                <td width="200"><code>parallax</code></td>
+                <td>boolean</td>
+              </tr>
+              <tr>
+                <td width="200"><code>class</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>height</code></td>
+                <td><code>small</code> <code>medium</code> <code>large</code></td>
+              </tr>
+              <tr>
+                <td width="200"><code>overlay</code></td>
+                <td><code>light</code> <code>medium</code> <code>dark</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 03</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>** Not backwards compatible with Version #02</strong></td>
+              </tr>
+              <tr>
+                <td>Add parameters for caller functionality</td>
+              </tr>
+              <tr>
+                <td>Switch to single rich text for content using native CTAs</td>
+              </tr>
+              <tr>
+                <td>Added class parameter</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 02</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add parallax toggle</td>
+              </tr>
+              <tr>
+                <td>Add CTAs + option to change styles</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add local data instead of JSON</td>
+              </tr>
+              <tr>
+                <td>Implement extend functionality</td>
+              </tr>
+              <tr>
+                <td>Update all files to match new structure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Nav <small>03</small></h2>
+          <!-- <p>
+            The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+          </p> -->
+        </div>
+        <div class="pl-panel-body">
+          {{ sprocket.template('sr-nav-03-extend.html') }}
+        </div>
+        <div class="pl-panel-footer">
+          <h2>Extendable Blocks</h2>
+          <p>
+            Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+          </p>
+          <pre class="language-markup"><code>
+            &#123;&#37; block content &#37;&#125;
+              &#123;&#37; if hub_id == 123 &#37;&#125;
+                &lt;span id=&quot;hs_cos_wrapper_my_menu&quot; class=&quot;hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu&quot; style=&quot;&quot; data-hs-cos-general-type=&quot;widget&quot; data-hs-cos-type=&quot;menu&quot;&gt;
+                  &lt;div id=&quot;hs_menu_wrapper_my_menu&quot; class=&quot;hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal&quot; role=&quot;navigation&quot; data-sitemap-name=&quot;sprocket-rocket&quot;&gt;
+                    &lt;ul&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1&quot;&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;#&quot;&gt;First Menu Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;#&quot;&gt;Second Menu Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;#&quot;&gt;Third Menu Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;#&quot;&gt;Services&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;#&quot;&gt;First Menu Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1&quot;&gt;&lt;a href=&quot;#&quot;&gt;Sign Up&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/div&gt;
+                &lt;/span&gt;
+              &#123;&#37; else &#37;&#125;
+                &#123;&#37; menu &quot;main_nav&quot; site_map_name='&#123;&#123; widget.sitemap_name &#125;&#125;', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' &#37;&#125;
+              &#123;&#37; endif &#37;&#125;
+            &#123;&#37; endblock &#37;&#125;
+          </code> </pre>
+        </div>
+
+        <div class="pl-panel-footer clearfix">
+    			<h2>Attributes</h2>
+          <p>Usage: <code>&#123;&#123; var.custom_module('custom-modules/sr-nav-02-extend.html', {'attribute': 'option', 'attribute': 'option'}) &#125;&#125;</code></p>
+    			<table class="table">
+    				<tbody>
+    					<tr>
+    						<td width="200"><code>brand</code></td>
+    						<td>string</td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>sitemap_name</code></td>
+    						<td>string</td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>layout</code></td>
+    						<td><code>'no-wrapper'</code> <code>'container'</code> <code>'container-fluid'</code></td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>dropdown_position</code></td>
+    						<td><code>'nav-left'</code> <code>'nav-right'</code></td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>style</code></td>
+    						<td><code>'nav-light'</code> <code>'nav-dark'</code></td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>transparent_background</code></td>
+    						<td>boolean</td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>sticky_nav</code></td>
+    						<td>boolean</td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>cta</code></td>
+    						<td>boolean</td>
+    					</tr>
+              <tr>
+    						<td width="200"><code>cta_class</code></td>
+    						<td>string</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    		</div>
+
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 03</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fix sticky nav hiding behind sr-parallax-masthead</td>
+              </tr>
+              <tr>
+                <td>Fix z-index issue causing dropdown to hide behind masthead</td>
+              </tr>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            <thead>
+              <tr>
+                <th>Version 02 (not compatible with previous versions)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Update paths and make them dynamic</td>
+              </tr>
+              <tr>
+                <td>Fix z-index issue causing dropdown to hide behind masthead</td>
+              </tr>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add local data instead of JSON</td>
+              </tr>
+              <tr>
+                <td>Implement extend functionality</td>
+              </tr>
+              <tr>
+                <td>Update all files to match new structure</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

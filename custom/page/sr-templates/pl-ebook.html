@@ -1,0 +1,79 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Ebook <small>02</small></h2>
+		<!-- <p>
+			The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+		</p> -->
+		</div>
+		<div class="pl-panel-body">
+		<iframe src="/{{ sprocket.baseDir }}sr-ebook-02.html" width="100%" height="800"></iframe>
+		</div>
+		<div class="pl-panel-footer">
+        <h2>Installation</h2>
+        <p>SR Ebook currently is not included in the SR App autodeployment.</p>
+        <p>To install the template on a client's portal, copy and paste the content of <mark><strong>sr-ebook-02.html</strong></mark> into a new template</p>
+        <h2>Usage</h2>
+        <h4>1. Adding a new chapter</h4>
+        <p>The number of chapters displayed is controlled by a choice field labeled <strong>Number of Chapter</strong>.
+            <br>The maximum number of chapters supported is <strong>20</strong>.</p>
+        <hr>
+        <h4>1. Updating sidebar nav</h4>
+        <p>Each sidebar nav item is created using a text module. Each has an automatically-assigned unique ID that links to each ebook chapter.</p>
+		</div>
+		<div class="pl-panel-footer clearfix">
+            <h2>Versions</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Version 02</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>Replace flex columns with 20 toggle-able hubl flexible column modules</td>
+                    </tr>
+                    <tr>
+                        <td>Add scroll functionality to sidebar nav</td>
+                    </tr>
+                    <tr>
+                        <td>Replace sidebar nav with text hubl modules</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Version 01</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>Build SR Ebook</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

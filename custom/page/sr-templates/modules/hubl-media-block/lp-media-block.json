@@ -1,0 +1,54 @@
+{
+  "name": "media_block",
+  "widget_label": "Media Block",
+  "fields": [
+    {
+      "default": {
+        "src": "http://placehold.it/570x407",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image",
+      "label": ""
+    },
+    {
+      "default": "Default content goes here",
+      "help_text": "",
+      "type": "text",
+      "name": "heading",
+      "label": "Heading"
+    },
+    {
+      "default": "Default content goes here",
+      "help_text": "",
+      "type": "text",
+      "name": "body",
+      "label": "Content"
+    },
+    {
+      "default": "Default content goes here",
+      "help_text": "",
+      "type": "richtext",
+      "name": "list",
+      "label": "List"
+    },
+    {
+      "default": "Submit",
+      "help_text": "",
+      "type": "text",
+      "name": "cta",
+      "label": "CTA"
+    },
+    {
+      "default": "",
+      "help_text": "",
+      "type": "text",
+      "name": "cta_url",
+      "label": "CTA Url"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-media-block.html' %}"
+}

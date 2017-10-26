@@ -1,0 +1,84 @@
+{% if hub_id == 123 %}
+
+	<!--
+		enabled options: boolean
+		flex_name options: string
+		layout options: 'no-wrapper', 'container', 'container-fluid'
+		mobile_columns options: number
+		top_bottom_padding options: css value
+		mobile_text_alignment options: css value
+		border_top options: boolean
+		border_bottom options: boolean
+	-->
+
+	{% if module.enabled or module.enabled == 0 %}
+		{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 1 %}
+	{% endif %}
+
+	{% if module.flex_name %}
+		{% set flex_name = module.flex_name %}
+	{% else %}
+		{% set class = 'rich-text' %}
+	{% endif %}
+
+	{% if caller()|length > 3 %}
+		{% set caller = caller() %}
+	{% else %}
+		{% set caller = '<h1>Hello World</h1>' %}
+	{% endif %}
+
+	{% if module.layout %}
+		{% set layout = module.layout %}
+	{% else %}
+		{% set layout = 'container' %}
+	{% endif %}
+
+	{% if module.columns_direction %}
+		{% set columns_direction = module.columns_direction %}
+	{% else %}
+		{% set columns_direction = 'row' %}
+	{% endif %}
+
+	{% if module.mobile_columns %}
+		{% set mobile_columns = module.mobile_columns %}
+	{% else %}
+		{% set mobile_columns = '1' %}
+	{% endif %}
+
+	{% if module.top_bottom_padding %}
+		{% set top_bottom_padding = module.top_bottom_padding %}
+	{% else %}
+		{% set top_bottom_padding = '0' %}
+	{% endif %}
+
+	{% if module.mobile_text_alignment %}
+		{% set mobile_text_alignment = module.mobile_text_alignment %}
+	{% else %}
+		{% set mobile_text_alignment = 'center' %}
+	{% endif %}
+
+	{% if module.border_top %}
+		{% set border_top = module.border_top %}
+	{% else %}
+		{% set border_top = 0 %}
+	{% endif %}
+
+	{% if module.border_bottom %}
+		{% set border_bottom = module.border_bottom %}
+	{% else %}
+		{% set border_bottom = 0 %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set widget = {'enabled': enabled, 'flex_name': flex_name, 'caller': caller, 'layout': layout, 'columns_direction': columns_direction, 'mobile_columns': mobile_columns, 'top_bottom_padding': top_bottom_padding, 'mobile_text_alignment': 'center', 'border_top': border_top, 'border_bottom': border_bottom} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-flex-column-03.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-flex-column-03.html' %}
+{% endif %}

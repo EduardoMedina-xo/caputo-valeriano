@@ -1,0 +1,35 @@
+{## lp-equal-height-columns-01 v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-equal-height-columns/equal-height-columns.css') }}
+
+<!-- equal-height-columns-01 start -->
+<div class="equal-height-cols">
+	<div class="row-sm-height">
+		{% if widget.img_left %}
+			<div class="col-xs-12 col-md-8 col-md-height col-md-top" style="background: url('http://placehold.it/570x407') 50% 50%; background-size: cover; min-height: 300px; height: 100%;">
+				<div class="inside inside-full-height">
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4 col-md-height content">
+				<div class="inside inside-full-height">
+					<h2>{{ widget.heading }}</h2>
+					{{ widget.body }}
+					<a class="btn btn-md btn-primary" href="{{ widget.cta_url }}">{{ widget.cta_text }}</a>
+				</div>
+			</div>
+		{% else %}
+			<div class="col-xs-12 col-md-4 col-md-height content">
+				<div class="inside inside-full-height">
+					<h2>{{ widget.heading }}</h2>
+					{{ widget.body }}
+					<a class="btn btn-md btn-primary" href="{{ widget.cta_url }}">{{ widget.cta_text }}</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-8 col-md-height col-md-top" style="background: url('http://placehold.it/570x407') 50% 50%; background-size: cover; min-height: 300px; height: 100%;">
+				<div class="inside inside-full-height">
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>
+<!-- equal-height-columns-01 end -->

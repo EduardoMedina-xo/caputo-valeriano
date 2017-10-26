@@ -1,0 +1,172 @@
+{
+  "template": [
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/templates/header.html",
+      "source": "launchpad-starter/custom/page/templates/header.html"
+    },
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/templates/footer-includes.html",
+      "source": "launchpad-starter/custom/page/templates/footer-includes.html"
+    },
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/templates/variables.html",
+      "source": "launchpad-starter/custom/page/templates/variables.html"
+    },
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/templates/footer.html",
+      "source": "launchpad-starter/custom/page/templates/footer.html"
+    },
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/templates/home.html",
+      "source": "launchpad-starter/custom/page/templates/home.html"
+    },
+    {
+      "category_id": "4",
+      "folder": "sr-templates",
+      "template_type": "4",
+      "path": "custom/page/sr-templates/sr-variables.html",
+      "source": "launchpad-starter/custom/page/sr-templates/sr-variables.html"
+    }
+  ],
+  "files": [
+    {
+      "file": "launchpad-starter/custom/page/templates/css/animate.css",
+      "folder_paths": "sr-build/css"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/css/base.css",
+      "folder_paths": "sr-build/css"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/css/blog.css",
+      "folder_paths": "sr-build/css"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/css/font-awesome.css",
+      "folder_paths": "sr-build/css"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/css/font-awesome.min.css",
+      "folder_paths": "sr-build/css"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/fontawesome-webfont.eot",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/fontawesome-webfont.svg",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/fontawesome-webfont.ttf",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/fontawesome-webfont.woff",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/fontawesome-webfont.woff2",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/FontAwesome.otf",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/glyphicons-halflings-regular.eot",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/glyphicons-halflings-regular.svg",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/glyphicons-halflings-regular.ttf",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/fonts/glyphicons-halflings-regular.woff",
+      "folder_paths": "sr-build/fonts"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/images/icon-blog-facebook.png",
+      "folder_paths": "sr-build/images"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/images/icon-blog-google-plus.png",
+      "folder_paths": "sr-build/images"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/images/icon-blog-linkedin.png",
+      "folder_paths": "sr-build/images"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/images/icon-blog-twitter.png",
+      "folder_paths": "sr-build/images"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/images/offer-1.jpg",
+      "folder_paths": "sr-build/images"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/bootstrap.min.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/debug.addIndicators.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/interaction.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/retina.min.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/ScrollMagic.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/wow.min.js",
+      "folder_paths": "sr-build/js"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/gsap/jquery.gsap.min.js",
+      "folder_paths": "sr-build/js/gsap"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/gsap/TimelineLite.min.js",
+      "folder_paths": "sr-build/js/gsap"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/gsap/TimelineMax.min.js",
+      "folder_paths": "sr-build/js/gsap"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/gsap/TweenLite.min.js",
+      "folder_paths": "sr-build/js/gsap"
+    },
+    {
+      "file": "launchpad-starter/custom/page/templates/js/gsap/TweenMax.min.js",
+      "folder_paths": "sr-build/js/gsap"
+    }
+  ]
+}

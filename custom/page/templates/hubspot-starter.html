@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+    <head>
+		<meta charset="utf-8">
+		<title>{{ content.html_title }}</title>
+		<meta name="description" content="{{ content.meta_description }}">
+		{{ standard_header_includes }}
+        {% include "custom/page/includes/header.html" %}
+        
+	</head>
+	<body class="">
+
+        {% widget_container "widget_name" label="Widget Label", no_wrapper=True %}
+        {% end_widget_container %}
+
+		{{ standard_footer_includes }}
+	</body>
+</html>

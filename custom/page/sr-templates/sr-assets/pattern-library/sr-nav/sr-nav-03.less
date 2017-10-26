@@ -1,0 +1,232 @@
+@import "../../less/variables.less";
+
+/*-----------------------------------------------------------------------------------*/
+/*  SR Navigation
+/*-----------------------------------------------------------------------------------*/
+
+@nav-line-height: 60px;
+@nav-dropdown-line-height: 50px;
+@nav-cta-color: @brand-primary;
+@nav-cta-hover-color: @btn-primary-hover;
+
+.sr-nav {
+	width: 100%;
+	.clearfix;
+	.sr-brand {
+		float: left;
+		line-height: @nav-line-height;
+		font-weight: bold;
+		font-size: 20px;
+	}
+	@media only screen and (min-width : 768px) {
+		ul {
+			float: right;
+			list-style: none;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			a {
+				display: block;
+				text-decoration: none;
+				line-height: @nav-line-height;
+				padding: 0 15px;
+			}
+			li {
+				position: relative;
+				float: left;
+				margin: 0;
+				padding: 0;
+				&.current-menu-item {
+					background: #ddd;
+				}
+				&:hover {
+					background: #f6f6f6;
+				}
+			}
+			li:hover > ul	{
+				display: block;
+			}
+		}
+		&.nav-left, &.nav-right {
+			ul {
+				ul {
+					display: none;
+					position: absolute;
+					top: 100%;
+					background: #fff;
+					padding: 0;
+					li {
+						float: none;
+						width: 200px;
+					}
+					a {
+						line-height: @nav-dropdown-line-height;
+					}
+					ul {
+						top: 0;
+						left: 100%
+					}
+				}
+			}
+		}
+		&.nav-left { ul ul { left: 0; }}
+		&.nav-right { ul ul { right: 0; }}
+	}
+	.sr-nav-toggle {
+		float: right;
+		padding-top: 17px;
+		cursor: pointer;
+		span {
+			display: block;
+			width: 25px;
+			height: 2px;
+			background: black;
+			margin: 4px 0;
+		}
+	}
+	@media only screen and (min-width : 768px) {
+		.sr-nav-toggle span {
+			display: none;
+		}
+	}
+	@media only screen and (max-width : 768px) {
+		overflow-y: scroll;
+		.hs-menu-wrapper {
+			width: 100%;
+			left: 0;
+			text-align: center;
+			max-height: 0;
+			opacity: 0;
+			.animated;
+			overflow: hidden;
+			ul {
+				list-style: none;
+				padding: 0;
+				margin:0;
+			}
+			> ul {
+				list-style: none;
+				display: table;
+				width: 100%;
+				padding: 15px 0;
+				li {
+					a {
+						font-size: 16px;
+						line-height: 40px;
+					}
+				}
+				ul {
+					li {
+						background: rgba(0, 0, 0, .05);
+						a {
+						}
+					}
+				}
+			}
+		}
+		&.menu-open {
+			background: white;
+			.hs-menu-wrapper {
+				opacity: 1;
+				max-height: 100vh;
+			}
+		}
+	}
+	.hs-item-has-children > a::after {
+		margin-left: 8px;
+		margin-bottom: 3px;
+		content: ' ';
+		display: inline-block;
+		width: 0px;
+	  height: 0px;
+	  border-left: 4px solid transparent;
+	  border-right: 4px solid transparent;
+	  border-top: 4px solid black;
+	}
+	&.nav-light {
+		background: white;
+		a.btn-nav {
+			color: white;
+		}
+		.sr-brand a {
+			color: @text-color;
+			&:hover {
+				color: @brand-primary;
+				text-decoration: none;
+			}
+		}
+	}
+	&.nav-dark {
+		background: #111;
+		color: white;
+		a {
+			color: white;
+		}
+		.hs-item-has-children > a::after {
+			border-top-color: white;
+		}
+		.sr-brand a {
+			color: white;
+			&:hover {
+				color: @brand-primary;
+				text-decoration: none;
+			}
+		}
+		ul li:hover {
+			@media only screen and (min-width : 768px) {
+				background: @brand-primary;
+			}
+		}
+		ul ul a {
+			@media only screen and (min-width : 768px) {
+				background: @brand-primary;
+				&:hover {
+					background: @btn-primary-hover;
+				}
+			}
+		}
+		.sr-nav-toggle span {
+			background-color: white;
+		}
+		&.menu-open {
+			.hs-menu-children-wrapper {
+				background: rgba(255, 255, 255, .05);
+			}
+		}
+	}
+	&.nav-transparent { background: none; }
+	&.nav-fixed {
+		position: fixed;
+		top: 0;
+		z-index: 999;
+		@media only screen and (max-width: 768px) {
+			.hs-menu-wrapper {
+				height: 0;
+			}
+			&.menu-open .hs-menu-wrapper {
+				height: 100vh;
+				max-width: 100vh;
+			}
+		}
+	}
+	li.btn-nav {
+		.clearfix;
+		&:hover {
+			background: none !important;
+		}
+	}
+	a.btn-nav {
+		background: @nav-cta-color;
+		margin: 12px 0 12px 15px;
+		line-height: 0;
+		text-decoration: none;
+		@media only screen and (max-width: 768px) {
+			line-height: 80px !important;
+			margin-left: 0;
+		}
+		padding: 18px 25px;
+		&:hover {
+			background: @nav-cta-hover-color;
+		}
+	}
+}

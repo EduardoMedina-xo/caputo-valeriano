@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='footer' html='<h3>Footer Title</h3><ul class="social-nav"><li><a href="#"><i class="fa fa-facebook"></i></a></li><li><a href="#"><i class="fa fa-twitter"></i></a></li><li><a href="#"><i class="fa fa-google"></i></a></li><li><a href="#"><i class="fa fa-youtube"></i></a></li><li><a href="#"><i class="fa fa-linkedin"></i></a></li><li><a href="#"><i class="fa fa-insatgram"></i></a></li><li><a href="#"><i class="fa fa-pinterest"></i></a></li><li><a href="#"><i class="fa fa-tumblr"></i></a></li></ul><ul><li>TEL: <a href="#">(555) 555-3555</a></li> <li>EMAIL: <a href="#">info@launchpad.com</a></li></ul><ul class="subnav"><li><a href="#">Home</a></li> <li><a href="#">About</a></li> <li><a href="#">Blog</a></li> <li><a href="#">Resources</a></li> <li><a href="#">Contact</a></li></ul><hr><p class="foot-note"><small>Website by <a href="#">Lean Labs</a> &copy; LaunchPad v1</small></p>' %}
+
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

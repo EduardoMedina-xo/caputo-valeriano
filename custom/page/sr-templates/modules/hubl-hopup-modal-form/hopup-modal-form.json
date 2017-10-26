@@ -1,0 +1,77 @@
+{
+  "name": "hopup_modal_form",
+  "widget_label": "Hopup Modal Form",
+  "fields": [
+    {
+      "default": "true",
+      "help_text": "",
+      "type": "boolean",
+      "name": "enabled",
+      "label": "Enable Multistep Form?"
+    },
+    {
+      "default": "LaunchPad Hop-up",
+      "help_text": "",
+      "type": "richtext",
+      "name": "hopup_header",
+      "label": "Hopup Header"
+    },
+    {
+      "default": "Content goes here",
+      "help_text": "",
+      "type": "richtext",
+      "name": "hopup_content",
+      "label": "Hopup Content"
+    },
+    {
+      "default": "275827",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_portal_id",
+      "label": "Hopup Portal ID"
+    },
+    {
+      "default": "4ee18fe6-38d8-4031-853f-d3c1d317c832",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_form_id",
+      "label": "Hopup Form ID"
+    },
+    {
+      "default": "slide",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_modal_type",
+      "label": "Hopup Trigger"
+    },
+    {
+      "default": "true",
+      "help_text": "",
+      "type": "boolean",
+      "name": "show_once",
+      "label": "Show Once?"
+    },
+    {
+      "default": "70",
+      "help_text": "",
+      "type": "text",
+      "name": "slide_percentage",
+      "label": "Slide Percentage"
+    },
+    {
+      "default": "local01",
+      "help_text": "",
+      "type": "text",
+      "name": "hopup_identifier",
+      "label": "Hopup Identifier"
+    },
+    {
+      "default": "light",
+      "help_text": "",
+      "type": "text",
+      "name": "light_or_dark_version",
+      "label": "Light or Dark Version?"
+    }
+  ],
+  "source": "{% include 'custom-modules/hopup-modal-form.html' %}"
+}

@@ -1,0 +1,120 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Landing <small>01</small></h2>
+        </div>
+        <div class="pl-panel-body">
+          {% call sprocket.custom_module('sr-landing-01-extend.html', { }) %}
+          <h3>Every Great Growth-Driven Design Project Starts With Strategy</h3>
+          <p>Base your website's strategy on your target audience's needs, problems, questions, and desires, and you will have solid foundation for success.</p>
+          <p>How do you ensure you've effectively addressed your target audience's key issues, and successfully provided the answers they seek, at each stage of their journey?</p>
+          <p>In it find:</p>
+          <ul>
+          <li><strong>How to Complete Each Step of the Buyer Journey and Align Messaging&nbsp;</strong></li>
+          <li><strong>Actionable Examples&nbsp;</strong></li>
+          <li><strong>How to Use The Templates + Strategy to Enhance Your Website and Buyer Journey&nbsp;</strong></li>
+          <li><strong>Our Client Onboarding Checklist&nbsp;</strong></li>
+          </ul>
+          <p>Get your free Growth-Drive Design Strategy Kit and learn how to set your brand up for success with the foundational&nbsp;elements you need for an effective website.&nbsp;</p>
+          <p><em>The Growth-Driven Design Strategy Kit will be available on August 30th. Sign up now to receive&nbsp;your copy as soon as it is released.</em></p>
+          {% endcall %}
+        </div>
+        <div class="pl-panel-footer">
+          <h2>Usage</h2>
+          <pre class="language-markup"><code>
+            &#123;&#37; call var.custom_module(&#39;custom-modules&#x2F;sr-landing-01-extend.html&#39;, &#123; &#39;form_header&#39;: &#39;&lt;h2&gt;Let\&#39;s Do This&lt;&#x2F;h2&gt;&lt;p class&#x3D;&quot;lead&quot;&gt;We\&#39;ve spent years refining the process we\&#39;re giving away for free.&lt;&#x2F;p&gt;&#39; &#125;) &#37;&#125;
+      &lt;h3&gt;Every Great Growth-Driven Design Project Starts With Strategy&lt;&#x2F;h3&gt;
+      &lt;p&gt;Base your website&#39;s strategy on your target audience&#39;s needs, problems, questions, and desires, and you will have solid foundation for success.&lt;&#x2F;p&gt;
+      &lt;p&gt;How do you ensure you&#39;ve effectively addressed your target audience&#39;s key issues, and successfully provided the answers they seek, at each stage of their journey?&lt;&#x2F;p&gt;
+      &lt;p&gt;In it find:&lt;&#x2F;p&gt;
+      &lt;ul&gt;
+      &lt;li&gt;&lt;strong&gt;How to Complete Each Step of the Buyer Journey and Align Messaging&amp;nbsp;&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Actionable Examples&amp;nbsp;&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;How to Use The Templates + Strategy to Enhance Your Website and Buyer Journey&amp;nbsp;&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+      &lt;li&gt;&lt;strong&gt;Our Client Onboarding Checklist&amp;nbsp;&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+      &lt;&#x2F;ul&gt;
+      &lt;p&gt;Get your free Growth-Drive Design Strategy Kit and learn how to set your brand up for success with the foundational&amp;nbsp;elements you need for an effective website.&amp;nbsp;&lt;&#x2F;p&gt;
+      &lt;p&gt;&lt;em&gt;The Growth-Driven Design Strategy Kit will be available on August 30th. Sign up now to receive&amp;nbsp;your copy as soon as it is released.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+    &#123;&#37; endcall &#37;&#125;
+          </code> </pre>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Attributes</h2>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="200"><code>enabled</code></td>
+                <td>boolean</td>
+              </tr>
+              <tr>
+                <td width="200"><code>show_offer</code></td>
+                <td>boolean</td>
+              </tr>
+              <tr>
+                <td width="200"><code>offer</code></td>
+                <td>richtext</td>
+              </tr>
+              <tr>
+                <td width="200"><code>content</code></td>
+                <td>richtext</td>
+              </tr>
+              <tr>
+                <td width="200"><code>form_position</code></td>
+                <td><code>bottom</code> <code>right</code></td>
+              </tr>
+              <tr>
+                <td width="200"><code>copyright</code></td>
+                <td>text</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>New module for landing pages</td>
+              </tr>
+              <tr>
+                <td>Space for offer, ebook, rich text and CTAs</td>
+              </tr>
+              <tr>
+                <td>Switch form position to bottom or right for 2 column page</td>
+              </tr>
+              <tr>
+                <td>** Form styles are within base.less</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

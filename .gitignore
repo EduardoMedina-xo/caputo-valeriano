@@ -1,0 +1,6 @@
+config.codekit
+config.codekit3
+#NPM Directory
+node_modules
+#Bower Directory
+bower_components

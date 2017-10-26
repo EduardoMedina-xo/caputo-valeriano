@@ -1,0 +1,115 @@
+{
+  "custom_module": {
+    "name": "SR Parallax Masthead",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "default": "",
+        "help_text": "",
+        "label": "Class",
+        "name": "class",
+        "type": "text"
+      },
+      {
+        "default": "<h1>Dolor Quam Tellus Lorem</h1><p class='lead'>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p><a href='#' class='btn btn-primary'>Click here</a>",
+        "help_text": "",
+        "label": "Content",
+        "name": "content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1200x800.jpg",
+          "alt": "",
+          "width": "1200",
+          "height": "800"
+        },
+        "label": "Image",
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "choices": [
+          [
+            "small", "Small"
+          ],
+          [
+            "medium", "Medium"
+          ],
+          [
+            "large", "Large"
+          ]
+        ],
+        "default": "small",
+        "display": "select",
+        "label": "Height",
+        "name": "height",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "light", "Light"
+          ],
+          [
+            "medium", "Medium"
+          ],
+          [
+            "dark", "Dark"
+          ]
+        ],
+        "default": "light",
+        "display": "select",
+        "label": "Overlay",
+        "name": "overlay",
+        "type": "choice"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Parallax",
+        "name": "parallax",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "03"
+  },
+  "custom_module_extend": "sr-parallax-masthead-03.html",
+  "custom_module_template": "sr-parallax-masthead-03.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-parallax-masthead-03.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-parallax-masthead/animation.gsap.min.js",
+      "folder_paths": "sr-assets/pattern-library/sr-parallax-masthead"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-parallax-masthead/debug.addIndicators.min.js",
+      "folder_paths": "sr-assets/pattern-library/sr-parallax-masthead"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-parallax-masthead/ScrollMagic.min.js",
+      "folder_paths": "sr-assets/pattern-library/sr-parallax-masthead"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-parallax-masthead/sr-masthead-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-parallax-masthead"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-parallax-masthead/TweenMax.min.js",
+      "folder_paths": "sr-assets/pattern-library/sr-parallax-masthead"
+    }
+  ]
+}

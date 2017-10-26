@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='exit_offer' image='http://placehold.it/263x300' heading='But wait!' body='Get 10% off if you subscribe to our newsletter.' ty_url='https://www.lean-labs.com/thankyou' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

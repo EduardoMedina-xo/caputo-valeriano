@@ -1,0 +1,77 @@
+{## lp-exit-offer v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/exit-offer/exit-offer.css') }}
+
+<!-- exit offer 01 start -->
+<script type="text/javascript">
+	$(function() {
+    var inlineMsg = 0;
+    var tyUrl = "{{ widget.ty_url }}";
+
+    $('.modal-step2').hide();
+
+    $(document).mousemove(function(e) {
+      var mousePos = (e.pageY - $(document).scrollTop());
+			if((mousePos <= 7) && (!sessionStorage.alreadyClicked)) {
+				$('#exit-offer').modal('show');
+        sessionStorage.alreadyClicked = 1;
+			}
+		});
+
+    // Animate fadeOut, then message fadeIn, then modal hide
+    $('.js-exitSubmit').click(function(){
+      if (inlineMsg == 1) {
+        $('.modal-step1').fadeOut(function(){
+          // Ajax form submit code goes here
+
+          $('.modal-step2').fadeIn(function(){
+            setTimeout(function(){
+              $('#exit-offer').modal('hide');
+            }, 800);
+          });
+        });
+      } else {
+        window.location.href = tyUrl;
+      }
+    });
+	});
+</script>
+
+<!-- Modal -->
+<div id="exit-offer" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-body clearfix">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-step1">
+          <div class="col-md-4">
+            <img class="img-responsive" src="{{ widget.image.src }}">
+          </div>
+          <div class="col-md-8">
+            <form class="hs-form stacked">
+              <div class="form-group field hs-form-field">
+                <h2>{{ widget.heading }}</h2>
+                <p class="lead">{{ widget.body }}</p>
+                <label>Email</label>
+                <div class="input">
+                  <input class="hs-input" type="text">
+                </div>
+              </div>
+              <a class="btn btn-primary js-exitSubmit">Submit</a>
+            </form>
+          </div>
+        </div>
+        <div class="modal-step2">
+          <div class="col-md-12 text-center">
+            <h3>Thank You!</h3>
+            <p class="lead">Confirmation message goes here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- exit offer 01 end -->

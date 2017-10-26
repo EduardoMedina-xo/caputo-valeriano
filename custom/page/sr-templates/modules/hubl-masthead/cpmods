@@ -1,0 +1,1 @@
+ln -s *.json ../../../../../../custom-modules| ln -s *.html ../../../../../../custom-modules

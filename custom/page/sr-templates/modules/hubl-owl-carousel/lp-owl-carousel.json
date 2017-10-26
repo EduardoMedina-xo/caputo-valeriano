@@ -1,0 +1,103 @@
+{
+  "name": "owl_carousel",
+  "widget_label": "Owl Carousel",
+  "fields": [
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image01",
+      "label": "Carousel Image 01"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image02",
+      "label": "Carousel Image 02"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image03",
+      "label": "Carousel Image 03"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image04",
+      "label": "Carousel Image 04"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image05",
+      "label": "Carousel Image 05"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image06",
+      "label": "Carousel Image 06"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image07",
+      "label": "Carousel Image 07"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/220x80",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image08",
+      "label": "Carousel Image 08"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-owl-carousel.html' %}"
+}

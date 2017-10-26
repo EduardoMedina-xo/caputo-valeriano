@@ -1,0 +1,40 @@
+{
+  "name": "exit_offer",
+  "widget_label": "Exit Offer",
+  "fields": [
+    {
+      "default": {
+        "src": "http://placehold.it/263x300",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image",
+      "label": ""
+    },
+    {
+      "default": "But wait!",
+      "help_text": "",
+      "type": "text",
+      "name": "heading",
+      "label": "Offer Heading"
+    },
+    {
+      "default": "Get 10% off if you subscribe to our newsletter.",
+      "help_text": "",
+      "type": "text",
+      "name": "body",
+      "label": "Offer Body"
+    },
+    {
+      "default": "https://www.lean-labs.com/thankyou",
+      "help_text": "",
+      "type": "text",
+      "name": "ty_url",
+      "label": "Thank You URL"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-exit-offer.html' %}"
+}

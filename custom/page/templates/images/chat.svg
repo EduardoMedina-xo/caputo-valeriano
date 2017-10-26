@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="316px" height="281px" viewBox="0 0 316 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>chat</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="landing-v1" transform="translate(-881.000000, -5666.000000)" fill="#E5F6FD">
+            <g id="offer-certified" transform="translate(0.000000, 5600.000000)">
+                <g id="cta" transform="translate(881.000000, 54.000000)">
+                    <path d="M288.667234,12.7114894 L27.2340426,12.7114894 C12.4187234,12.7114894 0,25.1302128 0,39.9455319 L0,219.676596 C0,234.519149 12.4187234,246.910638 27.2340426,246.910638 L81.7021277,246.910638 L81.7021277,292.765957 L126.597447,243.349787 L153.831489,211.697021 C155.799149,209.436596 159.230638,209.171064 161.518298,211.138723 C163.805957,213.079149 164.044255,216.537872 162.10383,218.798298 L137.926809,246.910638 L288.667234,246.910638 C303.509787,246.910638 315.901277,234.519149 315.901277,219.676596 L315.901277,39.9455319 C315.901277,25.1302128 303.509787,12.7114894 288.667234,12.7114894 Z" id="chat"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

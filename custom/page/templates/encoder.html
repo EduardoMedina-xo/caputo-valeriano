@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    </head>
+    <body>
+        <h3>Paste your code here</h3>
+        <textarea id="original" style="width:500px;height:300px;"></textarea><br><br>
+        <button>Encode</button>
+        <h3>Encoded</h3>
+        <textarea id="results" style="width:500px;height:300px;"></textarea>
+        
+
+        <script>
+
+            var entityMap = {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;',
+            '/': '&#x2F;',
+            '`': '&#x60;',
+            '=': '&#x3D;',
+            '{': '&#123;',
+            '}': '&#125;',
+            '%': '&#37;'
+            };
+
+            function escapeHtml (string) {
+                return String(string).replace(/[&<>"'`=\/{}%]/g, function (s) {
+                    return entityMap[s];
+                });
+            }
+
+            $('button').click(function(){
+                var esc = escapeHtml($('#original').val());
+                $('#results').val(esc);
+            });
+        </script>
+    </body>
+</html>

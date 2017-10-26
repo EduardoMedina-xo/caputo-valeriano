@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 25 25" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>plus-button copy</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Landing" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="landing-v1" transform="translate(-997.000000, -3474.000000)" fill="#363636">
+            <g id="faq" transform="translate(-2396.000000, -338.000000)">
+                <g id="Group-3" transform="translate(2805.000000, 3784.000000)">
+                    <g id="plus-button-copy" transform="translate(588.000000, 28.000000)">
+                        <path d="M12.422,25 C5.574,25 0,19.426 0,12.575 C0,5.727 5.574,0.153 12.422,0.153 C19.273,0.153 24.848,5.727 24.848,12.575 C24.848,19.426 19.273,25 12.422,25 Z M12.422,1.571 C6.355,1.571 1.418,6.508 1.418,12.575 C1.418,18.645 6.355,23.579 12.422,23.579 C18.492,23.579 23.426,18.645 23.426,12.575 C23.426,6.508 18.492,1.571 12.422,1.571 Z" id="Fill-1"></path>
+                        <path d="M17.32,13.286 L7.523,13.286 C7.133,13.286 6.812,12.969 6.812,12.575 C6.812,12.184 7.133,11.864 7.523,11.864 L17.32,11.864 C17.715,11.864 18.031,12.184 18.031,12.575 C18.031,12.969 17.715,13.286 17.32,13.286 Z" id="Fill-2"></path>
+                        <path d="M12.422,18.184 C12.031,18.184 11.711,17.868 11.711,17.473 L11.711,7.676 C11.711,7.286 12.031,6.965 12.422,6.965 C12.816,6.965 13.133,7.286 13.133,7.676 L13.133,17.473 C13.133,17.868 12.816,18.184 12.422,18.184 Z" id="Fill-3"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

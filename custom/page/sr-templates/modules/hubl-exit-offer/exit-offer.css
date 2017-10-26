@@ -1,0 +1,20 @@
+#exit-offer.modal {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+  #exit-offer.modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+#exit-offer .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+  padding-bottom: 150px;
+  width: 60%;
+}

@@ -1,0 +1,132 @@
+{
+  "custom_module": {
+    "name": "SR Nav",
+    "fields": [
+      {
+        "default": "Sprocket Rocket",
+        "help_text": "",
+        "label": "Brand",
+        "name": "brand",
+        "type": "text"
+      },
+      {
+        "default": "/",
+        "help_text": "",
+        "label": "Brand URL",
+        "name": "brand_url",
+        "type": "text"
+      },
+      {
+        "default": {
+          "src": "",
+          "alt": "",
+          "width": "",
+          "height": ""
+        },
+        "label": "Brand Image",
+        "name": "brand_img",
+        "type": "image"
+      },
+      {
+        "default": "sprocket-rocket",
+        "help_text": "",
+        "label": "Sitemap Name",
+        "name": "sitemap_name",
+        "type": "text"
+      },
+      {
+        "choices": [
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container-fluid",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "nav-left", "Left"
+          ],
+          [
+            "nav-right", "Right"
+          ]
+        ],
+        "default": "nav-left",
+        "display": "select",
+        "label": "Dropdown Position",
+        "name": "dropdown_position",
+        "type": "choice"
+      },
+      {
+        "choices": [
+          [
+            "", "Default (transparent)"
+          ],
+          [
+            "nav-light", "Light"
+          ],
+          [
+            "nav-dark", "Dark"
+          ]
+        ],
+        "default": "nav-light",
+        "display": "select",
+        "label": "Style",
+        "name": "style",
+        "type": "choice"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Transparent Background",
+        "name": "transparent_background",
+        "type": "boolean"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Sticky Nav",
+        "name": "sticky_nav",
+        "type": "boolean"
+      },
+      {
+        "default": "btn-nav",
+        "help_text": "",
+        "label": "CTA Class",
+        "name": "cta_class",
+        "type": "text"
+      },
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Last Item as CTA",
+        "name": "cta",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "03"
+  },
+  "custom_module_extend": "sr-nav-03-extend.html",
+  "custom_module_template": "sr-nav-03.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-nav-03.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-nav/sr-nav-03.css",
+      "folder_paths": "sr-assets/pattern-library/sr-nav"
+    }
+  ]
+}

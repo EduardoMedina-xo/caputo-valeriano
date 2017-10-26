@@ -1,0 +1,131 @@
+{## sr-testimonials v.0.1 ##}
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-testimonials/sr-testimonials-01.css') }}
+
+<!-- testimonials 01 start -->
+
+{% require_js %}
+<script>
+$('.sr-testimonials-tabs a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+})
+</script>
+{% end_require_js %}
+
+<div class="sr-testimonials">
+    <div class="{{ widget.layout }}">
+
+        {% block sr-testimonials-content %}
+
+            <!-- Tab panes -->
+            <div class="tab-content sr-testimonials-panes">
+
+                <div role="tabpanel" class="tab-pane fade in active" id="tab-1">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_1_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_1_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_1_name }}</h6>
+                                <h4 class="sr-testimonials-company">{{ widget.testimonial_1_company }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="tab-2">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_2_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_2_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_2_name }}</h6>
+                                <h4 class="sr-testimonials-company">{{ widget.testimonial_2_company }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="tab-3">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_3_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_3_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_3_name }}</h6>
+                                <h4 class="sr-testimonials-company">{{ widget.testimonial_3_company }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="tab-4">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_4_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_4_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_4_name }}</h6>
+                                <h4 class="sr-testimonials-company">{{ widget.testimonial_4_company }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="tab-5">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_5_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_5_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_5_name }}</h6>
+                                <h5 class="sr-testimonials-company">{{ widget.testimonial_5_company }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div role="tabpanel" class="tab-pane fade" id="tab-6">
+                    <div class="sr-testimonials-pane">
+                        <div class="sr-testimonials-content">{{ widget.testimonial_6_content }}</div>
+                        <div class="sr-testimonials-info">
+                            <div class="sr-testimonials-photo"><img src="{{ widget.testimonial_6_photo.src }}"></div>
+                            <div class="sr-testimonials-author">
+                                <h6 class="sr-testimonials-name">{{ widget.testimonial_6_name }}</h6>
+                                <h6 class="sr-testimonials-company">{{ widget.testimonial_6_company }}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Nav tabs -->
+            <ul class="sr-testimonials-tabs" role="tablist">
+                <li role="presentation" class="active">
+                    <a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_1_tab.src }}"></a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_2_tab.src }}"></a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_3_tab.src }}"></a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab-4" aria-controls="tab-4" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_4_tab.src }}"></a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab-5" aria-controls="tab-5" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_5_tab.src }}"></a>
+                </li>
+                <li role="presentation" class="">
+                    <a href="#tab-6" aria-controls="tab-6" role="tab" data-toggle="tab"><img src="{{ widget.testimonial_6_tab.src }}"></a>
+                </li>
+            </ul>
+
+        {% endblock content_testimonials %}
+    </div>
+</div>
+
+
+<!-- testimonials 01 end -->

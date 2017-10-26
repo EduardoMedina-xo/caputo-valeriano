@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='share_box' title='This is where your post title goes' sub_header='This is where your sub header goes' encoded_title='This is where your ENCODED post title goes' linkedin_summary='This is where your LinkedIn Summary goes' share_url='https://URL.com' fb_app_id='105199966572714' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

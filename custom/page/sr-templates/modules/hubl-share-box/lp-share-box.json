@@ -1,0 +1,49 @@
+{
+  "name": "share_box",
+  "widget_label": "Share Box",
+  "fields": [
+    {
+      "default": "This is where your post title goes",
+      "help_text": "",
+      "type": "text",
+      "name": "title",
+      "label": "Title"
+    },
+    {
+      "default": "This is where your sub header goes",
+      "help_text": "",
+      "type": "text",
+      "name": "sub_header",
+      "label": "Sub Header"
+    },
+    {
+      "default": "This is where your ENCODED post title goes",
+      "help_text": "",
+      "type": "text",
+      "name": "encoded_title",
+      "label": "Encoded Title"
+    },
+    {
+      "default": "This is where your LinkedIn Summary goes",
+      "help_text": "",
+      "type": "text",
+      "name": "linkedin_summary",
+      "label": "LinkedIn Summary"
+    },
+    {
+      "default": "https://URL.com",
+      "help_text": "Use 'Share URL' for HubSpot. Facebook and LinkedIn will grab the open graph image if there is one exists on page.",
+      "type": "text",
+      "name": "share_url",
+      "label": "Share URL"
+    },
+    {
+      "default": "105199966572714",
+      "help_text": "Enter the site's Facebook App ID. Each ID only works on 1 site, we don't need to create this as a field.",
+      "type": "text",
+      "name": "fb_app_id",
+      "label": "Facebook App Id"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-share-box.html' %}"
+}

@@ -1,0 +1,92 @@
+{
+  "custom_module": {
+    "name": "SR Demo",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "default": "Hello World.",
+        "help_text": "Help text",
+        "label": "Text field label",
+        "name": "heading",
+        "type": "text"
+      },
+      {
+        "default": "Rich text field default content.",
+        "help_text": "Help text",
+        "label": "Rich text field label",
+        "name": "content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/1200x800.jpg",
+          "alt": "",
+          "width": "1200",
+          "height": "800"
+        },
+        "label": "Image label",
+        "name": "sr-demo-image",
+        "type": "image"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Top",
+        "name": "border_top",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Bottom",
+        "name": "border_bottom",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-demo-extend.html",
+  "custom_module_template": "sr-demo.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-test",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-demo.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-demo/sr-demo-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-demo"
+    },
+    {
+      "file": "sr-assets/pattern-library/sr-demo/sr-demo-01.js",
+      "folder_paths": "sr-assets/pattern-library/sr-demo"
+    }
+  ]
+}

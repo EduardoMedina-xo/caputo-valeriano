@@ -1,0 +1,104 @@
+{## sr-landing v.0.1 ##}
+{% if widget.enabled %}
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-landing/sr-landing-01.css') }}
+
+<div class="sr-landing">
+
+	{% if widget.form_position == 'Bottom' %}
+	<div class="form-content-top">
+	  <div class="container">
+			{% if widget.show_offer %}
+	    <div class="col-sm-8 col-sm-offset-2">
+				<div class="landing-media">
+					{{ widget.offer }}
+				</div>
+	    </div>
+			{% endif %}
+			<div class="content col-sm-6 col-sm-offset-3">
+				{{ widget.content }}
+			</div>
+	  </div>
+	</div>
+	<!-- contact form -->
+	<div class="contact-form landing-form landing-form-bottom clearfix">
+		<div class="container">
+		  <div class="col-sm-8 col-sm-offset-2">
+		    <div class="form-wrap" id="landing-form">
+		      <div class="row">
+		        <div class="col-md-10 col-md-offset-1">
+							<div class="form-header">
+								{{ widget.form_header }}
+							</div>
+		          {% if hub_id == 123 %}
+		            <!--[if lte IE 8]>
+		            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+		            <![endif]-->
+		            <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+		            <script>
+		            hbspt.forms.create({
+		              portalId: '275827',
+		              formId: '1ba92a94-3927-4d7f-bb4f-51040b16be0b',
+		              css: ''
+		            });
+		            </script>
+		          {% else %}
+		            {% form "form" label="Form", custom_form_html=None, no_title=True, title="" %}
+		          {% endif %}
+		        </div>
+						<div class="col-sm-10 col-sm-offset-1 text-center landing-copyright">
+							{{ widget.copyright }}
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+
+	{% else %}
+		{% if widget.show_offer %}
+		<div class="container-fluid">
+			<div class="col-md-6 col-md-offset-3 landing-media">
+			{{ widget.offer }}
+			</div>
+		</div>
+		{% endif %}
+		<div class="two-col-form" >
+		  <div class="container-fluid">
+		    <div class="row">
+		      <div class="col-xs-12 col-md-6 content">
+						{{ widget.content }}
+		      </div>
+		      <div class="col-xs-12 col-md-6  ">
+						<div class="form-wrap clearfix" id="landing-form">
+							<div class="form-header">
+			        	{{ widget.form_header }}
+							</div>
+			        {% if hub_id == 123 %}
+			          <!--[if lte IE 8]>
+			          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+			          <![endif]-->
+			          <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+			          <script>
+			          hbspt.forms.create({
+			            portalId: '275827',
+			            formId: '1ba92a94-3927-4d7f-bb4f-51040b16be0b',
+			            css: ''
+			          });
+			          </script>
+			        {% else %}
+			          {% form "form" label="Form", custom_form_html=None, no_title=True, title="" %}
+			        {% endif %}
+							<div class="col-sm-10 col-sm-offset-1 text-center landing-copyright">
+								{{ widget.copyright }}
+							</div>
+						</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	{% endif %}
+
+</div>
+
+{% endif %}

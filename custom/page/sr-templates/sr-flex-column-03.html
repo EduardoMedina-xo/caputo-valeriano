@@ -1,0 +1,59 @@
+{## sr-flex-column v.0.3 ##}
+
+{% if widget.enabled %}
+    {% require_js %}
+    <style>
+        .sr-flex > span {
+            display: flex;
+            {% if widget.columns_direction == 'row' %}
+            flex-direction: row;
+            {% else %}
+            flex-direction: column;
+            {% endif %}
+            flex-wrap: wrap;
+        }
+
+        .{{ widget.flex_name }} > span.hs_cos_wrapper {
+          width: 100%;
+          {% if widget.top_bottom_padding != "0" %}
+              padding: {{ widget.top_bottom_padding }} 0;
+          {% endif %}
+        }
+
+        .{{ widget.flex_name }} div.hs_cos_wrapper {
+            width: calc(100% / {{ widget.mobile_columns }});
+            text-align: {{ widget.mobile_text_alignment }};
+        }
+
+        @media only screen and (min-width: 768px) {
+          .{{ widget.flex_name }} > span.hs_cos_wrapper {
+              width: inherit;
+              {% if widget.top_bottom_padding != "0" %}
+                  padding: {{ widget.top_bottom_padding }} 0;
+              {% endif %}
+              text-align: inherit;
+          }
+            .sr-flex div.hs_cos_wrapper {
+                width: inherit;
+                text-align: inherit;
+                flex: 1;
+            }
+        }
+    }
+    </style>
+    {% end_require_js %}
+
+    <div class="sr-flex-wrapper {{ widget.flex_name }} {% if widget.border_top %}line-top{% endif %} {% if widget.border_bottom %}line-bottom{% endif %}">
+        <div class="{% if widget.layout != "no-wrapper "%}{{ widget.layout }}{% endif %}">
+            <div class="sr-flex {{ widget.flex_name }}">
+                {% if hub_id == 123 %}
+                    <span class="hs_cos_wrapper">
+                        {{ widget.caller }}
+                    </span>
+                {% else %}
+                    {{ var.flex(widget.flex_name) }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}

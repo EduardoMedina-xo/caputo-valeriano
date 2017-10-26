@@ -1,0 +1,165 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Flex Column <small>04</small></h2>
+		<p>
+			Flexible columns are vertical columns in a template that allow the end user to insert and remove a variety of modules of their choosing into the template, while editing in the content editor.
+		</p>
+		</div>
+		<div class="pl-panel-body">
+		{% call sprocket.custom_module('sr-flex-column-04-extend.html', { 'background_enabled': 0, 'class': 'test-class'}) %}
+		{% endcall %}
+		</div>
+		<div class="pl-panel-footer">
+		<h2>Usage</h2>
+		<!-- <p>
+			Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+		</p> -->
+		<pre class="language-markup"><code>
+			&#123;&#37; call var.custom_module('custom-modules/sr-flex-column-04-extend.html', {'flex_name': 'design-features'}) &#37;&#125;
+				&lt;!-- Load another component or module here.. --&gt;
+			&#123;&#37; endcall &#37;&#125;
+		</code> </pre>
+
+		</div>
+		<div class="pl-panel-footer clearfix">
+			<h2>Attributes</h2>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td width="200"><code>enabled</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>class</code></td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td width="200"><code>flex_name</code></td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td width="200"><code>layout</code></td>
+						<td><code>no-wrapper</code> <code>container</code> <code>container-fluid</code></td>
+					</tr>
+					<tr>
+						<td width="200"><code>columns direction</code></td>
+						<td><code>row</code> <code>column</code></td>
+					</tr>
+					<tr>
+						<td width="200"><code>mobile_columns</code></td>
+						<td>number</td>
+					</tr>
+					<tr>
+						<td width="200"><code>top_bottom_padding</code></td>
+						<td>CSS value</td>
+					</tr>
+					<tr>
+						<td width="200"><code>mobile_text_alignment</code></td>
+						<td>CSS value</td>
+					</tr>
+					<tr>
+						<td width="200"><code>border_top</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>border_bottom</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>background_enabled</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>background_image</code></td>
+						<td>image url</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="pl-panel-footer clearfix">
+			<h2>Versions</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Version 04</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Add class on wrapper</td>
+					</tr>
+					<tr>
+						<td>Add background enabled and background image option</td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<th>Version 03</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Add columns direction option</td>
+					</tr>
+					<tr>
+						<td>Add enabled option</td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<th>Version 02</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Add call() option</td>
+					</tr>
+					<tr>
+						<td>Add option to pass attributes directly when loading a module</td>
+					</tr>
+					<tr>
+						<td>Add enabled toggle</td>
+					</tr>
+					<tr>
+						<td>Fix borders</td>
+					</tr>
+				</tbody>
+				<thead>
+					<tr>
+						<th>Version 01</th>
+					</tr>
+				</thead>
+					<tbody>
+					<tr>
+						<td>Initial build</td>
+					</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

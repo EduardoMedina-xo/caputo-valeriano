@@ -1,0 +1,128 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Rich Text Item <small>02</small></h2>
+		<p>
+			Rich Text Items can be used on their own or inside a SR Flex Column to form a grid.
+		</p>
+		</div>
+		<div class="pl-panel-body">
+		{{ sprocket.template('sr-rich-text-item-02-extend.html') }}
+		</div>
+		<div class="pl-panel-footer">
+		<h2>Usage</h2>
+		<!-- <p>
+			Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+		</p> -->
+		<pre class="language-markup"><code>
+			&#123;&#37; call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {'class': 'my-rte-class'}) &#37;&#125;
+				&lt;!-- HTML Markup goes here --&gt;
+			&#123;&#37; endcall &#37;&#125;
+		</code> </pre>
+
+		</div>
+		<div class="pl-panel-footer clearfix">
+			<h2>Attributes</h2>
+			<table class="table">
+				<tbody>
+					<tr>
+						<td width="200"><code>enabled</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>class</code></td>
+						<td>string</td>
+					</tr>
+					<tr>
+						<td width="200"><code>top_bottom_padding</code></td>
+						<td><code>full section</code> <code>half section</code> <code>0</code></td>
+					</tr>
+					<tr>
+						<td width="200"><code>left_right_padding</code></td>
+						<td><code>container</code> <code>15px</code> <code>no padding</code></td>
+					</tr>
+					<tr>
+						<td width="200"><code>text_center</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>background_enabled</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>background_image</code></td>
+						<td>image url</td>
+					</tr>
+					<tr>
+						<td width="200"><code>border_top</code></td>
+						<td>boolean</td>
+					</tr>
+					<tr>
+						<td width="200"><code>border_bottom</code></td>
+						<td>boolean</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div class="pl-panel-footer clearfix">
+			<h2>Versions</h2>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Version 02</th>
+					</tr>
+				</thead>
+					<tbody>
+					<tr>
+						<td>Add call() option</td>
+					</tr>
+					<tr>
+						<td>Add option to pass attributes directly when loading a module</td>
+					</tr>
+					<tr>
+						<td>Add enabled toggle</td>
+					</tr>
+					<tr>
+						<td>Fix borders</td>
+					</tr>
+					</tbody>
+			</table>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Version 01</th>
+					</tr>
+				</thead>
+					<tbody>
+					<tr>
+						<td>Initial build</td>
+					</tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

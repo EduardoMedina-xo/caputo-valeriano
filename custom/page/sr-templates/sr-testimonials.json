@@ -1,0 +1,299 @@
+{
+  "custom_module": {
+    "name": "SR Testimonials",
+    "fields": [
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 1 Tab",
+        "name": "testimonial_1_tab",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 2 Tab",
+        "name": "testimonial_2_tab",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 3 Tab",
+        "name": "testimonial_3_tab",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 4 Tab",
+        "name": "testimonial_4_tab",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 5 Tab",
+        "name": "testimonial_5_tab",
+        "type": "image"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 6 Tab",
+        "name": "testimonial_6_tab",
+        "type": "image"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 1 Content",
+        "name": "testimonial_1_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 1 Photo",
+        "name": "testimonial_1_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 1",
+        "help_text": "",
+        "label": "Testimonial 1 Name",
+        "name": "testimonial_1_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 1",
+        "help_text": "",
+        "label": "Testimonial 1 Company",
+        "name": "testimonial_1_company",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 2 Content",
+        "name": "testimonial_2_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 2 Photo",
+        "name": "testimonial_2_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 2",
+        "help_text": "",
+        "label": "Testimonial 2 Name",
+        "name": "testimonial_2_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 2",
+        "help_text": "",
+        "label": "Testimonial 2 Company",
+        "name": "testimonial_2_company",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 3 Content",
+        "name": "testimonial_3_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 3 Photo",
+        "name": "testimonial_3_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 3",
+        "help_text": "",
+        "label": "Testimonial 3 Name",
+        "name": "testimonial_3_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 3",
+        "help_text": "",
+        "label": "Testimonial 3 Company",
+        "name": "testimonial_3_company",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 4 Content",
+        "name": "testimonial_4_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 4 Photo",
+        "name": "testimonial_4_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 4",
+        "help_text": "",
+        "label": "Testimonial 4 Name",
+        "name": "testimonial_4_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 4",
+        "help_text": "",
+        "label": "Testimonial 4 Company",
+        "name": "testimonial_4_company",
+        "type": "text"
+      },
+      {
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 5 Content",
+        "name": "testimonial_5_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 5 Photo",
+        "name": "testimonial_5_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 5",
+        "help_text": "",
+        "label": "Testimonial 5 Name",
+        "name": "testimonial_5_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 5",
+        "help_text": "",
+        "label": "Testimonial 5 Company",
+        "name": "testimonial_5_company",
+        "type": "text"
+      },{
+        "default": "Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.",
+        "help_text": "",
+        "label": "Testimonial 6 Content",
+        "name": "testimonial_6_content",
+        "type": "richtext"
+      },
+      {
+        "default": {
+          "src": "http://placehold.it/100x100.jpg",
+          "alt": "",
+          "width": "100",
+          "height": "100"
+        },
+        "label": "Testimonial 6 Photo",
+        "name": "testimonial_6_photo",
+        "type": "image"
+      },
+      {
+        "default": "Name 6",
+        "help_text": "",
+        "label": "Testimonial 6 Name",
+        "name": "testimonial_6_name",
+        "type": "text"
+      },
+      {
+        "default": "Company 6",
+        "help_text": "",
+        "label": "Testimonial 6 Company",
+        "name": "testimonial_6_company",
+        "type": "text"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-testimonials-01-extend.html",
+  "custom_module_template": "sr-testimonials--01.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-templates",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-testimonials-01.html",
+		"source": ""
+  },
+  "files": [
+    {
+      "file": "sr-assets/pattern-library/sr-testimonials/sr-testimonials-01.css",
+      "folder_paths": "sr-assets/pattern-library/sr-testimonials"
+    }
+  ]
+}

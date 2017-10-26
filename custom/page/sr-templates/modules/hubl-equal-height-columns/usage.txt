@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='equal_height_cols' img_left='false' image_src='http://placehold.it/570x407' heading='Default content goes here' body='<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis ipsum ligula, ac pulvinar urna bibendum quis. Suspendisse potenti. Ut gravida mattis porttitor. Donec auctor elit sed consequat faucibus.</p><p>Proin efficitur metus ex, vel posuere purus eleifend sed. Cras arcu ipsum, fermentum vel leo in, porttitor pharetra orci.Nunc malesuada justo quam, id fringilla dui semper sit amet. Duis nibh metus, dignissim in ligula eu, tincidunt elementum enim. Quisque interdum leo quis libero finibus vestibulum. In tristique scelerisque placerat.</p>' cta_text='More Details' cta_url='#' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

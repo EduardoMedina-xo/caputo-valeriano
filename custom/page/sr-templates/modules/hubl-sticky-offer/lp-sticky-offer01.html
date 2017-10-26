@@ -1,0 +1,34 @@
+{## lp-sticky-offer-01 v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-sticky-offer/sticky-offer01.css') }}
+{{ require_js('launchpad-hubl/modules/hubl-sticky-offer/TweenMax.min.js') }}
+{{ require_js('launchpad-hubl/modules/hubl-sticky-offer/ScrollMagic.min.js') }}
+{{ require_js('launchpad-hubl/modules/hubl-sticky-offer/animation.gsap.min.js') }}
+{{ require_js('launchpad-hubl/modules/hubl-sticky-offer/debug.addIndicators.min.js') }}
+
+<!-- sticky offer 01 start -->
+<script type="text/javascript">
+	$(function() {
+
+		// Calculate 70% of body height
+  	var trigger = ($('body').height() - $(window).height()) * ({{ widget.scroll_trigger }}/100);
+		// console.log (trigger);
+
+		var controller = new ScrollMagic.Controller();
+
+		// build scene
+		var scene = new ScrollMagic.Scene({offset: trigger})
+				.setTween(".sticky-offer", .8, {right: 30})
+				// .addIndicators() // add indicators (requires plugin)
+				.addTo(controller);
+
+		$('.sticky-close').click(function(){
+			$(this).parent().hide();
+		});
+	});
+</script>
+<div class="sticky-offer">
+	<div class="sticky-close"><span class="glyphicon glyphicon glyphicon-remove-circle"></span></div>
+	{{ widget.encoded_cta }}
+</div>
+<!-- sticky offer 01 end -->

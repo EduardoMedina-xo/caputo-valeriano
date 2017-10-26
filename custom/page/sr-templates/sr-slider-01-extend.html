@@ -1,0 +1,65 @@
+{% if hub_id == 123 %}
+
+	<!--
+		enable: 'true', 'false'
+		layout options: 'no-wrapper', container', 'container-fluid'
+		number_of_rows: numerical
+		number_of_slides: numerical
+		dot_navigation : 'true', 'false'
+		arrow_navigation : 'true', 'false'
+		autoplay: 'true', 'false'
+		infinite: 'true', 'false'
+		transition_speed: millisecond (default: 500)
+	-->
+	{% set widget = {
+		'enable': 'true',
+		'layout': 'container',
+
+		'number_of_rows': '1',
+		'number_of_slides': '1',
+		'dot_navigation': 'true',
+		'arrow_navigation': 'true',
+		'autoplay': 'false',
+		'infinite': 'true',
+		'transition_speed': '500',
+
+        'slide_1_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+        'slide_2_image': {
+			'src': 'http://placehold.it/1920x769'
+		},
+        'slide_3_image': {
+			'src': 'http://placehold.it/1920x790'
+		},
+		'slide_4_image': {
+			'src': 'http://placehold.it/1920x782'
+		},
+        'slide_5_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+        'slide_6_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+		'slide_7_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+        'slide_8_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+        'slide_9_image': {
+			'src': 'http://placehold.it/1920x768'
+		},
+		'slide_10_image': {
+			'src': 'http://placehold.it/1920x768'
+		}
+	}
+	%}
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-slider-01.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-slider-01.html' %}
+{% endif %}

@@ -1,0 +1,94 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>Contribute</h2>
+          <p>
+            All patterns follow the same structure and contain:
+          </p>
+          <pre class="language-markup">
+            <code>
+              sr-assets
+                |—— pattern-library
+                  |—— sr-parallax-masthead
+                    |—— animation.gsap.min.js
+                    |—— debug.addIndicators.min.js
+                    |—— ScrollMagic.min.js
+                    |—— sr-masthead-01.css
+                    |—— TweenMax.min.js
+
+              sr-templates
+                |—— sr-parallax-masthead-01-extend.html
+                |—— sr-parallax-masthead-01.html
+                |—— sr-variables.html
+            </code>
+          </pre>
+          <p>
+            <code>01</code> represents the module version number and should be increased every time make any changes.
+          </p>
+          <div class="alert alert-warning">
+            <strong>Note:</strong> New modules / updates need to be pushed to the modules repo launchpad-hubl (setup as git submodule), to be added to the Pattern Library, and to be added to the Lean Labs test portal.
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>Pattern Dependencies (CSS / JS)</h2>
+          <p>
+            Use <code>&#123;&#123; require_js(sprocket.assetDir + '/pattern-library/module-name/module-name-01.js') &#125;&#125;</code> and <code>&#123;&#123; require_css(sprocket.assetDir + /pattern-library/module-name/module-name-01.css') &#125;&#125;</code> for module dependencies.
+          </p>
+          <div class="alert alert-warning">
+            <strong>Note:</strong> module dependencies do not contain any client specific styles or names. Add all client specific styles to <code>base.less</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>Updating Module Versions</h2>
+          <ol>
+            <li>
+              Each module has its own branch e.g. <code>modules/module-name</code>. Make sure you checkout the branch before doing any work.
+            </li>
+            <li>
+              Duplicate <code>module-name-01</code> and save as <code>module-name-02</code>, same applies for module dependencies (css / js) located in <code>sr-assets</code> and for module extends.
+            </li>
+            <li>
+              Document your changes and update the module's page inside the pattern library (each module should have its own page)
+            </li>
+            <li>
+              Push your changes to the git submodule repo and then push the submodule update to <code>LaunchPad Starter</code>
+            </li>
+            <li>
+              Deploy your all updates to the LL test server
+            </li>
+            <li>
+              Update <a href="https://docs.google.com/spreadsheets/d/1r_ulUPm8hLp57oNFuhYB65qdzsz0DjSerC9bEAsi4vs/edit#gid=0" target="_blank">SR Modules Usage</a> spreadsheet
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

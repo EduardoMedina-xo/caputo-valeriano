@@ -1,0 +1,150 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Filter Panels <small>01</small></h2>
+        </div>
+        <div class="pl-panel-body">
+          {% call sprocket.custom_module('sr-filter-panels-01.html', {'filter2_name': 'Option 2', 'filter3_name': 'Option 3', 'filter1_values': 'Test Option 1:test-option-1|Test Option 2:test-option-2' }) %}
+            {% call sprocket.custom_module('sr-rich-text-item-03-extend.html', {  'class': 'test-option-1 ebooks 2017 filter-panel', 'top_bottom_padding': ' '}) %}
+              <h3>Test Option 1</h3>
+              <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+            {% endcall %}
+            {% call sprocket.custom_module('sr-rich-text-item-03-extend.html', {  'class': 'test-option-2 articles 2016 filter-panel', 'top_bottom_padding': ' '}) %}
+              <h3>Test Option 2</h3>
+              <p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+            {% endcall %}
+            {% call sprocket.custom_module('sr-rich-text-item-03-extend.html', {  'class': 'test-option-2 ebooks 2016 filter-panel', 'top_bottom_padding': ' '}) %}
+              <h3>Quam Magna Dolor</h3>
+              <p>Aenean lacinia bibendum nulla sed consectetur.</p>
+            {% endcall %}
+            {% call sprocket.custom_module('sr-rich-text-item-03-extend.html', {  'class': 'test-option-1 ebooks 2017 filter-panel', 'top_bottom_padding': ' '}) %}
+              <h3>Porta Ornare Inceptos Sem</h3>
+              <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+            {% endcall %}
+          {% endcall %}
+
+        </div>
+        <div class="pl-panel-footer">
+          <h2>Usage</h2>
+          <pre class="language-markup"><code>
+            &#123;&#37; call sprocket.custom_module(&#39;sr-filter-panels-01.html&#39;, &#123;&#39;filter2_name&#39;: &#39;Option 2&#39;, &#39;filter3_name&#39;: &#39;Option 3&#39;, &#39;filter1_values&#39;: &#39;Test Option 1:test-option-1|Test Option 2:test-option-2&#39; &#125;) &#37;&#125;
+            &#123;&#37; call sprocket.custom_module(&#39;sr-rich-text-item-03-extend.html&#39;, &#123;  &#39;class&#39;: &#39;test-option-1 ebooks 2017 filter-panel&#39;, &#39;top_bottom_padding&#39;: &#39; &#39;&#125;) &#37;&#125;
+              &lt;h3&gt;Test Option 1&lt;&#x2F;h3&gt;
+              &lt;p&gt;Aenean lacinia bibendum nulla sed consectetur.&lt;&#x2F;p&gt;
+            &#123;&#37; endcall &#37;&#125;
+            &#123;&#37; call sprocket.custom_module(&#39;sr-rich-text-item-03-extend.html&#39;, &#123;  &#39;class&#39;: &#39;test-option-2 articles 2016 filter-panel&#39;, &#39;top_bottom_padding&#39;: &#39; &#39;&#125;) &#37;&#125;
+              &lt;h3&gt;Test Option 2&lt;&#x2F;h3&gt;
+              &lt;p&gt;Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.&lt;&#x2F;p&gt;
+            &#123;&#37; endcall &#37;&#125;
+            &#123;&#37; call sprocket.custom_module(&#39;sr-rich-text-item-03-extend.html&#39;, &#123;  &#39;class&#39;: &#39;test-option-2 ebooks 2016 filter-panel&#39;, &#39;top_bottom_padding&#39;: &#39; &#39;&#125;) &#37;&#125;
+              &lt;h3&gt;Quam Magna Dolor&lt;&#x2F;h3&gt;
+              &lt;p&gt;Aenean lacinia bibendum nulla sed consectetur.&lt;&#x2F;p&gt;
+            &#123;&#37; endcall &#37;&#125;
+            &#123;&#37; call sprocket.custom_module(&#39;sr-rich-text-item-03-extend.html&#39;, &#123;  &#39;class&#39;: &#39;test-option-1 ebooks 2017 filter-panel&#39;, &#39;top_bottom_padding&#39;: &#39; &#39;&#125;) &#37;&#125;
+              &lt;h3&gt;Porta Ornare Inceptos Sem&lt;&#x2F;h3&gt;
+              &lt;p&gt;Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.&lt;&#x2F;p&gt;
+            &#123;&#37; endcall &#37;&#125;
+          &#123;&#37; endcall &#37;&#125;
+          </code> </pre>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Attributes</h2>
+          <table class="table">
+            <tbody>
+              <tr>
+                <td width="200"><code>enabled</code></td>
+                <td>boolean</td>
+              </tr>
+              <tr>
+                <td width="200"><code>class</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter_name</code></td>
+                <td>text, name for flex column</td>
+              </tr>
+              <tr>
+                <td width="200"><code>panel_height</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter1_name</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter1_values</code></td>
+                <td>text in format: <code>Inbound Marketing:inbound-marketing|Growth Driven Design:gdd|SEO:seo</code></td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter2_name</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter2_values</code></td>
+                <td>text in format: <code>Inbound Marketing:inbound-marketing|Growth Driven Design:gdd|SEO:seo</code></td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter3_name</code></td>
+                <td>text</td>
+              </tr>
+              <tr>
+                <td width="200"><code>filter3_values</code></td>
+                <td>text in format: <code>Inbound Marketing:inbound-marketing|Growth Driven Design:gdd|SEO:seo</code></td>
+              </tr>
+              <tr>
+    						<td width="200"><code>top_bottom_padding</code></td>
+    						<td><code>full section</code> <code>half section</code> <code>0</code></td>
+    					</tr>
+    					<tr>
+    						<td width="200"><code>left_right_padding</code></td>
+    						<td><code>container</code> <code>15px</code> <code>no padding</code></td>
+    					</tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>New module for filter panels e.g. resources, ebooks etc</td>
+              </tr>
+              <tr>
+                <td>Option for max 3 dropdowns</td>
+              </tr>
+              <tr>
+                <td>Use SR rich text for panels in the flex col created by module. Add classes to panels to match filter options.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

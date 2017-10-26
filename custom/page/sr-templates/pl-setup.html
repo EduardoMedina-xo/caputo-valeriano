@@ -1,0 +1,86 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>Setup SR on a Client Portal</h2>
+          <p>
+            Requirements: client website needs to run Bootstrap 3
+          </p>
+          <ol>
+            <li>
+              Download the folder <code>sr-assets</code> from <a href="https://gitlab.com/helloteichner/launchpad-starter/tree/sr-starter" target="_blank">https://gitlab.com/helloteichner/launchpad-starter/tree/sr-starter</a> and use FTP to copy it to <code>/files</code> on the client portal.
+            </li>
+            <li>
+              Go to <a href="https://app.hubspot.com/design-manager/2660319/?folder=Custom%20Modules" target="_blank">https://app.hubspot.com/design-manager/2660319/?folder=Custom%20Modules</a>, select the Custom Module you want to copy over to the client portal (e.g. <code>SR Parallax Masthead</code>) and click on Copy to portals.<br /><br />
+              <div class="alert alert-warning">
+                <strong>Note:</strong> If you copy a SR Custom Module to a portal where you’ve already setup SR, HubSpot will create a duplicate version of sr-variables.html. Make sure you remove this file and also update the paths inside the Custom Module.
+              </div>
+            </li>
+            <li>
+              That's it. Now you can add your SR pattern to the page.<br />
+              To add a pattern to a page, you go to <code>Edit Page (in HubSpot)</code> → <code>Edit Modules</code> → <code>Add new module</code>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>Setup a New HubSpot Project (Wireframe)</h2>
+          <p>
+            Requirements: new HubSpot client portal
+          </p>
+          <ol>
+            <li>
+              Clone LaunchPad Starter (needs to be renamed to SR Starter) from <a href="https://gitlab.com/helloteichner/launchpad-starter" target="_blank">https://gitlab.com/helloteichner/launchpad-starter</a> inside your HubL Local Server <code>hubl-server/work/hubthemes/your-project</code>. Make sure you checkout the <code>sr-starter</code> branch (not master).
+            </li>
+            <li>
+              LaunchPad Starter should come with <code>launchpad-hubl</code> setup as a Git Submodule. Make sure you have a folder called <code>launchpad-hubl</code> inside your project folder.
+            </li>
+            <li>
+              Create a new GitLab Repo for your project inside the Lean Labs Group <a href="https://gitlab.com/lean-labs" target="_blank">https://gitlab.com/lean-labs</a>, then in SourceTree go to <code>Repository</code> → <code>Repository Setting</code> / <code>Remotes</code> and replace the current Remote Repository Path with your new GitLab Project Path. Save and Push.
+            </li>
+            <li>
+              Configure Deploybot / staging (optional)
+            </li>
+            <li>
+              Update local project paths in <code>variables.html</code>
+            </li>
+            <li>
+              Copy all assets / templates to the new client portal using FTP.<br /><br />
+              <div class="alert alert-warning">
+                <strong>Note:</strong> currently all assets are inside the templates folder and HubSpot will not let you upload these. Setup a new folder under <code>/files</code> (e.g. lean-labs) and copy <code>CSS</code>, <code>JS</code> and all other dependencies there. Check paths in <code>variables.html</code> and update as needed.
+              </div>
+            </li>
+            <li>
+              Publish the templates in HubSpot, otherwise they won't show up.
+            </li>
+            <li>
+              Setup SR on your client portal (see instructions above).
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

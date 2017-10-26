@@ -1,0 +1,41 @@
+{% if hub_id == 123 %}
+<!--
+  layout options: 'no-wrapper', 'container', 'container-fluid'
+  tabs_position options: 'top', 'bottom'
+  top_bottom_padding options: 'no-padding', 'full section', 'half section'
+  tab_content_layout: 'full section', 'half section'
+-->
+
+  {% set parent_custom_widget_name = 'tabbed01'%}
+
+  {% set widget = {
+    'enabled': 1,
+    'tab01_enabled': 1,
+    'tab02_enabled': 1,
+    'tab03_enabled': 1,
+    'tab04_enabled': 1,
+    'layout': 'container',
+    'top_bottom_padding': 'half section',
+    'tabs_position': 'top',
+    'tab_content_layout': 'half section',
+    'tab_01_heading': 'First Tab',
+    'tab_01_body': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    'tab_02_heading': 'Second Tab',
+    'tab_02_body': 'Ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet.',
+    'tab_03_heading': 'Third Tab',
+    'tab_03_body': 'Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus.',
+    'tab_04_heading': 'Fourth Tab',
+    'tab_04_body': 'Consectetur adipiscing elit. Vivamus vitae urna quis est elementum sodales. Nulla tempor lacus eu lorem efficitur cursus. Proin a ligula id purus auctor dignissim id quis neque. Fusce ullamcorper maximus elit, quis iaculis massa placerat quis. Praesent tincidunt velit nec convallis imperdiet. Suspendisse elit urna, mollis ut libero eu, semper venenatis lectus.',
+    'border_top': 0,
+    'border_bottom': 0
+    }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-tabbed-content-01.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-tabbed-content-01.html' %}
+{% endif %}

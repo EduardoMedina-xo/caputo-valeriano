@@ -1,0 +1,77 @@
+{% if hub_id == 123 %}
+
+	<!--
+		layout options: 'no-wrapper', 'container', 'container-fluid'
+	-->
+	{% set widget = {
+		'layout': 'container',
+		'testimonial_1_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_2_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_3_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_4_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_5_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_6_tab': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_1_content': 'Lorem ipsum dolor sit amet, euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.',
+		'testimonial_1_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_1_name': 'Name 1',
+		'testimonial_1_company': 'Company 1',
+
+		'testimonial_2_content': 'Labore definiebas signiferumque cum ea, at nonumes verterem inimicus mel. Ad legimus expetenda intellegat mel, mucius fastidii ea cum, pri ex eruditi assentior. Libris gubergren sed ne, ne periculis comprehensam vim, debet errem omnesque ut est. Mei postulant explicari gubergren ei, eu ius audiam maluisset.',
+		'testimonial_2_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_2_name': 'Name 2',
+		'testimonial_2_company': 'Company 2',
+
+		'testimonial_3_content': 'Stet sanctus no vix, ea libris eirmod sapientem eos, quo ea porro possit mentitum. Eu regione torquatos pri. Dolorum persequeris et sea, ius dolore suscipiantur ad, partem mucius sea eu. Stet duis per ad, lucilius deserunt vim cu. Malis indoctum tractatos ut duo, sit et verterem laboramus persecuti, sea ei facete inimicus.',
+		'testimonial_3_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_3_name': 'Name 3',
+		'testimonial_3_company': 'Company 3',
+
+		'testimonial_4_content': 'Debet postea pro ad, nam ad solum vivendum, his id hinc option. Nobis expetenda ex vix. Etiam ignota has eu, per ad fuisset omittam, at ipsum facete eos. Ius aperiri discere tractatos te, quo cu sint scripta scriptorem. Ut aliquam legendos convenire sed. Civibus instructior his et, apeirian disputando ex eum.',
+		'testimonial_4_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_4_name': 'Name 4',
+		'testimonial_4_company': 'Company 4',
+
+		'testimonial_5_content': 'No saepe putent est, mei fugit choro an. Mei novum mundi iracundia eu, ius ea lorem viris utroque, sed id iisque atomorum dignissim. Tamquam corpora sit ex. Est ut agam quidam, id eum munere everti, eos rebum adipisci necessitatibus eu. Quando diceret suscipit duo ne, suas torquatos deseruisse has an. No soleat temporibus nec, quo eu nusquam assueverit, cibo invenire gubergren no cum.',
+		'testimonial_5_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_5_name': 'Name 5',
+		'testimonial_5_company': 'Company 5',
+
+		'testimonial_6_content': 'Euismod perpetua ne quo, cu has ferri aliquam expetendis, facete sanctus ad vim. Tation contentiones est ad, malis primis te duo. Ius et quem modus expetenda, verear perfecto senserit per id. Pri et eloquentiam ullamcorper suscipiantur, zril everti mei ad. Mea ne aliquip iuvaret posidonium, aliquam alienum dignissim has ea.',
+		'testimonial_6_photo': {
+			'src': 'http://placehold.it/100x100'
+		},
+		'testimonial_6_name': 'Name 6',
+		'testimonial_6_company': 'Company 6',
+
+	}
+	%}
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-testimonials-01.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-testimonials-01.html' %}
+{% endif %}

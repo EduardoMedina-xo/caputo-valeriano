@@ -1,0 +1,242 @@
+.hopup-modal {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	/*padding: 20px;*/
+	z-index: 99999;
+}
+
+.hopup-modal-inner {
+	position: relative;
+	max-width: 100%;
+  top: 50% !important;
+	left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+	box-shadow: 0px 20px 40px 0px rgba(0,0,0,0.60);
+	display: table;
+	border-radius: 4px;
+	opacity: 0;
+	/*overflow: hidden;*/
+	margin: 40px;
+  margin-left: 0px;
+	margin-top: 0px;
+}
+
+.hopup-modal.slide {
+	background: none;
+}
+
+.hopup-modal.slide .hopup-modal-inner {
+	max-width: 90%;
+	position: fixed;
+	transform: none;
+	right: -500px;
+	top: inherit !important;
+	left: inherit !important;
+	bottom: 20px;
+	margin: 0px;
+}
+
+.hopup-modal-inner img {
+	width: 100% !important;
+	height: auto;
+	border-radius: 5px;
+	margin-bottom: 0 !important;
+}
+
+.hopup-modal-close {
+	position: absolute;
+	top: -16px;
+	right: -16px;
+	width: 33px;
+	height: 33px;
+	cursor: pointer;
+  z-index: 9999;
+}
+
+
+/**
+ * Hopup Types
+ **/
+
+.hopup-modal .hopup-modal-inner {
+		border-radius: 0;
+}
+
+.hopup-modal .hopup-modal-header .hopup-modal-main-header {
+		border-top: 8px solid #0086cb;
+		padding-top: 35px;
+		display: inline-block;
+		font-size: 2.375em; /* 38px */
+		letter-spacing: -1px;
+		line-height: 1;
+		font-weight: 500;
+		max-width: 300px;
+}
+.hopup-modal .hopup-modal-header .hopup-modal-main-header span span {
+	 color: #939498;
+}
+
+.hopup-modal .hs-form-field {
+		margin-bottom: 12px!important;
+}
+.hopup-modal input,
+.hopup-modal textarea,
+.hopup-modal select
+{
+		font-size: 0.875em;
+		padding: 10px!important;
+		line-height: 1.2!important;
+}
+.hopup-modal input[type="submit"] {
+		width: 100%;
+		margin-top: 0;
+}
+
+@media (max-width: 1366px) {
+		.hopup-modal {
+				font-size: 14px;
+		}
+		.hopup-modal .hopup-modal-inner {
+		}
+		.hopup-modal .hopup-modal-header .hopup-modal-main-header {
+				padding-top: 25px;
+				max-width: 80%;
+		}
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+		.hopup-modal {
+				font-size: 13px;
+		}
+		.hopup-modal .hopup-modal-inner {
+		}
+		.hopup-modal .hopup-modal-header .hopup-modal-main-header {
+				font-size: 1.6em;
+		}
+}
+@media (min-width: 768px) and (max-width: 980px) {
+}
+@media (max-width: 767px) {
+}
+@media (max-width: 479px) {
+		.hopup-modal {
+				background-color: rgba(14,25,39,0.95)!important;
+		}
+}
+
+/* Scroll */
+.hopup-modal.scroll {
+		background-color: rgba(14,25,39,0.95)!important;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		opacity: 1;
+		overflow-y: scroll;
+}
+.hopup-modal.scroll  .hopup-modal-inner {
+		position: absolute;
+		top: 60px!important;
+		left: 50%!important;
+		-webkit-transform: translateY(0) translateX(-50%);
+		-ms-transform: translateY(0) translateX(-50%);
+		transform: translateY(0) translateX(-50%);
+		z-index: 10000;
+		visibility: visible;
+		opacity: 1;
+		transition: visibility 241ms linear, opacity 240ms ease-out, -webkit-transform 240ms ease-out;
+		transition: visibility 241ms linear, opacity 240ms ease-out, transform 240ms ease-out;
+		-webkit-transform-origin: left center;
+		-ms-transform-origin: left center;
+		transform-origin: left center;
+		height: auto;
+		width: 85%;
+		max-width: 700px!important;
+		padding: 0 75px 30px;
+}
+.hopup-modal.scroll .hopup-modal-inner {
+		background: #fff;
+}
+.hopup-modal.scroll .hopup-modal-header {
+		padding: 0 0 30px;
+}
+
+@media (max-width: 767px) {
+		.hopup-modal.scroll  .hopup-modal-inner {
+				/*padding: 0 40px 30px;*/
+		}
+}
+
+
+
+
+/* Slide */
+
+@media (max-width: 479px) {
+		.hopup-modal.slide {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 9999;
+				opacity: 1;
+				overflow-y: scroll;
+		}
+		.hopup-modal.slide  .hopup-modal-inner {
+				top: 0 !important;
+				left: 0 !important;
+				bottom: 0!important;
+				right: 0!important;
+				margin: auto!important;
+				position: absolute;
+				overflow-y: scroll;
+		}
+
+}
+
+
+/* Timer */
+
+.hopup-modal.timer {
+		top: 0;
+}
+
+/**
+ * Light or Dark
+ **/
+
+/* Light version */
+.hopup-modal.light  .hopup-modal-inner {
+	background-color: #fff;
+}
+.hopup-modal.light .hs-form-field > label {
+	color: #333;
+}
+
+/* Dark Version */
+.hopup-modal.dark .hopup-modal-inner {
+	background: #0e1927;
+	color: #fff;
+}
+.hopup-modal.dark .hopup-modal-header .hopup-modal-main-header,
+.hopup-modal.dark .hopup-modal-header .hopup-modal-main-header * {
+	color: #fff;
+}
+.hopup-modal.dark .hopup-modal-header .hopup-modal-main-header span span {
+	color: #939498;
+}
+.hopup-modal.dark .hs-form-field > label,
+.hopup-modal.dark .hs-error-msgs label{
+	color: #fff;
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.hopup-modal.slide .hopup-modal-inner {
+		max-width: 100%;
+	}
+}

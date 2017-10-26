@@ -1,0 +1,152 @@
+//-----------------------------------------------------------------------------------
+//  Typography
+//-----------------------------------------------------------------------------------
+
+@font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+
+// Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+@font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
+@font-family-base:        @font-family-sans-serif;
+@font-size-base:          11px;
+
+@font-size-large:         1.25em;
+@font-size-small:         0.85em;
+
+@font-size-h1:            3.71em;
+@font-size-h2:            2.85em;
+@font-size-h3:            1.8em;
+@font-size-h4:            1.25em;
+@font-size-h5:            1em;
+@font-size-h6:            0.85em;
+
+@headings-font-family:    inherit;
+@headings-font-weight:    700;
+@headings-line-height:    1.3;
+@headings-color:          inherit;
+
+// Responsive Typography
+@media only screen and (min-width : 768px)	{ @font-size-base: 11px; body { font-size: @font-size-base; } }
+@media only screen and (min-width : 992px)	{ @font-size-base: 12px; body { font-size: @font-size-base; } }
+@media only screen and (min-width : 1200px)	{ @font-size-base: 14px; body { font-size: @font-size-base; } }
+
+
+p {
+	font-size: 1.25em; margin-bottom: ceil((@font-size-base * 1.3)); line-height: 1.57em; .antialiased;
+	&.lead { font-size: 1.4em; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+	&.light {
+		font-weight: 300;
+	}
+}
+a {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+	&.no-decoration {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+	&.btn {
+		text-decoration: none;
+	}
+}
+// -----------------------------------------------------------------------------------
+//  Main Colors
+// -----------------------------------------------------------------------------------
+
+@body-bg:         				white;
+@text-color:      				#001e2d;
+@link-color:      				@brand-primary;
+
+@brand-primary:	  				#f50044;
+@brand-success:   				#5cb85c;
+@brand-info:      				#5bc0de;
+@brand-warning:   				#f0ad4e;
+@brand-danger:    				#d9534f;
+
+@btn-primary:							@brand-primary;
+@btn-primary-hover:				darken(@brand-primary, 10%);
+
+@btn-default:							transparent;
+@btn-default-hover:				@brand-primary;
+
+
+//-----------------------------------------------------------------------------------
+//  Shared
+//-----------------------------------------------------------------------------------
+
+.block() { display: table; }
+.circle() { border-radius: 100%; }
+.divider() {
+	display: block;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 0 0 13px 0;
+	margin: 0 0 40px;
+}
+
+.line-top() { border-top: 1px solid #DADADA; }
+.line-bottom() { border-bottom: 1px solid #DADADA; }
+
+.text-center-mobile() { text-align: center; }
+.max-responsive() { max-width: 100%; height: auto !important; }
+.antialiased() { -webkit-font-smoothing: antialiased; }
+
+.animated() {
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+.animated-fast() {
+	-webkit-transition: all .15s ease-in-out;
+	-moz-transition: all .15s ease-in-out;
+	-o-transition: all .15s ease-in-out;
+	transition: all .15s ease-in-out;
+	animation-timing-function: ease-in-out;
+}
+
+.clearfix() {
+    &:before,
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+//-----------------------------------------------------------------------------------
+//  Media Queries
+//-----------------------------------------------------------------------------------
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.text-center-mobile {
+		text-align: left;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+}

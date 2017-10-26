@@ -1,0 +1,98 @@
+{## sr-slider v.0.1 ##}
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-slider/sr-slider-01.css') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-slider/vendor/slick.min.js') }}
+
+<!-- slider 01 start -->
+
+{% require_js %}
+<script>
+$('.sr-slider-inner').slick({
+    {% if widget.dot_navigation == 'true' %}dots: true,{% endif %}
+    {% if widget.arrow_navigation == 'true' %}arrows: true,{% endif %}
+    {% if widget.autoplay == 'true' %}autoplay: true,{% endif %}
+    rows: {{ widget.number_of_rows }},
+    slidesToShow: {{ widget.number_of_slides }},
+    slidesToScroll: 1,
+    infinite: true,
+    speed: {{ widget.transition_speed }},
+    adaptiveHeight: true,
+
+    responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            }
+        }
+    ]
+});
+</script>
+{% end_require_js %}
+
+<div class="sr-slider {% if widget.number_of_rows > 1 %}multi-rows{% endif %}">
+    <div class="{{ widget.layout }}">
+
+        {% block sr-slider-content %}
+
+            <!-- Tab panes -->
+            <div class="sr-slider-inner">
+                {% if widget.slide_1_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_1_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_2_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_2_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_3_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_3_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_4_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_4_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_5_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_5_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_6_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_6_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_7_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_7_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_8_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_8_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_9_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_9_image.src }}">
+                    </div>
+                {% endif %}
+                {% if widget.slide_10_image.src %}
+                    <div class="sr-slider-slide">
+                        <img src="{{ widget.slide_10_image.src }}">
+                    </div>
+                {% endif %}
+            </div>
+        {% endblock content %}
+
+    </div>
+</div>
+
+
+<!-- slider 01 end -->

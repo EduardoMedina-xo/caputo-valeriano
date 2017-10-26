@@ -1,0 +1,23 @@
+{% if hub_id == 123 %}
+  <!--
+    layout options: 'no-wrapper', 'container', 'container-fluid'
+  -->
+  {% set widget = {
+    'top_bottom_padding': '0',
+    'left_right_padding': '0',
+    'rich_text': '<h1>Hello World</h1><p>This text will change once the website goes live.</p>',
+    'border_top': 1,
+    'background_image': {
+      'src': ''
+      }
+    }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-rich-text-item-01.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-rich-text-item.html' %}
+{% endif %}

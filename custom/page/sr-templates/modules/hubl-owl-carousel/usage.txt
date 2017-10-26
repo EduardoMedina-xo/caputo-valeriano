@@ -1,0 +1,6 @@
+{% if hub_id == "123" %}
+  {% custom_widget widget_name='owl_carousel' image01_src='http://placehold.it/220x80' image02_src='http://placehold.it/220x80' image03_src='http://placehold.it/220x80' image04_src='http://placehold.it/220x80' image05_src='http://placehold.it/220x80' image06_src='http://placehold.it/220x80' image07_src='http://placehold.it/220x80' image08_src='http://placehold.it/220x80' %}
+{% else %}
+  {% widget_container "main_flexible_column" label="Main Flex Column", no_wrapper=True %}
+  {% end_widget_container %}
+{% endif %}

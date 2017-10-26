@@ -1,0 +1,13 @@
+{## lp-image-parallax v.0.1 ##}
+
+{{ require_js('launchpad-hubl/modules/hubl-image-parallax/jquery.imageScroll.js') }}
+
+<!-- image-parallax start -->
+<div class="img-holder" data-image="{{ widget.image.src }}" data-cover-ratio="0.5"></div>
+<!-- image-parallax end -->
+
+<script type="text/javascript">
+	$(function() {
+		$('.img-holder').imageScroll();
+	});
+</script>

@@ -1,0 +1,183 @@
+{% if hub_id == 123 %}
+  {% import "launchpad/custom/page/variables.html" as var %}
+{% else %}
+  {% import "custom/page/variables.html" as var %}
+{% endif %}
+
+{{ var.template('header.html') }}
+
+<body class="thank-you">
+	<div class="landing-nav">
+		<div class="container clearfix">
+			<div class="col-xs-12">
+				<a href="/"><img src="http://placehold.it/150x50"></a>
+			</div>
+		</div>
+	</div>
+
+	<!-- parallax masthead 01 start -->
+	<script type="text/javascript">
+		$(function() {
+			loadCSS("launchpad/modules/masthead/masthead01.css");
+
+			var loadJS = [
+				'launchpad/modules/masthead/TweenMax.min.js',
+				'launchpad/modules/masthead/ScrollMagic.min.js',
+				'launchpad/modules/masthead/animation.gsap.min.js'
+				];
+
+			// This is executed once all scripts are loaded
+			loadAndExecuteScripts(loadJS, 0, function () {
+
+				var controller = new ScrollMagic.Controller();
+
+				// build scene
+				var scene = new ScrollMagic.Scene({triggerElement: '.masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+						.setTween(".masthead-inner", {y: 90})
+						// .addIndicators() // add indicators (requires plugin)
+						.addTo(controller);
+
+				var scene1 = new ScrollMagic.Scene({triggerElement: '.masthead-wrapper', triggerHook: 'onLeave', duration: "70%"})
+						.setTween(".masthead-image", {opacity: .0})
+						// .addIndicators() // add indicators (requires plugin)
+						.addTo(controller);
+			});
+		});
+	</script>
+
+	<header class="masthead-wrapper" style="background: #f9f9f9">
+		<div class="masthead-image" style="background: url('') 50% 50% / cover; opacity: .4;">
+		</div>
+		<div class="container-fluid">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+				<div class="masthead text-center" style="min-height: 500px;">
+					<div class="masthead-inner">
+						<h1>Thank You <span>Page Template</span></h1>
+						<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
+						<a href="#" class="btn btn-primary">Download Now</a>
+						<a href="#" class="btn btn-default">Email to a Friend</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- parallax masthead 01 end -->
+
+  <section class="hidden-xs">
+		<div class="container page-container">
+			<div class="row">
+				<div id="landing-resources">
+					<div class="col-xs-12 clearfix">
+						<h3 class="divider">Related Resources</h3>
+					</div>
+					<div class="items-wrapper clearfix">
+						<div class="item">
+							<div class="col-xs-12 col-sm-6 col-md-3 ">
+								<a href="#">
+									<img class="img-responsive" alt="Post Image" src="http://placehold.it/720x480">
+									<h5>Vestibulum id ligula porta felis euismod semper</h5>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-xs-12 col-sm-6 col-md-3 ">
+								<a href="#">
+									<img class="img-responsive" alt="Post Image" src="http://placehold.it/720x480">
+									<h5>Vestibulum id ligula porta felis euismod semper</h5>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-xs-12 col-sm-6 col-md-3 ">
+								<a href="#">
+									<img class="img-responsive" alt="Post Image" src="http://placehold.it/720x480">
+									<h5>Vestibulum id ligula porta felis euismod semper</h5>
+								</a>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-xs-12 col-sm-6 col-md-3 ">
+								<a href="#">
+									<img class="img-responsive" alt="Post Image" src="http://placehold.it/720x480">
+									<h5>Vestibulum id ligula porta felis euismod semper</h5>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+  <hr class="hidden-xs">
+
+  <section>
+		<!-- columns02 start -->
+		<div class="container page-container clearfix">
+			<div class="row">
+				<div class="col-md-6">
+					<h2 class="divider">Title Text Goes Here</h2>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever <strong>since the 1500s</strong>, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<p>Galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into <strong>electronic typesetting</strong>, remaining essentially unchanged. Type and scrambled it to make a type <strong>specimen book</strong>. It has survived not only five centuries, but also <strong>the leap into electronic typesetting, remaining essentially unchanged.</strong></p>
+					<br class="clearfix">
+				</div>
+				<div class="col-md-6">
+					<div id="landingform">
+						<div class="row">
+							<div class="col-md-12">
+								<h3 class="divider">Optional Title</h3>
+								<!-- <div class="contact-form"> -->
+								<span id="hs_cos_wrapper_form" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" data-hs-cos-general-type="widget" data-hs-cos-type="form">
+									<form class="hs-form stacked">
+										<div class="form-group field hs-form-field">
+											<label>First Name</label>
+											<div class="input">
+												<input class="hs-input" type="text">
+											</div>
+										</div>
+										<div class="form-group field hs-form-field">
+											<label>Last Name</label>
+											<div class="input">
+												<input class="hs-input" type="text">
+											</div>
+										</div>
+										<div class="form-group field hs-form-field">
+											<label>Company</label>
+											<div class="input">
+												<input class="hs-input" type="text">
+											</div>
+										</div>
+										<div class="form-group field hs-form-field">
+											<label>Email</label>
+											<div class="input">
+												<input class="hs-input" type="text">
+											</div>
+										</div>
+										<a class="btn btn-primary" href="#">Submit</a>
+									</form>
+								</span>
+								<!-- </div> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- columns02 end -->
+	</section>
+
+  <div class="landing-footer">
+		<div class="container clearfix">
+			<div class="row">
+				<div class="col-xs-12">
+					<small>Copyright &copy; 2016 Company Name. All Rights Reserved. <a href="#">Privacy Policy</a>.</small>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{{ var.template('footer.html') }}
+	{{ var.template('footer-includes.html') }}
+
+</body>
+</html>

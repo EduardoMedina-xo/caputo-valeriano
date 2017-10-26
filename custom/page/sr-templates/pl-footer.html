@@ -1,0 +1,114 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% import variables as sprocket %}
+{% else %}
+  {% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+  <div class="pl-topnav">
+    <a href="index.html"><strong>SR</strong> Pattern Library</a>
+  </div>
+  <div class="pl-wrapper">
+    {{ sprocket.template('_nav.html') }}
+    <div class="pl-body">
+      <div class="pl-panel">
+        <div class="pl-panel-heading">
+          <h2>SR Footer <small>01</small></h2>
+          <p>
+            Footer using flexbox based on HubSpot's Advanced Menus.
+          </p>
+        </div>
+        <div class="pl-panel-body">
+          {{ sprocket.template('sr-footer-01-extend.html') }}
+        </div>
+        <div class="pl-panel-footer">
+          <h2>Extendable Blocks</h2>
+          <p>
+            Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+          </p>
+          <pre class="language-markup"><code>
+            &#123;&#37; block content &#37;&#125;
+              &#123;&#37; if hub_id == 123 &#37;&#125;
+                &lt;span id=&quot;hs_cos_wrapper_widget_1494607248582_footer&quot; class=&quot;hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu&quot; style=&quot;&quot; data-hs-cos-general-type=&quot;widget&quot; data-hs-cos-type=&quot;menu&quot;&gt;
+                  &lt;div id=&quot;hs_menu_wrapper_widget_1494607248582_footer&quot; class=&quot;hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal&quot; role=&quot;navigation&quot; data-sitemap-name=&quot;sprocket-rocket footer&quot;&gt;
+                    &lt;ul&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;First Column&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;First Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Second Item&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Third Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Fourth Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Second Column&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;First Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Second Item&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Third Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Fourth Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Third Column&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;First Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Second Item&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Third Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Fourth Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li class=&quot;hs-menu-item hs-menu-depth-1 hs-item-has-children&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Fourth Column&lt;/a&gt;
+                        &lt;ul class=&quot;hs-menu-children-wrapper&quot;&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;First Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Second Item&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Third Item&lt;/a&gt;&lt;/li&gt;
+                          &lt;li class=&quot;hs-menu-item hs-menu-depth-2&quot;&gt;&lt;a href=&quot;javascript:;&quot;&gt;Fourth Item&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/div&gt;
+                &lt;/span&gt;
+              &#123;&#37; else &#37;&#125;
+                &#123;&#37; menu &quot;footer_nav&quot; site_map_name='&#123;&#123; widget.sitemap_name &#125;&#125;', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' &#37;&#125;
+              &#123;&#37; endif &#37;&#125;
+            &#123;&#37; endblock &#37;&#125;
+          </code></pre>
+          <pre class="language-markup"><code>
+            &#123;&#37; block copyright &#37;&#125;
+              &lt;div class=&quot;footer-copyright&quot;&gt;
+                &lt;div class=&quot;row&quot;&gt;
+                  &lt;div class=&quot;col-xs-12 text-center&quot;&gt;
+                    &copy; Copyright text goes here.
+                  &lt;/div&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &#123;&#37; endblock &#37;&#125;
+          </code></pre>
+        </div>
+        <div class="pl-panel-footer clearfix">
+          <h2>Versions</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Version 01</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Build module</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

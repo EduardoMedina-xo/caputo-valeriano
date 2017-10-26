@@ -1,0 +1,34 @@
+{% if hub_id == 123 %}
+  <!--
+    masthead-height options: 'small', 'medium', 'large'
+    overlay options: 'light', 'medium', 'dark'
+  -->
+  {% set widget = {
+    'heading': 'LaunchPad Masthead',
+    'lead': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat dolor nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+  	'image': {
+      'src': 'http://placehold.it/1200x800'
+    },
+    'height': 'medium',
+    'overlay': 'light',
+  }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-parallax-masthead-01.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-parallax-masthead-01.html' %}
+{% endif %}
+
+{% block sr-parallax-masthead-content %}
+<div class="sr-masthead text-center" style="{% if widget.height == 'small' %}min-height: 500px;{% elif widget.height == 'medium' %}min-height: 600px;{% elif widget.height == 'large' %}min-height: 700px;{% endif %}">
+  <div class="sr-masthead-inner">
+    <h1>{{ widget.heading }}</h1>
+    <p>{{ widget.lead }}</p>
+    <a href="#" class="btn btn-lg btn-primary">Click click</a>
+  </div>
+</div>
+{% endblock %}

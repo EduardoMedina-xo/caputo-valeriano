@@ -1,0 +1,116 @@
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import variables as sprocket %}
+{% else %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+{{ sprocket.template('_header.html') }}
+
+<body>
+<div class="pl-topnav">
+	<a href="index.html"><strong>SR</strong> Pattern Library</a>
+</div>
+<div class="pl-wrapper">
+	{{ sprocket.template('_nav.html') }}
+	<div class="pl-body">
+	<div class="pl-panel">
+		<div class="pl-panel-heading">
+		<h2>SR Slider <small>01</small></h2>
+		<!-- <p>
+			The 12 column grid can be used for aligning components and assisting in responsive behavior. It is not intended to be the only solution for aligning components.
+		</p> -->
+		</div>
+		<div class="pl-panel-body">
+		{{ sprocket.template('sr-slider-01-extend.html') }}
+		</div>
+		<div class="pl-panel-footer">
+		<h2>Extendable Blocks</h2>
+		<p>
+			Blocks and extends are used to replace parts of a module while keeping the original functionality the same. More details here: <a href="http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends" target="_blank">http://designers.hubspot.com/docs/hubl/intro-to-hubl#blocks-and-extends</a>
+		</p>
+		<pre class="language-markup"><code>
+			&#123;&#37; block content &#37;&#125;
+
+            &lt;!-- Tab panes --&gt;
+            &lt;div class=&quot;sr-slider-inner&quot;&gt;
+
+                &#123;&#37; if widget.slide_1_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_1_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_2_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_2_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_3_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_3_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_4_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_4_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_5_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_5_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_6_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_6_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_7_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_7_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_8_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_8_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_9_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_9_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+                &#123;&#37; if widget.slide_10_image.src &#37;&#125;
+                    &lt;div class=&quot;sr-slider-slide&quot;&gt;
+                        &lt;img src=&quot;&#123;&#123; widget.slide_10_image.src &#125;&#125;&quot;&gt;
+                    &lt;/div&gt;
+                &#123;&#37; endif &#37;&#125;
+            &lt;/div&gt;
+        &#123;&#37; endblock content &#37;&#125;
+		</code> </pre>
+		</div>
+		<div class="pl-panel-footer clearfix">
+            <h2>Versions</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Version 01</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                    <tr>
+                        <td>Build SR Slider</td>
+                    </tr>
+                </tbody>
+            </table>
+		</div>
+	</div>
+	</div>
+</div>
+
+	{{ sprocket.template('_footer-includes.html') }}
+
+</body>
+</html>

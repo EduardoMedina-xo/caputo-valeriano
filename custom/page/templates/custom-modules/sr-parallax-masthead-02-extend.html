@@ -1,0 +1,51 @@
+{% if hub_id == 123 %}
+
+    <!--
+        heading options: string
+        lead options: string
+        image.src options: url
+        height options: 'small', 'medium', 'large'
+        overlay options: 'light', 'medium', 'dark'
+        parallax options: boolean
+        cta01_text options: string
+        cta01_style options: 'Primary', 'Default'
+        cta02_text options: string
+        cta02_style options: 'Primary', 'Default'
+    -->
+
+    {% set widget = {
+        'heading': 'LaunchPad Masthead',
+        'lead': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat dolor nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+        'image': {
+            'src': 'http://placehold.it/1200x800'
+        },
+        'height': 'medium',
+        'overlay': 'light',
+        'parallax': 1,
+        'cta01_text': 'Click',
+        'cta01_link': '#',
+        'cta01_style': 'Primary',
+        'cta02_text': 'Here',
+        'cta02_link': '#',
+        'cta02_style': 'Secondary'
+    }%}
+
+    {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+    {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-parallax-masthead-02.html" %}
+    {% import sr-variables as sprocket %}
+    {% extends sr-extends %}
+{% else %}
+    {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+    {% extends 'custom/page/sr-templates/sr-parallax-masthead-02.html' %}
+{% endif %}
+
+{% block sr-parallax-masthead-content %}
+    <div class="sr-masthead text-center" style="{% if widget.height == 'small' %}min-height: 500px;{% elif widget.height == 'medium' %}min-height: 600px;{% elif widget.height == 'large' %}min-height: 700px;{% endif %}">
+        <div class="sr-masthead-inner">
+            <h1>{{ widget.heading }}</h1>
+            <p>{{ widget.lead }}</p>
+            {% if widget.cta01_text %}<a href="#" class="btn btn-lg {% if widget.cta01_style == 'Primary' %}btn-primary{% else %}btn-default{% endif %}">{{ widget.cta01_text }}</a>{% endif %}
+            {% if widget.cta02_text %}<a href="#" class="btn btn-lg {% if widget.cta02_style == 'Primary' %}btn-primary{% else %}btn-default{% endif %}">{{ widget.cta02_text }}</a>{% endif %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,198 @@
+{## sr-ebook v.0.1 ##}
+
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/templates/variables.html" %}
+{% import variables as var %}
+{% set srvariables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import srvariables as sprocket %}
+{% else %}
+{% import "custom/page/templates/variables.html" as var %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-ebook/sr-ebook-01.css') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/vendor/waypoint.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/vendor/sticky-kit.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/sr-ebook-01.js') }}
+
+
+{{ var.template('header.html') }}
+
+<body class="ebook">
+
+{% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-nav-03-extend.html') }}
+{% else %}
+    {% custom_widget "SR Nav" widget_name='SR Nav' %}
+{% endif %}
+
+{% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-parallax-masthead-02-extend.html') }}
+{% else %}
+    {% custom_widget "SR Parallax Masthead" widget_name='SR Parallax Masthead' %}
+{% endif %}
+
+<section class="ebook-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ebook-sidebar">
+                    <div class="ebook-sidebar-nav">
+                        {% if hub_id == 123 %}
+                            {% widget_block rich_text "ebook_sidebar_nav" overrideable=True, label='Ebook Sidebar Nav'  %}
+                                {% widget_attribute "html" %}
+                                    <ul>
+                                        <li><a href="#">Article 01</a></li>
+                                        <li><a href="#">Article 02</a></li>
+                                        <li><a href="#">Article 03</a></li>
+                                        <li><a href="#">Article 04</a></li>
+                                        <li><a href="#">Article 05</a></li>
+                                    </ul>
+                                {% end_widget_attribute %}
+                            {% end_widget_block %}
+                        {% else %}
+                            {% widget_container "ebook_sidebar" label="Ebook Sidebar" %}
+                            {% end_widget_container %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="ebook-content">
+                    {% if hub_id == 123 %}
+                        <span>
+                            {% call var.custom_module('custom-modules/sr-flex-column-03-extend.html', {
+                                'flex_name': 'design-features',
+                                'layout': 'no-wrapper',
+                                'columns_direction': 'column'
+                            }) %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 01</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 02</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                            {% endcall %}
+                            {% call var.custom_module('custom-modules/sr-flex-column-03-extend.html', {
+                                'flex_name': 'design-features',
+                                'layout': 'no-wrapper',
+                                'columns_direction': 'column'
+                            }) %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 03</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 04</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                            {% endcall %}
+                            {% call var.custom_module('custom-modules/sr-flex-column-03-extend.html', {
+                                'flex_name': 'design-features',
+                                'layout': 'no-wrapper',
+                                'columns_direction': 'column'
+                            }) %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 05</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 06</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                            {% endcall %}
+                            {% call var.custom_module('custom-modules/sr-flex-column-03-extend.html', {
+                                'flex_name': 'design-features',
+                                'layout': 'no-wrapper',
+                                'columns_direction': 'column'
+                            }) %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 07</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 08</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                            {% endcall %}
+                            {% call var.custom_module('custom-modules/sr-flex-column-03-extend.html', {
+                                'flex_name': 'design-features',
+                                'layout': 'no-wrapper',
+                                'columns_direction': 'column'
+                            }) %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 09</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                                {% call var.custom_module('custom-modules/sr-rich-text-item-02-extend.html', {
+                                    'class': 'my-rte-class',
+                                    'top_bottom_padding': '0'
+                                }) %}
+                                    <h2>Article 10</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                {% endcall %}
+                            {% endcall %}
+                        </span>
+                    {% else %}
+                        {% widget_container "ebook_content" label="Ebook Content" %}
+                        {% end_widget_container %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-footer-01-extend.html') }}
+{% else %}
+    {% custom_widget "SR Footer" widget_name='SR Footer' %}
+{% endif %}
+
+
+{{ var.template('footer-includes.html') }}
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+{% if hub_id == 123 %}
+  <!--
+    layout options: 'no-wrapper', 'container', 'container-fluid'
+  -->
+  {% set widget = {
+    'layout': 'container',
+    'sitemap_name': 'sprocket-rocket footer'
+    }
+  %}
+
+  {% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+  {% set sr-extends = projectDir + "/custom/page/sr-templates/sr-footer-01.html" %}
+  {% import sr-variables as sprocket %}
+  {% extends sr-extends %}
+{% else %}
+  {% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+  {% extends 'custom/page/sr-templates/sr-footer-01.html' %}
+{% endif %}
+
+{% block sr-footer-content %}
+  {% if hub_id == 123 %}
+    <span id="hs_cos_wrapper_widget_1494607248582_footer" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_menu" style="" data-hs-cos-general-type="widget" data-hs-cos-type="menu">
+      <div id="hs_menu_wrapper_widget_1494607248582_footer" class="hs-menu-wrapper active-branch flyouts hs-menu-flow-horizontal" role="navigation" data-sitemap-name="sprocket-rocket footer">
+        <ul>
+          <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="javascript:;">First Column</a>
+            <ul class="hs-menu-children-wrapper">
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">First Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Second Item</a></a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Third Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Fourth Item</a></li>
+            </ul>
+          </li>
+          <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="javascript:;">Second Column</a>
+            <ul class="hs-menu-children-wrapper">
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">First Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Second Item</a></a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Third Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Fourth Item</a></li>
+            </ul>
+          </li>
+          <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="javascript:;">Third Column</a>
+            <ul class="hs-menu-children-wrapper">
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">First Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Second Item</a></a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Third Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Fourth Item</a></li>
+            </ul>
+          </li>
+          <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children"><a href="javascript:;">Fourth Column</a>
+            <ul class="hs-menu-children-wrapper">
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">First Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Second Item</a></a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Third Item</a></li>
+              <li class="hs-menu-item hs-menu-depth-2"><a href="javascript:;">Fourth Item</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </span>
+  {% else %}
+    {% menu "footer_nav" site_map_name='{{ widget.sitemap_name }}', overrideable=False, root_type='site_root', flyouts='true', max_levels='2', flow='horizontal', label='Advanced Menu' %}
+  {% endif %}
+{% endblock %}
+
+{% block sr-footer-copyright %}
+  <div class="footer-copyright">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        © Copyright text goes here.
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,432 @@
+{## sr-ebook v.0.1 ##}
+
+{% if hub_id == 123 %}
+{% set project = request.path|split('/', 2) %}
+{% set projectDir = project|first %}
+{% set variables = projectDir + "/custom/page/templates/variables.html" %}
+{% import variables as var %}
+{% set srvariables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+{% import srvariables as sprocket %}
+{% else %}
+{% import "custom/page/templates/variables.html" as var %}
+{% import "custom/page/sr-templates/sr-variables.html" as sprocket %}
+{% endif %}
+
+
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-ebook/sr-ebook-02.css') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/vendor/waypoint.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/vendor/sticky-kit.js') }}
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-ebook/sr-ebook-02.js') }}
+
+
+{{ var.template('header.html') }}
+
+<body class="ebook">
+
+{% if hub_id == 123 %}
+    {{ var.custom_module('custom-modules/sr-nav-03-extend.html') }}
+{% else %}
+    {% custom_widget "SR Nav" widget_name='SR Nav' %}
+{% endif %}
+
+{% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-parallax-masthead-02-extend.html') }}
+{% else %}
+    {% custom_widget "SR Parallax Masthead" widget_name='SR Parallax Masthead' %}
+{% endif %}
+
+
+{% choice "number_of_chapters" label='Number of Chapters', value='20', choices='1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20', export_to_template_context=True %}
+
+<section class="ebook-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="ebook-sidebar">
+                    <div class="ebook-sidebar-nav">
+                        <ul>
+                            {% if widget_data.number_of_chapters.value >= 1 %}
+                                <li><a href="#chapter-01">{% text "chapter_01_nav" label="Chapter 01 Nav", value="Chapter 01 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 2 %}
+                                <li><a href="#chapter-02">{% text "chapter_02_nav" label="Chapter 02 Nav", value="Chapter 02 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 3 %}
+                                <li><a href="#chapter-03">{% text "chapter_03_nav" label="Chapter 03 Nav", value="Chapter 03 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 4 %}
+                                <li><a href="#chapter-04">{% text "chapter_04_nav" label="Chapter 04 Nav", value="Chapter 04 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 5 %}
+                                <li><a href="#chapter-05">{% text "chapter_05_nav" label="Chapter 05 Nav", value="Chapter 05 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 6 %}
+                                <li><a href="#chapter-06">{% text "chapter_06_nav" label="Chapter 06 Nav", value="Chapter 06 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 7 %}
+                                <li><a href="#chapter-07">{% text "chapter_07_nav" label="Chapter 07 Nav", value="Chapter 07 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 8 %}
+                                <li><a href="#chapter-08">{% text "chapter_08_nav" label="Chapter 08 Nav", value="Chapter 08 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 9 %}
+                                <li><a href="#chapter-09">{% text "chapter_09_nav" label="Chapter 09 Nav", value="Chapter 09 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 10 %}
+                                <li><a href="#chapter-10">{% text "chapter_10_nav" label="Chapter 10 Nav", value="Chapter 10 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 11 %}
+                                <li><a href="#chapter-11">{% text "chapter_11_nav" label="Chapter 11 Nav", value="Chapter 11 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 12 %}
+                                <li><a href="#chapter-12">{% text "chapter_12_nav" label="Chapter 12 Nav", value="Chapter 12 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 13 %}
+                                <li><a href="#chapter-13">{% text "chapter_13_nav" label="Chapter 13 Nav", value="Chapter 13 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 14 %}
+                                <li><a href="#chapter-14">{% text "chapter_14_nav" label="Chapter 14 Nav", value="Chapter 14 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 15 %}
+                                <li><a href="#chapter-15">{% text "chapter_15_nav" label="Chapter 15 Nav", value="Chapter 15 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 16 %}
+                                <li><a href="#chapter-16">{% text "chapter_16_nav" label="Chapter 16 Nav", value="Chapter 16 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 17 %}
+                                <li><a href="#chapter-17">{% text "chapter_17_nav" label="Chapter 17 Nav", value="Chapter 17 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 18 %}
+                                <li><a href="#chapter-18">{% text "chapter_18_nav" label="Chapter 18 Nav", value="Chapter 18 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 19 %}
+                                <li><a href="#chapter-19">{% text "chapter_19_nav" label="Chapter 19 Nav", value="Chapter 19 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                            {% if widget_data.number_of_chapters.value >= 20 %}
+                                <li><a href="#chapter-20">{% text "chapter_20_nav" label="Chapter 20 Nav", value="Chapter 20 Nav", no_wrapper=True %}</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="ebook-content">
+                    
+                    {% if widget_data.number_of_chapters.value >= 1 %}
+                        <div id="chapter-01" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 01</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>  
+                            {% else %}
+                                {% widget_container "chapter_01", label="Chapter 01" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 2 %}
+                        <div id="chapter-02" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 02</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>  
+                            {% else %}
+                                {% widget_container "chapter_02", label="Chapter 02" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 3 %}
+                        <div id="chapter-03" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 03</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>
+                            {% else %}
+                                {% widget_container "chapter_03", label="Chapter 03" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 4 %}
+                        <div id="chapter-04" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 04</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>
+                            {% else %}
+                                {% widget_container "chapter_04", label="Chapter 04" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 5 %}
+                        <div id="chapter-05" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 05</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>
+                            {% else %}
+                                {% widget_container "chapter_05", label="Chapter 05" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 6 %}
+                        <div id="chapter-06" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 06</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>  
+                            {% else %}
+                                {% widget_container "chapter_06", label="Chapter 06" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 7 %}
+                        <div id="chapter-07" class="chapter">
+                            {% if hub_id == 123 %}
+                            <span>
+                                <h2>Chapter 07</h2>
+                                <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                            </span>  
+                            {% else %}
+                                {% widget_container "chapter_07", label="Chapter 07" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 8 %}
+                        <div id="chapter-08" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 08</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>  
+                            {% else %}
+                                {% widget_container "chapter_08", label="Chapter 08" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 9 %}
+                        <div id="chapter-09" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 09</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span>       
+                            {% else %}
+                                {% widget_container "chapter_09", label="Chapter 09" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 10 %}
+                        <div id="chapter-10" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 10</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_10", label="Chapter 10" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+
+                    {% if widget_data.number_of_chapters.value >= 11 %}
+                        <div id="chapter-11" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 11</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_11", label="Chapter 11" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 12 %}
+                        <div id="chapter-12" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 12</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_12", label="Chapter 12" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 13 %}
+                        <div id="chapter-13" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 13</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_13", label="Chapter 13" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 14 %}
+                        <div id="chapter-14" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 14</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_14", label="Chapter 14" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 15 %}
+                        <div id="chapter-15" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 15</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_15", label="Chapter 15" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 16 %}
+                        <div id="chapter-16" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 16</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_16", label="Chapter 16" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 17 %}
+                        <div id="chapter-17" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 17</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_17", label="Chapter 17" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 18 %}
+                        <div id="chapter-18" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 18</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_18", label="Chapter 18" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 19 %}
+                        <div id="chapter-19" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 19</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_19", label="Chapter 19" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                    {% if widget_data.number_of_chapters.value >= 20 %}
+                        <div id="chapter-20" class="chapter">
+                            {% if hub_id == 123 %}
+                                <span>
+                                    <h2>Chapter 20</h2>
+                                    <p>Lorem ipsum dolor sit amet, ei sit officiis gubergren, ex mei viris aperiri. Mei cu sanctus sapientem definiebas, te sanctus recusabo pri. Usu nihil numquam id, pro at habemus fuisset, vitae intellegam ea mea. Usu ea liber reprimique, prima congue definitionem qui ei, ut mea elit vitae mentitum. Paulo semper salutatus ut qui, id congue quando duo, dolores invenire in per.</p>
+                                    <p>Nusquam consetetur an sea, has vidit homero accusamus et. Adhuc laoreet his id, vel dolorum intellegam ne. Ex delectus appareat perfecto pri, alienum epicuri mea no, ei est veritus graecis vituperata. Duo ei bonorum meliore recteque, his cu unum insolens, melius molestiae vis ad. Vix tempor docendi te. Sea ut nisl mentitum, ei duo autem ceteros, has atomorum eleifend assueverit an.</p>
+                                </span> 
+                            {% else %}
+                                {% widget_container "chapter_20", label="Chapter 20" %}
+                                {% end_widget_container %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-footer-01-extend.html') }}
+{% else %}
+    {% custom_widget "SR Footer" widget_name='SR Footer' %}
+{% endif %}
+
+
+{{ var.template('footer-includes.html') }}
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{## lp-owl-carousel v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-owl-carousel/owl.carousel.css') }}
+{{ require_js('launchpad-hubl/modules/hubl-owl-carousel/owl.carousel.min.js') }}
+
+<!-- owl-carousel 01 start -->
+<script type="text/javascript">
+	$(function() {
+		$('.owl-carousel').owlCarousel({
+			loop: true,
+			margin: 10,
+			responsive: {
+				0: {
+					items: 2
+				},
+				600: {
+					items: 3
+				},
+				1000: {
+					items: 5
+				}
+			}
+		});
+	});
+</script>
+
+<div class="col-xs-12 clearfix">
+	<div class="owl-carousel">
+		<div class="item"><img src="{{ widget.image01.src }}"></div>
+		<div class="item"><img src="{{ widget.image02.src }}"></div>
+		<div class="item"><img src="{{ widget.image03.src }}"></div>
+		<div class="item"><img src="{{ widget.image04.src }}"></div>
+		<div class="item"><img src="{{ widget.image05.src }}"></div>
+		<div class="item"><img src="{{ widget.image06.src }}"></div>
+		<div class="item"><img src="{{ widget.image07.src }}"></div>
+		<div class="item"><img src="{{ widget.image08.src }}"></div>
+	</div>
+</div>
+<!-- owl-carousel 01 end -->

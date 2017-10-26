@@ -1,0 +1,47 @@
+{## hopup-modal v.0.1 ##}
+
+{{ require_css('launchpad-hubl/modules/hubl-hopup-modal/hopup-modal.css') }}
+{{ require_js('launchpad-hubl/modules/hubl-hopup-modal/hopup-modal.js') }}
+
+<!-- hopup modal start -->
+{% if widget.enabled %}
+
+<div class="hopup-modal {{ widget.hopup_modal_type }} {{ widget.light_or_dark_version }}" style="opacity: 0; display:none;">
+	<div class="hopup-modal-inner {{ widget.hopup_identifier }}">
+  	{{ widget.hopup_content }}
+		<!--[if lte IE 8]>
+  		<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+		<![endif]-->
+		<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+		<script>
+			$(window).on("load", function(){
+  			$('.hopup-modal').hopupModal({
+
+  				trigger: '{{ widget.hopup_modal_type }}',                    // Options: exit | slide | timer
+
+					{% if widget.show_once %}
+						showOnce: 'true',      				// Show modal only once per session
+					{% endif %}
+
+					{% if widget.hopup_modal_type == "timer" %}
+						triggerTime: '{{ widget.trigger_time }}',  				// Triggers modal after 10 seconds
+					{% endif %}
+
+					{% if widget.hopup_modal_type == "scroll" %}
+						triggerPosition: '{{ widget.slide_percentage }}',    		// Triggers modal when 70% of he page is scrolled
+					{% endif %}
+
+					{% if widget.hopup_modal_type == "slide" %}
+						triggerPosition: '{{ widget.slide_percentage }}',        	// Triggers modal when 70% of he page is scrolled
+					{% endif %}
+
+				});
+			});
+  	</script>
+
+		<div class="hopup-modal-close" style="background: url('http://www.lean-labs.com/hubfs/img/close.png') 50% 50% / cover;"></div>
+	</div>
+</div>
+<!-- hopup modal end -->
+
+{% endif %}

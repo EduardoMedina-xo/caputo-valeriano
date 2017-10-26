@@ -1,0 +1,32 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set baseDir = projectDir + "/custom/page/templates/" %}
+  {% set assetDir = "/" + projectDir + "/custom/page/templates" %}
+  {% set imgDir = "/file_manager" + assetDir + "/images" %}
+{% else %}
+  {% set baseDir = "custom/page/templates/" %}
+  {% set assetDir = "//cdn2.hubspot.net/hubfs/" + site_settings.portal_id + "/sr-build" %}
+  {% set imgDir = assetDir + "/images" %}
+{% endif %}
+
+{% macro template(value) %}
+  {% set values = baseDir + value %}
+  {% include values %}
+{% endmacro %}
+
+<!-- ===========================================
+    * @desc FLEXIBLE COLUMN VARIABLE
+    * @example {{ var.flex("Case Studies Flex Column") }}
+============================================== -->
+
+{% macro flex(value, id) %}
+  {% widget_container label="{{value}}" %}
+  {% end_widget_container %}
+{% endmacro %}
+
+{% macro custom_module(src, value) %}
+  {% set module = value %}
+  {% set values = baseDir + src %}
+  {% include values %}
+{% endmacro %}

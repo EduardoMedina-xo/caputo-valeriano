@@ -1,0 +1,217 @@
+<style>
+  .{{ parent_custom_widget_name }} {
+    {% if widget.border_top %}
+        border-top: 2px solid black;
+    {% endif %}
+    {% if widget.border_bottom %}
+        border-bottom: 2px solid black;
+    {% endif %}
+  }
+
+  .{{ parent_custom_widget_name }} .nav-pills > li + li {
+    margin-left: 0;
+  }
+
+  .{{ parent_custom_widget_name }} .nav-pills li {
+    width: 100%;
+    background: #f3f3f3;
+    border-radius: 3px;
+    margin: 2px 0;
+  }
+
+  .{{ parent_custom_widget_name }} .nav-pills .tab-content {
+    display: none;
+  }
+
+  .{{ parent_custom_widget_name }} .nav-pills .active .tab-content {
+    display: inherit;
+  }
+
+  .{{ parent_custom_widget_name }} ul {
+    display: inline-block;
+  }
+
+  .{{ parent_custom_widget_name }} .tab-content {
+    padding: 2em 0;
+    font-size: 1.5em;
+  }
+
+  @media only screen and (min-width : 768px) {
+    .{{ parent_custom_widget_name }} {
+      {% if widget.top_bottom_padding != "no-padding" %}
+          padding-top: {% if widget.top_bottom_padding == 'full section' %}5em;{% elif widget.top_bottom_padding == 'half section' %}2.5em;{% else %}0;{% endif %}
+          padding-bottom: {% if widget.top_bottom_padding == 'full section' %}5em;{% elif widget.top_bottom_padding == 'half section' %}2.5em;{% else %}0;{% endif %}
+      {% endif %}
+    }
+    .{{ parent_custom_widget_name }} .nav-pills .active .tab-content {
+      display: none;
+    }
+    .{{ parent_custom_widget_name }} .nav-pills li {
+      width: inherit;
+    }
+    .{{ parent_custom_widget_name }} .nav-pills > li + li {
+      margin-left: 2px;
+    }
+  }
+</style>
+
+<script>
+  $(function(){
+    // Make first tab active
+    $('.{{ parent_custom_widget_name }} li:first').addClass('active');
+  });
+</script>
+
+{% if widget.enabled %}
+  <div class="st-tabbed-content {{ parent_custom_widget_name }}">
+    <div class="{% if widget.layout != "no-wrapper "%}{{ widget.layout }}{% endif %}">
+      <div class="row">
+
+        <!-- Tab nav top -->
+        {% if widget.tabs_position == 'top' %}
+          <div class="col-xs-12 text-center">
+            <ul class="nav nav-pills">
+
+              {% if widget.tab01_enabled %}
+                <li>
+                  <a href="#{{ parent_custom_widget_name }}-tab01" data-toggle="tab">
+                    {{ widget.tab_01_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active">
+                        {{ widget.tab_01_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab02_enabled %}
+                <li>
+                  <a href="#{{ parent_custom_widget_name }}-tab02" data-toggle="tab">
+                    {{ widget.tab_02_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active">
+                        {{ widget.tab_02_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab03_enabled %}
+                <li>
+                  <a href="#{{ parent_custom_widget_name }}-tab03" data-toggle="tab">
+                    {{ widget.tab_03_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active">
+                        {{ widget.tab_03_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab04_enabled %}
+                <li>
+                  <a href="#{{ parent_custom_widget_name }}-tab04" data-toggle="tab">
+                    {{ widget.tab_04_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active">
+                        {{ widget.tab_04_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+
+        <!-- Tab content -->
+        <div class="col-xs-12 {% if widget.tab_content_layout == 'full section'%}col-sm-12{% elif widget.tab_content_layout == 'half section' %}col-sm-8 col-sm-offset-2{% endif %} tab-content text-center hidden-xs">
+          {% if widget.tab01_enabled %}
+            <div class="tab-pane active" id="{{ parent_custom_widget_name }}-tab01">
+              {{ widget.tab_01_body }}
+            </div>
+          {% endif %}
+          {% if widget.tab02_enabled %}
+            <div class="tab-pane" id="{{ parent_custom_widget_name }}-tab02">
+              {{ widget.tab_02_body }}
+            </div>
+          {% endif %}
+          {% if widget.tab03_enabled %}
+            <div class="tab-pane" id="{{ parent_custom_widget_name }}-tab03">
+              {{ widget.tab_03_body }}
+            </div>
+          {% endif %}
+          {% if widget.tab04_enabled %}
+            <div class="tab-pane" id="{{ parent_custom_widget_name }}-tab04">
+              {{ widget.tab_04_body }}
+            </div>
+          {% endif %}
+        </div>
+
+        <!-- Tab nav bottom -->
+        {% if widget.tabs_position == 'bottom' %}
+          <div class="col-xs-12 text-center">
+            <ul class="nav nav-pills">
+
+              {% if widget.tab01_enabled %}
+                <li class="active">
+                  <a href="#tab01" data-toggle="tab">
+                    {{ widget.tab_01_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab01">
+                        {{ widget.tab_01_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab02_enabled %}
+                <li>
+                  <a href="#tab02" data-toggle="tab">
+                    {{ widget.tab_02_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab01">
+                        {{ widget.tab_02_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab03_enabled %}
+                <li>
+                  <a href="#tab03" data-toggle="tab">
+                    {{ widget.tab_03_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab01">
+                        {{ widget.tab_03_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+
+              {% if widget.tab04_enabled %}
+                <li>
+                  <a href="#tab04" data-toggle="tab">
+                    {{ widget.tab_04_heading }}
+                    <div class="tab-content">
+                      <div class="tab-pane active" id="tab01">
+                        {{ widget.tab_04_body }}
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+{% endif %}

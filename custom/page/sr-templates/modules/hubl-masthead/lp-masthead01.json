@@ -1,0 +1,33 @@
+{
+  "name": "masthead",
+  "widget_label": "Masthead",
+  "fields": [
+    {
+      "default": {
+        "src": "http://placehold.it/1200x800",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image",
+      "label": ""
+    },
+    {
+      "default": "LaunchPad Masthead",
+      "help_text": "",
+      "type": "text",
+      "name": "heading",
+      "label": "Heading"
+    },
+    {
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer feugiat dolor nibh. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
+      "help_text": "",
+      "type": "text",
+      "name": "lead",
+      "label": "Lead Paragraph"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-masthead01.html' %}"
+}

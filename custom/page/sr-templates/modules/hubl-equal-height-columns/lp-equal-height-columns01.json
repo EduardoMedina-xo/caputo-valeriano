@@ -1,0 +1,54 @@
+{
+  "name": "equal_height_cols",
+  "widget_label": "Equal Height Columns",
+  "fields": [
+    {
+      "default": "false",
+      "help_text": "",
+      "type": "boolean",
+      "name": "img_left",
+      "label": "Left Image?"
+    },
+    {
+      "default": {
+        "src": "http://placehold.it/570x407",
+        "alt": "",
+        "width": "",
+        "height": ""
+      },
+      "help_text": "",
+      "type": "image",
+      "name": "image",
+      "label": "Image"
+    },
+    {
+      "default": "Default content goes here",
+      "help_text": "",
+      "type": "text",
+      "name": "heading",
+      "label": "Heading"
+    },
+    {
+      "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lobortis ipsum ligula, ac pulvinar urna bibendum quis. Suspendisse potenti. Ut gravida mattis porttitor. Donec auctor elit sed consequat faucibus.</p><p>Proin efficitur metus ex, vel posuere purus eleifend sed. Cras arcu ipsum, fermentum vel leo in, porttitor pharetra orci.Nunc malesuada justo quam, id fringilla dui semper sit amet. Duis nibh metus, dignissim in ligula eu, tincidunt elementum enim. Quisque interdum leo quis libero finibus vestibulum. In tristique scelerisque placerat.</p>",
+      "help_text": "",
+      "type": "richtext",
+      "name": "body",
+      "label": "Body"
+    },
+    {
+      "default": "More Details",
+      "help_text": "",
+      "type": "text",
+      "name": "cta_text",
+      "label": "CTA Text"
+    },
+    {
+      "default": "#",
+      "help_text": "",
+      "type": "text",
+      "name": "cta_url",
+      "label": "CTA Url"
+    }
+  ],
+  "source": "{% include 'custom-modules/lp-equal-height-columns01.html' %}"
+}

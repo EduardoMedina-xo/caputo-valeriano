@@ -1,0 +1,29 @@
+.share-box {
+    padding: 40px;
+    border: 1px solid #ddd;
+    margin: 30px auto;
+}
+.share-box h3 {
+    letter-spacing: 0;
+    margin: 0 0 1em;
+}
+.share-box .share-box-links {
+    text-align: center;
+}
+.share-box .share-box-links a {
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+}
+.share-box .share-box-links a:before {
+    margin-right: 5px;
+}
+.share-box .share-box-links .share-tweet:before {
+    content: url('http://www.lean-labs.com/hubfs/leanlabs/img/social/share-twitter.png');
+}
+.share-box .share-box-links .share-facebook:before {
+    content: url('http://www.lean-labs.com/hubfs/leanlabs/img/social/share-facebook.png');
+}
+.share-box .share-box-links .share-linkedin:before {
+    content: url('http://www.lean-labs.com/hubfs/leanlabs/img/social/share-linkedin.png');
+}

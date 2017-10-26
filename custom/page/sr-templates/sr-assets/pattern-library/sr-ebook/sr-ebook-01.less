@@ -1,0 +1,53 @@
+@import "../../less/variables.less";
+
+.ebook {
+    
+    .ebook-body {
+        padding: 70px 0;
+    }
+
+    // Sidebar
+    .ebook-sidebar-nav {
+        padding-top: 10px;
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style: none;
+                &:nth-child(n+2) {
+                    margin-top: 1em;
+                }
+                a {
+                    display: block;
+                    padding: 20px;
+                    background: #f9f9f9;
+                    color: @text-color;
+                    text-decoration: none;
+                    &:hover,
+                    &.active {
+                        background: @brand-primary;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    // Content
+    .ebook-content {
+        padding-top: 10px;
+        > span > div {
+            &:nth-child(n+2) {
+                margin-top: 50px;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width : 768px) {
+    .ebook-body > .container > .row {
+        display: flex;
+    }
+}
+    
