@@ -42,15 +42,18 @@
         "type": "richtext"
       },
       {
-        "default": {
-          "src": "http://placehold.it/1200x800.jpg",
-          "alt": "",
-          "width": "1200",
-          "height": "800"
-        },
-        "label": "Image label",
-        "name": "sr-demo-image",
-        "type": "image"
+        "default": "http://lean-labs.com",
+        "help_text": "",
+        "label": "CTA Link URL",
+        "name": "cta_link",
+        "type": "text"
+      },
+      {
+        "default": "Click Her",
+        "help_text": "",
+        "label": "CTA Content ",
+        "name": "cta_content",
+        "type": "text"
       },
       {
         "default": false,
@@ -79,14 +82,5 @@
 		"path": "custom/page/sr-templates/sr-hello-world-01.html",
 		"source": ""
   },
-  "files": [
-    {
-      "file": "sr-assets/pattern-library/sr-demo/sr-demo-01.css",
-      "folder_paths": "sr-assets/pattern-library/sr-demo"
-    },
-    {
-      "file": "sr-assets/pattern-library/sr-demo/sr-demo-01.js",
-      "folder_paths": "sr-assets/pattern-library/sr-demo"
-    }
-  ]
+  "files": []
 }

@@ -19,6 +19,24 @@
 		{% set heading = 'Hello World' %}
 	{% endif %}
 
+	{% if module.content %}
+		{% set content = module.content %}
+	{% else %}
+		{% set content = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' %}
+	{% endif %}
+
+	{% if module.cta_link %}
+		{% set cta_link = module.cta_link %}
+	{% else %}
+		{% set cta_link = 'http://lean-labs.com' %}
+	{% endif %}
+
+	{% if module.cta_content %}
+		{% set cta_content = module.cta_content %}
+	{% else %}
+		{% set cta_content = 'Click Here' %}
+	{% endif %}
+
 	{% if caller()|length > 3 %}
 		{% set caller = caller() %}
 	{% else %}
@@ -44,7 +62,7 @@
 	{% endif %}
 
 	<!-- do not change -->
-	{% set widget = {'enabled': enabled, 'heading': heading, 'caller': caller, 'layout': layout, 'border_top': border_top, 'border_bottom': border_bottom} %}
+	{% set widget = {'enabled': enabled, 'heading': heading, 'content': content, 'cta_link': cta_link, 'cta_content': cta_content, 'caller': caller, 'layout': layout, 'border_top': border_top, 'border_bottom': border_bottom} %}
 
 	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
 	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-hello-world-01.html" %}

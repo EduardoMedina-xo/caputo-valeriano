@@ -1,4 +1,3 @@
-
 {% if hub_id == 123 %}
 <!-- Use for local overrides -->
 {% endif %}
@@ -17,8 +16,11 @@
 <div class="sr-demo {{ widget.layout }} {% if widget.border_top %}line-top{% endif %} {% if widget.border_bottom %}line-bottom{% endif %}">
     <h1>{{ widget.heading }}</h1>
     <p class="lead">
-    {{ widget.content }}
+        {{ widget.content }}
     </p>
+
+    <a href="{{ widget.cta_link }}" class="btn btn-primary btn-lg">{{ widget.cta_content }}</a>
+
 </div>
 
 <script>
