@@ -1,0 +1,56 @@
+{% if hub_id == 123 %}
+
+	<!--
+		enabled options: boolean
+		layout options: 'no-wrapper', 'container', 'container-fluid'
+		border_top options: boolean
+		border_bottom options: boolean
+	-->
+
+	{% if module.enabled or module.enabled == 0 %}
+		{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 1 %}
+	{% endif %}
+
+	{% if module.heading %}
+		{% set heading = module.heading %}
+	{% else %}
+		{% set heading = 'Hello World' %}
+	{% endif %}
+
+	{% if caller()|length > 3 %}
+		{% set caller = caller() %}
+	{% else %}
+		{% set caller = 'Hello World' %}
+	{% endif %}
+
+	{% if module.layout %}
+		{% set layout = module.layout %}
+	{% else %}
+		{% set layout = 'container' %}
+	{% endif %}
+
+	{% if module.border_top %}
+		{% set border_top = module.border_top %}
+	{% else %}
+		{% set border_top = 0 %}
+	{% endif %}
+
+	{% if module.border_bottom %}
+		{% set border_bottom = module.border_bottom %}
+	{% else %}
+		{% set border_bottom = 0 %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set widget = {'enabled': enabled, 'heading': heading, 'caller': caller, 'layout': layout, 'border_top': border_top, 'border_bottom': border_bottom} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-hello-world-01.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-hello-world-01.html' %}
+{% endif %}

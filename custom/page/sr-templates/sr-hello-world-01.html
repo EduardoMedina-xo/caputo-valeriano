@@ -1,0 +1,29 @@
+
+{% if hub_id == 123 %}
+<!-- Use for local overrides -->
+{% endif %}
+
+<!-- External module CSS dependencies -->
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-demo/sr-demo-01.css') }}
+
+<!-- External module JS dependencies -->
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-demo/sr-demo-01.js') }}
+
+{% if widget.enabled %}
+<style>
+    /* Module CSS */
+</style>
+
+<div class="sr-demo {{ widget.layout }} {% if widget.border_top %}line-top{% endif %} {% if widget.border_bottom %}line-bottom{% endif %}">
+    <h1>{{ widget.heading }}</h1>
+    <p class="lead">
+    {{ widget.content }}
+    </p>
+</div>
+
+<script>
+  $(function(){
+    console.log("SR Demo is loaded.");
+  })
+</script>
+{% endif %}

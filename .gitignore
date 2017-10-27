@@ -4,3 +4,4 @@ config.codekit3
 node_modules
 #Bower Directory
 bower_components
+.idea/
