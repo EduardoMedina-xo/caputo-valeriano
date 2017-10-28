@@ -1,0 +1,86 @@
+{% if hub_id == 123 %}
+
+	<!--
+		enabled options: boolean
+		layout options: 'no-wrapper', 'container', 'container-fluid'
+		border_top options: boolean
+		border_bottom options: boolean
+	-->
+
+	{% if module.enabled or module.enabled == 0 %}
+		{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 1 %}
+	{% endif %}
+
+	{% if module.heading %}
+		{% set heading = module.heading %}
+	{% else %}
+		{% set heading = 'Hello World' %}
+	{% endif %}
+
+	{% if module.content %}
+		{% set content = module.content %}
+	{% else %}
+		{% set content = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' %}
+	{% endif %}
+
+	{% if module.cta_watch %}
+		{% set cta_watch = module.cta_watch %}
+	{% else %}
+		{% set cta_watch = 'Watch the video' %}
+	{% endif %}
+
+	{% if module.cta_detail %}
+		{% set cta_detail = module.cta_detail %}
+	{% else %}
+		{% set cta_detail = "<p>Or learn how <a href="{{ widget.cta_link }}">the whole process</a> works here</p>" %}
+	{% endif %}
+
+	{% if module.cta_link %}
+		{% set cta_link = module.cta_link %}
+	{% else %}
+		{% set cta_link = 'https://notarize.com/wp-content/themes/layerswp/how-it-works' %}
+	{% endif %}
+
+	{% if module.cta_content %}
+		{% set cta_content = module.cta_content %}
+	{% else %}
+		{% set cta_content = 'Click Here' %}
+	{% endif %}
+
+	{% if caller()|length > 3 %}
+		{% set caller = caller() %}
+	{% else %}
+		{% set caller = 'Hello World' %}
+	{% endif %}
+
+	{% if module.layout %}
+		{% set layout = module.layout %}
+	{% else %}
+		{% set layout = 'container' %}
+	{% endif %}
+
+	{% if module.border_top %}
+		{% set border_top = module.border_top %}
+	{% else %}
+		{% set border_top = 0 %}
+	{% endif %}
+
+	{% if module.border_bottom %}
+		{% set border_bottom = module.border_bottom %}
+	{% else %}
+		{% set border_bottom = 0 %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set widget = {'enabled': enabled, 'heading': heading, 'content': content, 'cta_link': cta_link, 'cta_content': cta_content, 'caller': caller, 'layout': layout, 'border_top': border_top, 'border_bottom': border_bottom} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-notarize.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-notarize.html' %}
+{% endif %}

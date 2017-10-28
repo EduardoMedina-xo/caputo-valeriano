@@ -18,7 +18,15 @@
 
   {{ var.custom_module('custom-modules/sr-parallax-masthead-02-extend.html', {'enabled': 1, 'parallax': 1, 'class': 'my-class', 'height': 'medium', 'image': 'http://placehold.it/1200x800.jpg', 'overlay': 'light' }) }}
 
-  {{ var.custom_module('custom-modules/sr-hello-world-01-extend.html', {'enabled': 1, 'layout': 'container', 'heading': 'Hello New World', 'border_top': 0, 'border_bottom': 0 }) }}
+  {{ var.custom_module('custom-modules/sr-notarize-extend.html', {
+      'enabled': 1,
+      'layout': 'container-fluid',
+      'heading': 'Hello New World',
+      'cta_column_one': 'Upload your document and prove your identity.',
+      'cta_column_two': 'Connect over live video with a notary public.',
+      'cta_column_three': 'Sign and Notarize in five minutes flat!',
+      'border_top': 0,
+      'border_bottom': 0 }) }}
 
   {% call var.custom_module('custom-modules/sr-accordion-01-extend.html', {'enabled': 'true', 'flex_name': 'Accordion', 'layout': 'container'}) %}
       {% call var.custom_module('custom-modules/sr-accordion-item-01-extend.html', {
