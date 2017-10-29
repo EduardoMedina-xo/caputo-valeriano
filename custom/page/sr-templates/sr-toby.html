@@ -1,0 +1,151 @@
+{% if hub_id == 123 %}
+    <!-- Use for local overrides -->
+{% endif %}
+
+<!-- External module CSS dependencies -->
+{{ require_css(sprocket.assetDir + '/pattern-library/sr-toby/sr-toby-01.css') }}
+
+<!-- External module JS dependencies -->
+{{ require_js(sprocket.assetDir + '/pattern-library/sr-toby/sr-toby-01.js') }}
+
+{% if widget.enabled %}
+    <style>
+        /* Module CSS */
+    </style>
+
+    <div class="container-fluid">
+        <div class="Hero Grid Grid--justifyCenter">
+            <div class="Grid-cell--md-8 Grid-cell--lg-7 align--center p--ver">
+                {% if widget.heading %}
+                    <h1 class="Hero-title Heading--lg c--brand">{{ widget.heading }}</h1>
+                {% endif %}
+                {% if widget.description %}
+                    <h2 class="container-fluid w--normal p--bottom">{{ widget.description }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="container-fluid Grid Grid--justifyCenter">
+            <div class="Grid-cell--xs-12">
+                <div class="Feature">
+                    <div class="Shadow Shadow--dimed"></div>
+                    <div class="Feature--container">
+                        <div class="Grid Grid--spaceBetween">
+                            <div class="Feature--copy flex--center Grid-cell--sm-12 Grid-cell--md-6 c--tertiary">
+                                <div>
+                                    {% if widget.cta_feature_one_title %}
+                                        <h1 class="container-fluid">{{ widget.cta_feature_one_title }}</h1>
+                                    {% endif %}
+                                    {% if widget.cta_feature_one_content %}
+                                        <p class="container-fluid">{{ widget.cta_feature_one_content }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="Feature--image Grid-cell--sm-12 Grid-cell--md-6 align--center">
+                                {% if widget.cta_feature_one_img_link %}
+                                    <img src="{{ widget.cta_feature_one_img_link }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Feature">
+                    <div class="Shadow Shadow--dimed"></div>
+                    <div class="Feature--container">
+                        <div class="Grid Grid--spaceBetween">
+                            <div class="Feature--copy flex--center Grid-cell--sm-12 Grid-cell--md-6 c--tertiary">
+                                <div>
+                                    {% if widget.cta_feature_two_title %}
+                                        <h1 class="container-fluid">{{ widget.cta_feature_two_title }}</h1>
+                                    {% endif %}
+                                    {% if widget.cta_feature_two_content %}
+                                        <p class="container-fluid">{{ widget.cta_feature_two_content }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="Feature--image Grid-cell--sm-12 Grid-cell--md-6 align--center">
+                                {% if widget.cta_feature_two_img_link %}
+                                    <img src="{{ widget.cta_feature_two_img_link }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Feature">
+                    <div class="Shadow Shadow--dimed"></div>
+                    <div class="Feature--container">
+                        <div class="Grid Grid--spaceBetween">
+                            <div class="Feature--copy flex--center Grid-cell--sm-12 Grid-cell--md-6 c--tertiary">
+                                <div>
+                                    {% if widget.cta_feature_three_title %}
+                                        <h1 class="container-fluid">{{ widget.cta_feature_three_title }}</h1>
+                                    {% endif %}
+                                    {% if widget.cta_feature_three_content %}
+                                        <p class="container-fluid">{{ widget.cta_feature_three_content }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="Feature--image Grid-cell--sm-12 Grid-cell--md-6 align--center">
+                                {% if widget.cta_feature_three_img_link %}
+                                    <img src="{{ widget.cta_feature_three_img_link }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Feature">
+                    <div class="Shadow Shadow--dimed"></div>
+                    <div class="Feature--container">
+                        <div class="Grid Grid--spaceBetween">
+                            <div class="Feature--copy flex--center Grid-cell--sm-12 Grid-cell--md-6 c--tertiary">
+                                <div>
+                                    {% if widget.cta_feature_four_title %}
+                                        <h1 class="container-fluid">{{ widget.cta_feature_four_title }}</h1>
+                                    {% endif %}
+                                    {% if widget.cta_feature_four_content %}
+                                        <p class="container-fluid">{{ widget.cta_feature_four_content }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="Feature--image Grid-cell--sm-12 Grid-cell--md-6 align--center">
+                                {% if widget.cta_feature_four_img_link %}
+                                    <img src="{{ widget.cta_feature_four_img_link }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="Feature">
+                    <div class="Shadow Shadow--dimed"></div>
+                    <div class="Feature--container">
+                        <div class="Grid Grid--spaceBetween">
+                            <div class="Feature--copy flex--center Grid-cell--sm-12 Grid-cell--md-6 c--tertiary">
+                                <div>
+                                    {% if widget.cta_feature_five_title %}
+                                        <h1 class="container-fluid">{{ widget.cta_feature_five_title }}</h1>
+                                    {% endif %}
+                                    {% if widget.cta_feature_five_content %}
+                                        <p class="container-fluid">{{ widget.cta_feature_five_content }}</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div class="Feature--image Grid-cell--sm-12 Grid-cell--md-6 align--center">
+                                {% if widget.cta_feature_five_img_link %}
+                                    <img src="{{ widget.cta_feature_five_img_link }}">
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            console.log("SR Toby is loaded.");
+        })
+    </script>
+{% endif %}

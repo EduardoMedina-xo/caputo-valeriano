@@ -18,37 +18,7 @@
 
   {{ var.custom_module('custom-modules/sr-parallax-masthead-02-extend.html', {'enabled': 1, 'parallax': 1, 'class': 'my-class', 'height': 'medium', 'image': 'http://placehold.it/1200x800.jpg', 'overlay': 'light' }) }}
 
-  {{ var.custom_module('custom-modules/sr-toby-extend.html', {
-      'enabled': 1,
-      'layout': 'no-wrapper',
-      'heading': 'Modern Teams Work in the Browser',
-      'description': 'You and your team use many different tools to get work done. Toby surfaces key resources from every tool onto every new tab page.',
-
-      'cta_feature_one_title': 'Your team’s working memory, all in one place',
-      'cta_feature_one_content': 'Centralize your team’s resources by adding them into Toby collections. Organize your collections with any reports, libraries, and documents configured endlessly.',
-      'cta_feature_one_img_link': 'http://www.gettoby.com/img/product/toolbox.png',
-
-      'cta_feature_two_title': 'Give your workflow special powers',
-      'cta_feature_two_content': 'Context switch on the fly by swapping collections from different projects. Bring clarity into your work by assigning tags to your collections.',
-      'cta_feature_two_img_link': 'http://www.gettoby.com/img/product/context.png',
-
-      'cta_feature_three_title': 'Make shared knowledge work for you',
-      'cta_feature_three_content': 'Find what you need within seconds using Toby search. Say goodbye to lost sticky notes, long chat threads, and dust-collecting bookmarks.',
-      'cta_feature_three_img_link': 'http://www.gettoby.com/img/product/search.png',
-
-      'cta_feature_four_title': 'From “Hired” to “Team member” within hours',
-      'cta_feature_four_content': 'Scale onboarding like never before by sharing relevant project collections on day one. Solve the information transfer gap by surfacing content with a snap of a finger.',
-      'cta_feature_four_img_link': 'http://www.gettoby.com/img/product/onboarding.png',
-
-      'cta_feature_five_title': 'Seamless team collaboration like it should be',
-      'cta_feature_five_content': 'Talk about work, where work happens by using Toby notes. Remove tool apathy, Toby empowers teams to make informed and relevant project decisions.',
-      'cta_feature_five_img_link': 'http://www.gettoby.com/img/product/idea.png',
-
-      'cta_column_two': 'Connect over live video with a notary public.',
-      'cta_column_three': 'Sign and Notarize in five minutes flat!',
-
-      'border_top': 0,
-      'border_bottom': 0 }) }}
+  {{ var.custom_module('custom-modules/sr-hello-world-01-extend.html', {'enabled': 1, 'layout': 'container', 'heading': 'Hello New World', 'border_top': 0, 'border_bottom': 0 }) }}
 
   {% call var.custom_module('custom-modules/sr-accordion-01-extend.html', {'enabled': 'true', 'flex_name': 'Accordion', 'layout': 'container'}) %}
       {% call var.custom_module('custom-modules/sr-accordion-item-01-extend.html', {

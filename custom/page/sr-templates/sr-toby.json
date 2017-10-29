@@ -1,0 +1,86 @@
+{
+  "custom_module": {
+    "name": "SR Toby",
+    "fields": [
+      {
+        "default": true,
+        "help_text": "",
+        "label": "Enabled",
+        "name": "enabled",
+        "type": "boolean"
+      },
+      {
+        "choices": [
+          [
+            "no-wrapper", "No Wrapper"
+          ],
+          [
+            "container", "Page"
+          ],
+          [
+            "container-fluid", "Full Width"
+          ]
+        ],
+        "default": "container",
+        "display": "select",
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice"
+      },
+      {
+        "default": "Hello World.",
+        "help_text": "Help text",
+        "label": "Text field label",
+        "name": "heading",
+        "type": "text"
+      },
+      {
+        "default": "Rich text field default content.",
+        "help_text": "Help text",
+        "label": "Rich text field label",
+        "name": "content",
+        "type": "richtext"
+      },
+      {
+        "default": "http://lean-labs.com",
+        "help_text": "",
+        "label": "CTA Link URL",
+        "name": "cta_link",
+        "type": "text"
+      },
+      {
+        "default": "Click Her",
+        "help_text": "",
+        "label": "CTA Content ",
+        "name": "cta_content",
+        "type": "text"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Top",
+        "name": "border_top",
+        "type": "boolean"
+      },
+      {
+        "default": false,
+        "help_text": "",
+        "label": "Border Bottom",
+        "name": "border_bottom",
+        "type": "boolean"
+      }
+    ],
+    "source": "",
+    "widgetLabel": "01"
+  },
+  "custom_module_extend": "sr-notarize-extend.html",
+  "custom_module_template": "sr-notarize.html",
+  "template": {
+    "category_id": "4",
+		"folder": "sr-test",
+		"template_type": "4",
+		"path": "custom/page/sr-templates/sr-notarize.html",
+		"source": ""
+  },
+  "files": []
+}

@@ -1,0 +1,144 @@
+{% if hub_id == 123 %}
+
+	<!--
+		enabled options: boolean
+		layout options: 'no-wrapper', 'container', 'container-fluid'
+		border_top options: boolean
+		border_bottom options: boolean
+	-->
+
+	{% if module.enabled or module.enabled == 0 %}
+		{% set enabled = module.enabled %}
+	{% else %}
+		{% set enabled = 1 %}
+	{% endif %}
+
+	{% if module.heading %}
+		{% set heading = module.heading %}
+	{% else %}
+		{% set heading = 'Modern Teams Work in the Browser' %}
+	{% endif %}
+
+	{% if module.description %}
+		{% set description = module.description %}
+	{% else %}
+		{% set description = 'You and your team use many different tools to get work done. Toby surfaces key resources from every tool onto every new tab page.' %}
+	{% endif %}
+
+	{% if module.content %}
+		{% set content = module.content %}
+	{% else %}
+		{% set content = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.' %}
+	{% endif %}
+
+	{% if module.cta_column_one %}
+		{% set cta_column_one = module.cta_column_one %}
+	{% else %}
+		{% set cta_column_one = '' %}
+	{% endif %}
+
+	{% if module.cta_column_one_img %}
+		{% set cta_column_one_img = module.cta_column_one_img %}
+	{% else %}
+		{% set cta_column_one_img = 'https://notarize.com/wp-content/themes/layerswp/assets/images/how-1.svg' %}
+	{% endif %}
+
+	{% if module.cta_column_two %}
+		{% set cta_column_two = module.cta_column_two %}
+	{% else %}
+		{% set cta_column_two = '' %}
+	{% endif %}
+
+	{% if module.cta_column_two_img %}
+		{% set cta_column_two_img = module.cta_column_two_img %}
+	{% else %}
+		{% set cta_column_two_img = 'https://notarize.com/wp-content/themes/layerswp/assets/images/how-2.svg' %}
+	{% endif %}
+
+	{% if module.cta_column_three %}
+		{% set cta_column_three = module.cta_column_three %}
+	{% else %}
+		{% set cta_column_three = '' %}
+	{% endif %}
+
+	{% if module.cta_column_three_img %}
+		{% set cta_column_three_img = module.cta_column_three_img %}
+	{% else %}
+		{% set cta_column_three_img = 'https://notarize.com/wp-content/themes/layerswp/assets/images/how-3.svg' %}
+	{% endif %}
+
+	{% if module.cta_watch_thumb %}
+		{% set cta_watch_thumb = module.cta_watch_thumb %}
+	{% else %}
+		{% set cta_watch_thumb = 'https://notarize.com/wp-content/themes/layerswp/assets/images/how-video-thumb.png' %}
+	{% endif %}
+
+	{% if module.cta_watch %}
+		{% set cta_watch = module.cta_watch %}
+	{% else %}
+		{% set cta_watch = 'Watch the video' %}
+	{% endif %}
+
+	{% if module.cta_link %}
+		{% set cta_link = module.cta_link %}
+	{% else %}
+		{% set cta_link = 'https://notarize.com/wp-content/themes/layerswp/how-it-works' %}
+	{% endif %}
+
+	{% if module.cta_content %}
+		{% set cta_content = module.cta_content %}
+	{% else %}
+		{% set cta_content = 'Click Here' %}
+	{% endif %}
+
+	{% if caller()|length > 3 %}
+		{% set caller = caller() %}
+	{% else %}
+		{% set caller = 'Hello World' %}
+	{% endif %}
+
+	{% if module.layout %}
+		{% set layout = module.layout %}
+	{% else %}
+		{% set layout = 'container' %}
+	{% endif %}
+
+	{% if module.border_top %}
+		{% set border_top = module.border_top %}
+	{% else %}
+		{% set border_top = 0 %}
+	{% endif %}
+
+	{% if module.border_bottom %}
+		{% set border_bottom = module.border_bottom %}
+	{% else %}
+		{% set border_bottom = 0 %}
+	{% endif %}
+
+	<!-- do not change -->
+	{% set widget = {
+		'enabled': enabled,
+		'heading': heading,
+	  'description': description,
+		'content': content,
+		'cta_column_one': cta_column_one,
+		'cta_column_one_img': cta_column_one_img,
+		'cta_column_two': cta_column_two,
+		'cta_column_two_img': cta_column_two_img,
+		'cta_column_three': cta_column_three,
+		'cta_column_three_img': cta_column_three_img,
+		'cta_watch_thumb': cta_watch_thumb,
+		'cta_watch': cta_watch,
+		'cta_link': cta_link,
+		'cta_content': cta_content,
+		'caller': caller,
+		'layout': layout, 'border_top': border_top, 'border_bottom': border_bottom} %}
+
+	{% set sr-variables = projectDir + "/custom/page/sr-templates/sr-variables.html" %}
+	{% set sr-extends = projectDir + "/custom/page/sr-templates/sr-toby.html" %}
+	{% import sr-variables as sprocket %}
+	{% extends sr-extends %}
+{% else %}
+	{% import 'custom/page/sr-templates/sr-variables.html' as sprocket %}
+	{% extends 'custom/page/sr-templates/sr-toby.html' %}
+{% endif %}
