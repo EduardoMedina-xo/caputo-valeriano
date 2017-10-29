@@ -1,0 +1,64 @@
+{% if hub_id == 123 %}
+  {% set project = request.path|split('/', 2) %}
+  {% set projectDir = project|first %}
+  {% set variables = projectDir + "/custom/page/templates/variables.html" %}
+  {% import variables as var %}
+{% else %}
+  {% import "custom/page/templates/variables.html" as var %}
+{% endif %}
+
+{{ var.template('header.html') }}
+
+<body class="home">
+  {% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-nav-03-extend.html') }}
+  {% else %}
+    {% custom_widget "SR Nav" widget_name='SR Nav' %}
+  {% endif %}
+
+  {{ var.custom_module('custom-modules/sr-parallax-masthead-02-extend.html', {'enabled': 1, 'parallax': 1, 'class': 'my-class', 'height': 'medium', 'image': 'http://placehold.it/1200x800.jpg', 'overlay': 'light' }) }}
+
+  {{ var.custom_module('custom-modules/sr-notarize-extend.html', {
+      'enabled': 1,
+      'layout': 'container-fluid',
+      'heading': 'Hello New World',
+      'cta_column_one': 'Upload your document and prove your identity.',
+      'cta_column_two': 'Connect over live video with a notary public.',
+      'cta_column_three': 'Sign and Notarize in five minutes flat!',
+      'border_top': 0,
+      'border_bottom': 0 }) }}
+
+  {% call var.custom_module('custom-modules/sr-accordion-01-extend.html', {'enabled': 'true', 'flex_name': 'Accordion', 'layout': 'container'}) %}
+      {% call var.custom_module('custom-modules/sr-accordion-item-01-extend.html', {
+        'parent_custom_widget_name': 'accordion01',
+        'title': 'Title 01',
+        'content': 'Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.'
+      }) %}
+      {% endcall %}
+      {% call var.custom_module('custom-modules/sr-accordion-item-01-extend.html', {
+        'parent_custom_widget_name': 'accordion02',
+        'title': 'Title 02',
+        'content': 'Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.'
+      }) %}
+      {% endcall %}
+      {% call var.custom_module('custom-modules/sr-accordion-item-01-extend.html', {
+        'parent_custom_widget_name': 'accordion03',
+        'title': 'Title 03',
+        'content': 'Lorem ipsum dolor sit amet, est te option omittam eloquentiam. Nihil dolores gloriatur at eam, te mel erant virtute. His ei mazim ignota disputando. Cu legimus impedit feugait vis, no commune invenire.'
+      }) %}
+      {% endcall %}
+  {% endcall %}
+
+  {% widget_container "flexible_column" %}
+  {% end_widget_container %}
+
+  {% if hub_id == 123 %}
+    {{ var.template('custom-modules/sr-footer-01-extend.html') }}
+  {% else %}
+    {% custom_widget "SR Footer" widget_name='SR Footer' %}
+  {% endif %}
+
+	{{ var.template('footer-includes.html') }}
+
+</body>
+</html>
